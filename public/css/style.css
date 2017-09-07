@@ -1,0 +1,375 @@
+
+/* Disables the arrow inside datalist boxes */
+input::-webkit-calendar-picker-indicator
+{
+    display: none;
+}
+
+/** REMOVE **/
+.test
+{
+    border: 1px solid red;
+}
+
+.current-time-wrapper
+{
+    margin-top: 100px;
+    margin-bottom: 10px;
+    color: #eee;
+}
+#current-time-hm,#current-time-s
+{
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+}
+#current-time-hm
+{
+    font-size: 12em;
+    font-weight: 300;
+}
+#current-time-s
+{
+    font-size: 3em;
+    font-weight: 300;
+    margin-left: 26px;
+}
+.game-time-wrapper
+{
+    margin-bottom: 60px;
+    color: #eee;
+}
+#game-time
+{
+    font-size: 1.6em;
+    font-weight: 300;
+}
+#game-time-to-changeover
+{
+    font-size: 1.6em;
+    font-weight: 300;
+}
+.game-time-icon
+{
+    font-size: 1.4em;
+    margin-right: 10px;
+}
+.dim
+{
+    color: #888;
+}
+.spinme
+{
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 12000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 12000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 12000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: spin;
+    animation-duration: 12000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.pulseme
+{
+    -webkit-animation-name: pulse;
+    -webkit-animation-duration: 2400ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: pulse;
+    -moz-animation-duration: 2400ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: pulse;
+    -ms-animation-duration: 2400ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+
+    animation-name: pulse;
+    animation-duration: 2400ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-ms-keyframes pulse {
+    0%   {transform: scale(1, 1);}
+    50% {transform: scale(0.9, 0.9);}
+    100% {transform: scale(1, 1);}
+}
+@-moz-keyframes pulse {
+    0%   {transform: scale(1, 1);}
+    50% {transform: scale(0.9, 0.9);}
+    100% {transform: scale(1, 1);}
+}
+@-webkit-keyframes pulse {
+    0%   {transform: scale(1, 1);}
+    50% {transform: scale(0.9, 0.9);}
+    100% {transform: scale(1, 1);}
+}
+@keyframes pulse {
+    0%   {transform: scale(1, 1);}
+    50% {transform: scale(0.9, 0.9);}
+    100% {transform: scale(1, 1);}
+}
+
+.navbar
+{
+    border-top: 4px solid #424242;
+}
+.navbar-nav
+{
+    width: 100%;
+    text-align: center;
+}
+.navbar-nav > li
+{
+    float: none;
+    display: inline-block;
+}
+
+.nav-ohai
+{
+    font-size: 1.6em;
+}
+
+body
+{
+    background-color: #424242;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 100px;
+}
+
+/*** Form ***/
+.form-item-wrapper
+{
+    background-color: #333;
+    color: #ccc;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.form-item-inner-wrapper
+{
+    background-color: #333;
+    color: #ccc;
+    padding-top: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    cursor: default;
+}
+/*.border-left*/
+/*{*/
+    /*border-left: 1px solid #555;*/
+/*}*/
+.form-center-h
+{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.form-item
+{
+    max-height: 48px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+}
+.form-item-timer
+{
+    font-size: 2.2em;
+    font-weight: 300;
+}
+.form-item-timer span
+{
+    line-height: 44px;
+}
+.form-item-img
+{
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    /*background: #222 url("../img/BossArmor/DimTree.png") no-repeat center;*/
+    background: #222;
+    background-position: center;
+    border-radius: 5px;
+    margin-right: 6px;
+    line-height: 44px;
+    font-size: 1.2em;
+    text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
+}
+.form-item-icon
+{
+    min-height: 28px;
+    max-height: 28px;
+    min-width: 28px;
+    max-width: 28px;
+}
+.form-item-texticon
+{
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    text-align: center;
+    font-size: 1.8em;
+    /*margin-right: 6px;*/
+}
+.form-item-texticon span
+{
+    line-height: 44px;
+}
+.form-item-submiticon
+{
+    margin-top: 10px;
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-item-submiticon span
+{
+    line-height: 44px;
+}
+.form-item-submiticon:hover
+{
+    color: #43ac6a;
+}
+.btn-submit
+{
+    background: none;
+    border: none;
+}
+.btn-submit:focus
+{
+    outline: 0;
+}
+.accumulated-trades
+{
+    color: #76cfe6;
+}
+
+.btn-new {
+    background-color: #393939;
+    border: 1px solid #414141;
+    height: 44px;
+    border-radius: 5px;
+    color: #eee;
+}
+
+.progress-custom
+{
+    margin: 10px 0 0 0;
+    padding: 0px;
+}
+
+/*** Items ***/
+.row-wrapper
+{
+    margin: 30px 0 0 0;
+    padding: 0px;
+}
+.btn-new2 {
+    background-color: #393939;
+    border: 0px solid #414141;
+    height: 44px;
+    border-radius: 5px;
+    color: #eee;
+    padding-top: 12px;
+}
+.btn-remove
+{
+    background: none;
+    border: none;
+}
+.btn-remove:focus
+{
+    outline: 0;
+}
+
+.form-item-removeicon
+{
+    margin-top: 10px;
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-item-removeicon span
+{
+    line-height: 44px;
+}
+.form-item-removeicon:hover
+{
+    color: #f04124;
+}
+.form-item-updateicon
+{
+    margin-top: 10px;
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-item-updateicon span
+{
+    line-height: 44px;
+}
+.form-item-updateicon:hover
+{
+    color: #76cfe6;
+}
+.set-width-input
+{
+    max-width: 85px;
+    min-width: 85px;
+}
+.truncate
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.session-data
+{
+    margin-top: 20px;
+}
