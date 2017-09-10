@@ -11,7 +11,7 @@
                 <li class="nav-timer"><a href="{{url("/")}}">Timer</a></li>
                 <li class="nav-links"><a href="{{url("/")}}">Links (coming soon)</a></li>
                 <li class="nav-ohai"><a href="{{url("/")}}">Ohai! Otaku!</a></li>
-                <li class="nav-failstacks"><a href="{{url("/")}}">Failstacks (coming soon)</a></li>
+                <li class="nav-failstacks"><a href="{{url("/failstacks")}}">Failstacks</a></li>
                 <li class="nav-about"><a href="{{url("/")}}">About (coming soon)</a></li>
             </ul>
         </div>

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class TimerController extends Controller
 {
+    use Utility;
     public function index()
     {
 //        session()->flush();
@@ -35,19 +37,19 @@ class TimerController extends Controller
         return view('timer.index')->with('all_items', $all_items);
     }
 
-    private function sortSession()
-    {
-        $all_items = array();
-        if(Session::has('items'))
-        {
-            foreach(Session::get('items') as $item)
-            {
-                $all_items[$item[0][4]] = array($item[0][0], $item[0][1], $item[0][2], $item[0][3], $item[0][4]);
-            }
-        }
-        ksort($all_items);
-        return $all_items;
-    }
+//    private function sortSession()
+//    {
+//        $all_items = array();
+//        if(Session::has('items'))
+//        {
+//            foreach(Session::get('items') as $item)
+//            {
+//                $all_items[$item[0][4]] = array($item[0][0], $item[0][1], $item[0][2], $item[0][3], $item[0][4]);
+//            }
+//        }
+//        ksort($all_items);
+//        return $all_items;
+//    }
 
     public function add(Request $request)
     {
