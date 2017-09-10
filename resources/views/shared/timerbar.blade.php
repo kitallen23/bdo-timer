@@ -1,7 +1,9 @@
-<div class="progress col-xs-12 progress-custom" id="timerbar">
-    <div class="progress-bar progress-bar-success" id="green-{{$time}}" style="width: 50%"></div>
-    <div class="progress-bar progress-bar-warning" id="orange-{{$time}}" style="width: 25%"></div>
-    <div class="progress-bar progress-bar-danger" id="red-{{$time}}" style="width: 25%"></div>
+<div class="col-xs-12 timerbar-wrapper">
+    <div class="progress col-xs-12 progress-custom-lg" id="timerbar">
+        <div class="progress-bar progress-bar-success" id="green-{{$time}}" style="width: 50%"></div>
+        <div class="progress-bar progress-bar-warning" id="orange-{{$time}}" style="width: 25%"></div>
+        <div class="progress-bar progress-bar-danger" id="red-{{$time}}" style="width: 25%"></div>
+    </div>
 </div>
 
 <script>
@@ -21,8 +23,6 @@
         var curr_t = Math.round(new Date().valueOf()/1000);
         var timeElapsedOffset = curr_t_offset - start_t;
         var timeElapsed = curr_t - start_t;
-        var absTimeElapsed = Math.abs(timeElapsed);
-        var absTimeElapsedOffset = Math.abs(timeElapsedOffset);
 
         // Hide timerbar if item has expired
         if(timeElapsed >= 1500)

@@ -339,12 +339,22 @@ body
 
 .progress-custom
 {
-    padding: 0px;
+    padding: 0;
     background: linear-gradient(to right,
         rgba(67, 172, 106, 0.2) 0%, rgba(67, 172, 106, 0.2) 50%,
         rgba(233, 144, 2, 0.2) 50%, rgba(233, 144, 2, 0.2) 75%,
         rgba(240, 65, 36, 0.2) 75%, rgba(240, 65, 36, 0.2) 100%);
     margin: 0;
+}
+.progress-custom-lg
+{
+    padding: 0;
+    background: linear-gradient(to right,
+    rgba(67, 172, 106, 0.2) 0%, rgba(67, 172, 106, 0.2) 50%,
+    rgba(233, 144, 2, 0.2) 50%, rgba(233, 144, 2, 0.2) 75%,
+    rgba(240, 65, 36, 0.2) 75%, rgba(240, 65, 36, 0.2) 100%);
+    margin: 0;
+    height: 6px;
 }
 .progress-custom-wrapper
 {
@@ -461,6 +471,13 @@ input:checked + .slider:before {
 {
     width: 50%;
     display: inline-block;
+}
+
+.timerbar-wrapper
+{
+    position: fixed;
+    top: 0;
+    padding: 0;
 }
 
 /*.footer {*/

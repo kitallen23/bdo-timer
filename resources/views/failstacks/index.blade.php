@@ -8,6 +8,19 @@
     <script src="{{ URL::asset('js/utility.js') }}"></script>
     <script src="{{ URL::asset('js/time.js') }}"></script>
 {{--    <script src="{{ URL::asset('js/all-items.js') }}"></script>--}}
+    <style>
+        #current-time-hm
+        {
+            font-size: 4em;
+            font-weight: 300;
+        }
+        #current-time-s
+        {
+            font-size: 1em;
+            font-weight: 300;
+            margin-left: 8px;
+        }
+    </style>
 
     @if($next_item != null)
         @include('shared.timerbar', ['itemname' => $next_item[0], 'enhancement' => $next_item[1],
@@ -29,16 +42,18 @@
                 <div id="current-time-s">00</div>
             </div>
 
-            <div class="game-time-wrapper text-center">
-                <div class="col-md-3 col-md-offset-3">
-                    <span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-icon" aria-hidden="true"></i></span>
-                    <span id="game-time">00 00</span>
-                </div>
-                <div class="col-md-3 dim">
-                    <span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-changeover-icon" aria-hidden="true"></i></span>
-                    <span id="game-time-to-changeover">00 00</span>
-                </div>
-            </div>
+            {{--<div class="game-time-wrapper text-center">--}}
+                {{--<div class="col-md-3 col-md-offset-3">--}}
+                    {{--<span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-icon" aria-hidden="true"></i></span>--}}
+                    {{--<span id="game-time">00 00</span>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-3 dim">--}}
+                    {{--<span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-changeover-icon" aria-hidden="true"></i></span>--}}
+                    {{--<span id="game-time-to-changeover">00 00</span>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+
+            Table goes here :)
 
             <!-- VIEW SESSION -->
             {{--<div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>--}}

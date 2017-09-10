@@ -3,15 +3,23 @@
 
 $(document).ready(function()
 {
-    currentTime();
-    gameTime();
+    if(!!document.getElementById('current-time-hm') &&
+        !!document.getElementById('current-time-s') &&
+        !!document.getElementById('time-format-button'))
+    {
+        currentTime();
 
-    var timeFormat = getCookie('timeformat');
-    if(timeFormat === "")
-        timeFormat = setTimeFormatCookie();
+        var timeFormat = getCookie('timeformat');
+        if(timeFormat === "")
+            timeFormat = setTimeFormatCookie();
 
-    document.getElementById('time-format-button').checked = (timeFormat === "24h");
+        document.getElementById('time-format-button').checked = (timeFormat === "24h");
+    }
 
+    if(!!document.getElementById('game-time'))
+    {
+        gameTime();
+    }
 });
 
 function setTimeFormatCookie()
