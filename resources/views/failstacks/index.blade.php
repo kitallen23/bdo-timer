@@ -7,10 +7,14 @@
 
     <script src="{{ URL::asset('js/utility.js') }}"></script>
     <script src="{{ URL::asset('js/time.js') }}"></script>
-    <script src="{{ URL::asset('js/all-items.js') }}"></script>
+{{--    <script src="{{ URL::asset('js/all-items.js') }}"></script>--}}
+
+    @if($next_item != null)
+        @include('shared.timerbar', ['itemname' => $next_item[0], 'enhancement' => $next_item[1],
+                'accumulatedtrades' => $next_item[2], 'offset' => $next_item[3], 'time' => $next_item[4]])
+    @endif
 
     <div class="col-xs-12 time-format-buttons">
-
         <label class="switch">
             <input type="checkbox" id="time-format-button" onchange="setTimeFormatCookie();">
             <div class="slider"><div class="slider-l">24h</div><div class="slider-r text-right">12h</div></div>
@@ -37,7 +41,7 @@
             </div>
 
             <!-- VIEW SESSION -->
-            <div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>
+            {{--<div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>--}}
 
         </div>
     </div>

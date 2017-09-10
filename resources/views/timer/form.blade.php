@@ -89,11 +89,12 @@
 
         </div>
 
-
-        <div class="progress col-xs-12 progress-custom">
-            <div class="progress-bar progress-bar-success" style="width: 50%"></div>
-            <div class="progress-bar progress-bar-warning" style="width: 25%"></div>
-            <div class="progress-bar progress-bar-danger" style="width: 25%"></div>
+        <div class="progress-custom-wrapper">
+            <div class="progress col-xs-12 progress-custom">
+                <div class="progress-bar progress-bar-success" style="width: 50%"></div>
+                <div class="progress-bar progress-bar-warning" style="width: 25%"></div>
+                <div class="progress-bar progress-bar-danger" style="width: 25%"></div>
+            </div>
         </div>
     </div>
 
