@@ -12,16 +12,14 @@ class TimerController extends Controller
 //        session()->flush();
 
         // Clear expired items in session
-        // NEEDS TESTING
         if(Session::has('items'))
         {
             $to_remove = [];
             foreach(Session::get('items') as $item)
             {
                 $item_time = $item[0][4];
-                if($item_time+1500 < time())         // HERE ADD 1500: $item_time + 1500
+                if($item_time+1500 < time())
                 {
-//                    session()->pull('items.'.$item_time);
                     array_push($to_remove, 'items.'.$item_time);
                 }
             }
@@ -31,7 +29,24 @@ class TimerController extends Controller
             }
         }
 
-        return view('timer.index');
+        // Sort the session array
+        $all_items = $this->sortSession();
+
+        return view('timer.index')->with('all_items', $all_items);
+    }
+
+    private function sortSession()
+    {
+        $all_items = array();
+        if(Session::has('items'))
+        {
+            foreach(Session::get('items') as $item)
+            {
+                $all_items[$item[0][4]] = array($item[0][0], $item[0][1], $item[0][2], $item[0][3], $item[0][4]);
+            }
+        }
+        ksort($all_items);
+        return $all_items;
     }
 
     public function add(Request $request)

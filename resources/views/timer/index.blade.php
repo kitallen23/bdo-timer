@@ -41,16 +41,13 @@
             @include('timer.form')
             {!! Form::close() !!}
 
+            @foreach($all_items as $i_time => $i_data)
 
-            @if(Session::has('items'))
-                @foreach(Session::get('items') as $item)
-
-                    {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
-                    @include('timer.item', ['itemname' => $item[0][0], 'enhancement' => $item[0][1],
-                        'accumulatedtrades' => $item[0][2], 'offset' => $item[0][3], 'time' => $item[0][4]])
-                    {!! Form::close() !!}
-                @endforeach
-            @endif
+                {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
+                @include('timer.item', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
+                    'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4]])
+                {!! Form::close() !!}
+            @endforeach
 
             <!-- VIEW SESSION -->
             {{--<div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>--}}
