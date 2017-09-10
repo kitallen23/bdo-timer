@@ -8,8 +8,6 @@
 /build/logs
 /build/coverage
 
-composer.phar
-
 .DS_Store
 
 /.idea
