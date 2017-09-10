@@ -141,6 +141,7 @@ input::-webkit-calendar-picker-indicator
 .navbar
 {
     border-top: 4px solid #424242;
+    /*height: 48px;*/
 }
 .navbar-nav
 {
@@ -152,17 +153,20 @@ input::-webkit-calendar-picker-indicator
     float: none;
     display: inline-block;
 }
-
 .nav-ohai
 {
     font-size: 1.6em;
 }
+/*.navbar .navbar-nav > li > a{*/
+    /*height: 48px;*/
+/*}*/
 
 body
 {
     background-color: #424242;
     font-family: 'Open Sans', sans-serif;
     padding-bottom: 100px;
+    color: #eee;
 }
 
 /*** Form ***/
@@ -479,6 +483,36 @@ input:checked + .slider:before {
     top: 0;
     padding: 0;
 }
+
+th
+{
+    text-align: center;
+}
+.table > tbody > tr > td
+{
+    vertical-align: middle;
+}
+.table-content
+{
+    background: #555555;
+    font-weight: bold;
+    color: #eee;
+}
+.table-hover > tbody > tr:hover > td.table-content
+{
+    background: #666666;
+    font-weight: bold;
+    color: #eee;
+}
+.table-hover > tbody > tr:hover > td.table-no-content
+{
+    background: #424242;
+}
+
+/*.dim*/
+/*{*/
+    /*color: pink;*/
+/*}*/
 
 /*.footer {*/
     /*margin-bottom: 50px;*/
