@@ -10,6 +10,9 @@
 </head>
 <body id="body">
 @yield('content')
+{{--<footer class="footer test text-center">--}}
+        {{--<span>&copy Kit Allen (put date here)</span>--}}
+{{--</footer>--}}
 @include('shared.navbar')
 </body>
 </html>

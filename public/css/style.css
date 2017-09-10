@@ -162,7 +162,6 @@ body
 {
     background-color: #424242;
     font-family: 'Open Sans', sans-serif;
-    margin-bottom: 100px;
 }
 
 /*** Form ***/
@@ -453,3 +452,9 @@ input:checked + .slider:before {
     width: 50%;
     display: inline-block;
 }
+
+/*.footer {*/
+    /*margin-bottom: 50px;*/
+    /*padding-bottom: 26px;*/
+    /*padding-top: 60px;*/
+/*}*/
