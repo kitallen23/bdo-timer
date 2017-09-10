@@ -21,7 +21,7 @@
     <div class="container">
 
         <div class="content">
-            <div class="current-time-wrapper text-center test">
+            <div class="current-time-wrapper text-center">
                 <div id="current-time-hm">00 00</div>
                 <div id="current-time-s">00</div>
             </div>
