@@ -3,7 +3,9 @@
 
     <div class="col-xs-1 form-center-h">
         <div class="form-item-removeicon text-center">
-            <button class="btn-submit" type="button" onclick="clearItemForm()"><span class="glyphicon glyphicon-remove text-valign"></span></button>
+            <button class="btn-submit btn-submit-red" type="button" onclick="clearItemForm()" tabindex="6">
+                <span class="glyphicon glyphicon-remove text-valign"></span>
+            </button>
         </div>
     </div>
 
@@ -21,14 +23,15 @@
                 <input type="text" class="btn-new form-control awesomplete truncate"
                         id="input-itemname" name="itemname" placeholder="&#xf002;"
                         style="font-family:'Open Sans',FontAwesome" spellcheck="false"
-                        list="item-list" data-autofirst="true" />
-                @include('timer.itemlist')
+                        list="item-list" data-autofirst="true" data-maxitems="20" tabindex="1"/>
+                <datalist id="item-list"></datalist>
             </div>
 
             <div class="col-sm-2 form-item-enhancement form-item">
                 <div class="form-center-h">
                     <select class="btn-new form-control set-width-input" name="enhancement"
-                            id="input-enhancement" onchange="setEnhancement(this.value, 'iconbox')">
+                            id="input-enhancement" onchange="setEnhancement(this.value, 'iconbox')"
+                            tabindex="2">
                         <option>+0</option>
                         <option>+1</option>
                         <option>+2</option>
@@ -61,7 +64,8 @@
                     >
                         <span class="glyphicon glyphicon-list text-valign accumulated-trades"></span>
                     </div>
-                    <input type="number" class="btn-new form-control set-width-input" id="input-accumulatedtrades" name="accumulatedtrades" />
+                    <input type="number" class="btn-new form-control set-width-input" id="input-accumulatedtrades"
+                           name="accumulatedtrades" min="0" tabindex="3" />
                 </div>
             </div>
 
@@ -72,7 +76,7 @@
                     >
                         <span class="glyphicon glyphicon-time text-valign"></span>
                     </div>
-                    <select id="input-offset" class="btn-new form-control set-width-input" name="offset" >
+                    <select id="input-offset" class="btn-new form-control set-width-input" name="offset" tabindex="4" >
                         <option>-</option>
                         <option>1 min</option>
                         <option>2 mins</option>
@@ -93,12 +97,14 @@
         </div>
     </div>
 
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
 
     <!-- Submit form -->
     <div class="col-xs-1 form-center-h">
         <div class="form-item-submiticon text-center">
-            <button type="submit" class="btn-submit"><span class="glyphicon glyphicon-ok text-valign"></span></button>
+            <button type="submit" class="btn-submit btn-submit-green" tabindex="5">
+                <span class="glyphicon glyphicon-ok text-valign"></span>
+            </button>
         </div>
     </div>
 </div>
@@ -106,15 +112,11 @@
 <script>
     $(document).ready(function(){
         document.getElementById('input-itemname').addEventListener("awesomplete-selectcomplete", function(event) {
-            setIconImage(event.text);
+            setIconImage('iconbox', event.text);
         });
     });
     $('#input-itemname').focusout(function(){
-        setIconImage(this.value);
+        setIconImage('iconbox', this.value);
+        setEnhancementList("input-enhancement", this.value, "", _isJ);
     });
-    function setIconImage(itemname)
-    {
-        var _name = itemname.replace(/[^a-z]/gi, '');
-        document.getElementById('iconbox').style.background = '#222 url("img/'+_name+'.png") no-repeat center';
-    }
 </script>

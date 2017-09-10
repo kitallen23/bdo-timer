@@ -3,7 +3,7 @@
 
     <div class="col-xs-1 form-center-h">
         <div class="form-item-updateicon text-center">
-            <button type="submit" class="btn-submit" name="submit" value="update">
+            <button type="submit" class="btn-submit btn-submit-blue" name="submit" value="update">
                 <span class="glyphicon glyphicon-upload text-valign"></span>
             </button>
         </div>
@@ -57,7 +57,8 @@
                     <div class="form-item-texticon text-center">
                         <span class="glyphicon glyphicon-list text-valign accumulated-trades"></span>
                     </div>
-                    <input type="number" class="btn-new2 form-control set-width-input" id="at-{{$time}}" name="accumulatedtrades" value="{{$accumulatedtrades}}" />
+                    <input type="number" class="btn-new2 form-control set-width-input" min="0" id="at-{{$time}}"
+                           name="accumulatedtrades" value="{{$accumulatedtrades}}" />
                 </div>
             </div>
 
@@ -84,20 +85,21 @@
     <!-- Remove item -->
     <div class="col-xs-1 form-center-h">
         <div class="form-item-removeicon text-center">
-            <button type="submit" class="btn-submit" name="submit" value="remove">
+            <button type="submit" class="btn-submit btn-submit-red" name="submit" value="remove">
                 <span class="glyphicon glyphicon-remove text-valign"></span>
             </button>
         </div>
     </div>
 </div>
 
-{{--FIX THIS--}}
-{{--@include('items.php-items')--}}
-
 <script>
+    var _isJ{{$time}} = false;
     $(document).ready(function()
     {
         updateTimer{{$time}}();
+
+        // Set enhancement list
+        setEnhancementList("input-enhancement-{{$time}}", '{{$itemname}}', '{{$time}}', _isJ{{$time}});
 
         // Set the selected dropdown value
         document.getElementById('{{$enhancement}}-{{$time}}').selected = "true";
@@ -106,23 +108,8 @@
         setEnhancement(document.getElementById("input-enhancement-{{$time}}").value, 'iconbox-{{$time}}')
 
         // Set the icon image
-        setIconImage{{$time}}();
-
+        setIconImage('iconbox-{{$time}}', '{{$itemname}}');
     });
-
-    function setIconImage{{$time}}()
-    {
-        @if(file_exists('img/'.preg_replace('/[^a-z]/i', '', $itemname).'.png'))
-            document.getElementById('iconbox-{{$time}}').style.background = '#222 url("{{URL::asset('img/'.preg_replace('/[^a-z]/i', '', $itemname).'.png')}}") no-repeat center';
-
-            @if(in_array($itemname, $yellow))
-                document.getElementById('iconbox-{{$time}}').style.border = '1px solid gold';
-            @endif
-
-        @else
-            document.getElementById('iconbox-{{$time}}').style.background = '#222';
-        @endif
-    }
 
     // Cached document objects
     var mins{{$time}} = document.getElementById('mins-{{$time}}');
@@ -134,36 +121,12 @@
 
     function updateTimer{{$time}}()
     {
-        var offset;
-        if("{{$offset}}" === "-")
-        {
-            offset = 0;
-        }
-        else if("{{$offset}}" === "1 min")
-        {
-            offset = 60;
-        }
-        else if("{{$offset}}" === "2 mins")
-        {
-            offset = 120;
-        }
-        else if("{{$offset}}" === "3 mins")
-        {
-            offset = 180;
-        }
-        else if("{{$offset}}" === "4 mins")
-        {
-            offset = 240;
-        }
-        else if("{{$offset}}" === "5 mins")
-        {
-            offset = 300;
-        }
         var start_t = '{{$time}}';
         var curr_t_offset = Math.round(new Date().valueOf()/1000)-(10*60);
         var curr_t = Math.round(new Date().valueOf()/1000);
-        var timeElapsedOffset = (curr_t_offset + offset) - start_t;
-        var timeElapsed = (curr_t + offset) - start_t;
+        var timeElapsedOffset = curr_t_offset - start_t;
+        var timeElapsed = curr_t - start_t;
+        var absTimeElapsed = Math.abs(timeElapsed);
         var absTimeElapsedOffset = Math.abs(timeElapsedOffset);
 
         if(timeElapsed >= 1500)

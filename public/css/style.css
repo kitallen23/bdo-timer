@@ -13,7 +13,7 @@ input::-webkit-calendar-picker-indicator
 
 .current-time-wrapper
 {
-    margin-top: 100px;
+    margin-top: 60px;
     margin-bottom: 10px;
     color: #eee;
 }
@@ -215,7 +215,6 @@ body
     max-height: 44px;
     min-width: 44px;
     max-width: 44px;
-    /*background: #222 url("../img/BossArmor/DimTree.png") no-repeat center;*/
     background: #222;
     background-position: center;
     border-radius: 5px;
@@ -239,7 +238,6 @@ body
     max-width: 44px;
     text-align: center;
     font-size: 1.8em;
-    /*margin-right: 6px;*/
 }
 .form-item-texticon span
 {
@@ -265,6 +263,46 @@ body
 {
     color: #43ac6a;
 }
+.form-item-removeicon
+{
+    margin-top: 10px;
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-item-removeicon span
+{
+    line-height: 44px;
+}
+.form-item-removeicon:hover
+{
+    color: #f04124;
+}
+.form-item-updateicon
+{
+    margin-top: 10px;
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-item-updateicon span
+{
+    line-height: 44px;
+}
+.form-item-updateicon:hover
+{
+    color: #76cfe6;
+}
 .btn-submit
 {
     background: none;
@@ -273,6 +311,18 @@ body
 .btn-submit:focus
 {
     outline: 0;
+}
+.btn-submit-green:focus
+{
+    color: #43ac6a;
+}
+.btn-submit-red:focus
+{
+    color: #f04124;
+}
+.btn-submit-blue:focus
+{
+    color: #76cfe6;
 }
 .accumulated-trades
 {
@@ -317,46 +367,6 @@ body
     outline: 0;
 }
 
-.form-item-removeicon
-{
-    margin-top: 10px;
-    min-height: 44px;
-    max-height: 44px;
-    min-width: 44px;
-    max-width: 44px;
-    text-align: center;
-    font-size: 1.8em;
-    color: #666;
-    cursor: pointer;
-}
-.form-item-removeicon span
-{
-    line-height: 44px;
-}
-.form-item-removeicon:hover
-{
-    color: #f04124;
-}
-.form-item-updateicon
-{
-    margin-top: 10px;
-    min-height: 44px;
-    max-height: 44px;
-    min-width: 44px;
-    max-width: 44px;
-    text-align: center;
-    font-size: 1.8em;
-    color: #666;
-    cursor: pointer;
-}
-.form-item-updateicon span
-{
-    line-height: 44px;
-}
-.form-item-updateicon:hover
-{
-    color: #76cfe6;
-}
 .set-width-input
 {
     max-width: 85px;
@@ -372,4 +382,74 @@ body
 .session-data
 {
     margin-top: 20px;
+}
+
+/*** Time format switch ***/
+.time-format-buttons
+{
+    margin-top: 16px;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    float: right;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+    line-height: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: #525252;
+    color: #aaa;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 32px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #424242;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #666;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #666;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
+}
+.slider-l
+{
+    width: 50%;
+    display: inline-block;
+}
+.slider-r
+{
+    width: 50%;
+    display: inline-block;
 }

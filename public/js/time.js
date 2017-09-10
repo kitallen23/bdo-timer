@@ -1,9 +1,28 @@
 
+// var timeFormat = "12h";
+
 $(document).ready(function()
 {
     currentTime();
     gameTime();
+
+    var timeFormat = getCookie('timeformat');
+    if(timeFormat === "")
+        timeFormat = setTimeFormatCookie();
+
+    document.getElementById('time-format-button').checked = (timeFormat === "24h");
+
 });
+
+function setTimeFormatCookie()
+{
+    var display24hr = document.getElementById('time-format-button').checked;
+    if(display24hr)
+    {
+        return setCookie("timeformat", "24h");
+    }
+    return setCookie("timeformat", "12h");
+}
 
 function currentTime()
 {
@@ -11,13 +30,30 @@ function currentTime()
     var h = dt.getHours();
     var m = dt.getMinutes();
     var s = dt.getSeconds();
-    h = zeroPadTime(h);
-    m = zeroPadTime(m);
-    s = zeroPadTime(s);
-    document.getElementById('current-time-hm').innerHTML = h + " " + m;
-    document.getElementById('current-time-s').innerHTML = s;
+    displayCurrentTime(h, m, s);
 
     setTimeout(currentTime, 500);
+}
+
+function displayCurrentTime(h, m, s)
+{
+    var display24hr = document.getElementById('time-format-button').checked;
+
+    if(!display24hr && h > 12)
+    {
+        document.getElementById('current-time-hm').innerHTML = zeroPadTime(h-12) + " " + zeroPadTime(m);
+        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+    }
+    else if(!display24hr && h === 0)
+    {
+        document.getElementById('current-time-hm').innerHTML = "12 " + zeroPadTime(m);
+        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+    }
+    else
+    {
+        document.getElementById('current-time-hm').innerHTML = zeroPadTime(h) + " " + zeroPadTime(m);
+        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+    }
 }
 
 // Zero-pads time

@@ -15,13 +15,19 @@ class TimerController extends Controller
         // NEEDS TESTING
         if(Session::has('items'))
         {
+            $to_remove = [];
             foreach(Session::get('items') as $item)
             {
                 $item_time = $item[0][4];
-                if($item_time+1500 < time())
+                if($item_time+1500 < time())         // HERE ADD 1500: $item_time + 1500
                 {
-                    session()->pull('items.'.$item_time);
+//                    session()->pull('items.'.$item_time);
+                    array_push($to_remove, 'items.'.$item_time);
                 }
+            }
+            foreach($to_remove as $session_id)
+            {
+                session()->pull($session_id);
             }
         }
 
@@ -32,8 +38,34 @@ class TimerController extends Controller
     {
         $allrequest = $request->all();
 
-        session()->push('items.'.time(), array($allrequest['itemname'], $allrequest['enhancement'],
-            $allrequest['accumulatedtrades'], $allrequest['offset'], time()));
+        $offset = 0;
+        if($allrequest['offset'] == "-")
+        {
+            $offset = 0;
+        }
+        else if($allrequest['offset'] == "1 min")
+        {
+            $offset = 60;
+        }
+        else if($allrequest['offset'] == "2 mins")
+        {
+            $offset = 120;
+        }
+        else if($allrequest['offset'] == "3 mins")
+        {
+            $offset = 180;
+        }
+        else if($allrequest['offset'] == "4 mins")
+        {
+            $offset = 240;
+        }
+        else if($allrequest['offset'] == "5 mins")
+        {
+            $offset = 300;
+        }
+
+        session()->push('items.'.(time()-$offset), array($allrequest['itemname'], $allrequest['enhancement'],
+            $allrequest['accumulatedtrades'], $allrequest['offset'], time()-$offset));
 
         return redirect()->route('timer.index');
     }

@@ -9,9 +9,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 </head>
 <body id="body">
+@yield('content')
 @include('shared.navbar')
-<div class="container">
-    @yield('content')
-</div>
 </body>
 </html>
