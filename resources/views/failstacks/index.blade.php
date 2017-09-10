@@ -20,6 +20,10 @@
             font-weight: 300;
             margin-left: 8px;
         }
+        .current-time-wrapper
+        {
+            margin-bottom: 40px;
+        }
     </style>
 
     @if($next_item != null)

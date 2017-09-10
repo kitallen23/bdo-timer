@@ -25,7 +25,7 @@
         var timeElapsed = curr_t - start_t;
 
         // Hide timerbar if item has expired
-        if(timeElapsed >= 1500)
+        if(timeElapsed >= 1200)
         {
             document.getElementById('timerbar').style.display = "none";
             return;
