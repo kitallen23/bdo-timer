@@ -66,6 +66,26 @@ class TimerController extends Controller
         {
             $offset = 300;
         }
+        else if($allrequest['offset'] == "6 mins")
+        {
+            $offset = 360;
+        }
+        else if($allrequest['offset'] == "7 mins")
+        {
+            $offset = 420;
+        }
+        else if($allrequest['offset'] == "8 mins")
+        {
+            $offset = 480;
+        }
+        else if($allrequest['offset'] == "9 mins")
+        {
+            $offset = 540;
+        }
+        else if($allrequest['offset'] == "10 mins")
+        {
+            $offset = 600;
+        }
 
         session()->push('items.'.(time()-$offset), array($allrequest['itemname'], $allrequest['enhancement'],
             $allrequest['accumulatedtrades'], $allrequest['offset'], time()-$offset));

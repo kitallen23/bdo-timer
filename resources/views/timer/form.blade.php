@@ -83,6 +83,11 @@
                         <option>3 mins</option>
                         <option>4 mins</option>
                         <option>5 mins</option>
+                        <option>6 mins</option>
+                        <option>7 mins</option>
+                        <option>8 mins</option>
+                        <option>9 mins</option>
+                        <option>10 mins</option>
                     </select>
                 </div>
             </div>
