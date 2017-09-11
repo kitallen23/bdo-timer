@@ -1,4 +1,14 @@
 
+var orangeItems = [
+    // Enhancement items
+    "Black Stone (Weapon)",
+    "Black Stone (Armor)",
+    "Concentrated Magical Black Stone (Weapon)",
+    "Concentrated Magical Black Stone (Armor)",
+    "Ultimate Weapon Reform Stone",
+    "Ultimate Armor Reform Stone"
+];
+
 var yellowItems = [
     // Boss armor
     "Giath's Helmet",
@@ -149,6 +159,12 @@ $(document).ready(function() {
 
     if(appendTo)
     {
+        for(i = 0; i < orangeItems.length; ++i)
+        {
+            el = document.createElement("option");
+            el.textContent = orangeItems[i];
+            appendTo.appendChild(el);
+        }
         for(var i = 0; i < yellowItems.length; ++i)
         {
             var el = document.createElement("option");
@@ -226,6 +242,17 @@ var accessoryItems = [
     "Tree Spirit Belt"
 ];
 
+var otherItems = [
+    // ORANGE
+    // Enhancement items
+    "Black Stone (Weapon)",
+    "Black Stone (Armor)",
+    "Concentrated Magical Black Stone (Weapon)",
+    "Concentrated Magical Black Stone (Armor)",
+    "Ultimate Weapon Reform Stone",
+    "Ultimate Armor Reform Stone"
+];
+
 var accessoryEnhancements = [
     "+0",
     "PRI",
@@ -259,46 +286,88 @@ var regularEnhancements = [
     "PEN"
 ];
 
-var _isJ = false;
+var otherEnhancements = [
+    "-"
+];
+
 function isJewellery(n)
 {
     return accessoryItems.indexOf(n) > -1;
 }
-function setEnhancementList(id, name, optionID, isJ)
+function isOther(n)
+{
+    return otherItems.indexOf(n) > -1;
+}
+function setEnhancementList(id, name, optionID)
 {
     var _name = name.replace(/&#039;/g, "'");
     var enhancementList = document.getElementById(id);
+    // if(isJewellery(_name))
+    // {
+    //     if(!isJ)
+    //     {
+    //         while(enhancementList.length > 0) {
+    //             enhancementList.remove(0);
+    //         }
+    //
+    //         for(var j = 0; j < accessoryEnhancements.length; ++j)
+    //         {
+    //             var el = document.createElement("option");
+    //             el.textContent = accessoryEnhancements[j];
+    //             if(optionID !== "") el.setAttribute("id", accessoryEnhancements[j]+"-"+optionID);
+    //             enhancementList.appendChild(el);
+    //         }
+    //     }
+    // }
+    // else if(isJ)
+    // {
+    //     while(enhancementList.length > 0) {
+    //         enhancementList.remove(0);
+    //     }
+    //     for(var k = 0; k < regularEnhancements.length; ++k)
+    //     {
+    //         var el = document.createElement("option");
+    //         el.textContent = regularEnhancements[k];
+    //         if(optionID !== "") el.setAttribute("id", regularEnhancements[k]+"-"+optionID);
+    //         enhancementList.appendChild(el);
+    //     }
+    // }
     if(isJewellery(_name))
-    {
-        if(!isJ)
-        {
-            while(enhancementList.length > 0) {
-                enhancementList.remove(0);
-            }
-
-            for(var i = 0; i < accessoryEnhancements.length; ++i)
-            {
-                var el = document.createElement("option");
-                el.textContent = accessoryEnhancements[i];
-                if(optionID !== "") el.setAttribute("id", accessoryEnhancements[i]+"-"+optionID);
-                enhancementList.appendChild(el);
-            }
-            isJ = true;
-        }
-    }
-    else if(isJ)
     {
         while(enhancementList.length > 0) {
             enhancementList.remove(0);
         }
-        for(var i = 0; i < regularEnhancements.length; ++i)
+
+        for(var j = 0; j < accessoryEnhancements.length; ++j)
         {
             var el = document.createElement("option");
-            el.textContent = regularEnhancements[i];
-            if(optionID !== "") el.setAttribute("id", regularEnhancements[i]+"-"+optionID);
+            el.textContent = accessoryEnhancements[j];
+            if(optionID !== "") el.setAttribute("id", accessoryEnhancements[j]+"-"+optionID);
             enhancementList.appendChild(el);
         }
-        isJ = false;
+    }
+    else if(isOther(_name))
+    {
+        while(enhancementList.length > 0) {
+            enhancementList.remove(0);
+        }
+        var el = document.createElement("option");
+        el.textContent = "-";
+        if(optionID !== "") el.setAttribute("id", "--"+optionID);
+        enhancementList.appendChild(el);
+    }
+    else
+    {
+        while(enhancementList.length > 0) {
+            enhancementList.remove(0);
+        }
+        for(var k = 0; k < regularEnhancements.length; ++k)
+        {
+            var el = document.createElement("option");
+            el.textContent = regularEnhancements[k];
+            if(optionID !== "") el.setAttribute("id", regularEnhancements[k]+"-"+optionID);
+            enhancementList.appendChild(el);
+        }
     }
 
 }

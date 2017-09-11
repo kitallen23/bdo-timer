@@ -53,11 +53,4 @@
 
         </div>
     </div>
-
-    <script>
-//        $(document).ready(function(){
-//            // Enable tooltips
-//            $('[data-toggle="tooltip"]').tooltip();
-//        });
-    </script>
 @endsection

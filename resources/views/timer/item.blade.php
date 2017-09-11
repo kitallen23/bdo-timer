@@ -95,13 +95,12 @@
 </div>
 
 <script>
-    var _isJ{{$time}} = false;
     $(document).ready(function()
     {
         updateTimer{{$time}}();
 
         // Set enhancement list
-        setEnhancementList("input-enhancement-{{$time}}", '{{$itemname}}', '{{$time}}', _isJ{{$time}});
+        setEnhancementList("input-enhancement-{{$time}}", '{{$itemname}}', '{{$time}}');
 
         // Set the selected dropdown value
         document.getElementById('{{$enhancement}}-{{$time}}').selected = "true";

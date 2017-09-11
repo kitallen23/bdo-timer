@@ -26,7 +26,7 @@ function setEnhancement(enhancement, idToChange)
             iconbox.innerHTML = 'V';
         }
     }
-    else if(enhancement === '+0')
+    else if(enhancement === '+0' || enhancement === '-')
     {
         iconbox.innerHTML = '';
     }
@@ -41,7 +41,11 @@ function setIconImage(elementID, itemname)
     var _name = itemname.replace(/[^a-z]/gi, '').toLowerCase();
     document.getElementById(elementID).style.background = '#222 url("img/'+_name+'.png") no-repeat center';
 
-    if(yellowItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
+    if(orangeItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
+    {
+        document.getElementById(elementID).style.border = '1px solid #ff5e14';
+    }
+    else if(yellowItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
     {
         document.getElementById(elementID).style.border = '1px solid gold';
     }
@@ -68,10 +72,10 @@ function getCookie(cname)
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) === ' ') {
             c = c.substring(1);
         }
-        if (c.indexOf(name) == 0) {
+        if (c.indexOf(name) === 0) {
             return c.substring(name.length, c.length);
         }
     }

@@ -118,6 +118,6 @@
     });
     $('#input-itemname').focusout(function(){
         setIconImage('iconbox', this.value);
-        setEnhancementList("input-enhancement", this.value, "", _isJ);
+        setEnhancementList("input-enhancement", this.value, "");
     });
 </script>

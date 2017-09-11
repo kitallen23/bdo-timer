@@ -600,9 +600,17 @@ th
 /*}*/
 
 /** Item colors for text **/
-.item-yellow
+.item-orange
 {
 
+}
+.item-yellow
+{
+    color: gold;
+}
+.item-blue
+{
+    color: #0099ff;
 }
 
 /*.footer {*/
