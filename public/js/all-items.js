@@ -147,19 +147,21 @@ $(document).ready(function() {
 
     var appendTo = document.getElementById("item-list");
 
-    for(var i = 0; i < yellowItems.length; ++i)
+    if(appendTo)
     {
-        var el = document.createElement("option");
-        el.textContent = yellowItems[i];
-        appendTo.appendChild(el);
+        for(var i = 0; i < yellowItems.length; ++i)
+        {
+            var el = document.createElement("option");
+            el.textContent = yellowItems[i];
+            appendTo.appendChild(el);
+        }
+        for(i = 0; i < blueItems.length; ++i)
+        {
+            el = document.createElement("option");
+            el.textContent = blueItems[i];
+            appendTo.appendChild(el);
+        }
     }
-    for(i = 0; i < blueItems.length; ++i)
-    {
-        el = document.createElement("option");
-        el.textContent = blueItems[i];
-        appendTo.appendChild(el);
-    }
-    // setEnhancementList("input-enhancement", "Ogre Ring");
 });
 
 var jewelleryItems = [

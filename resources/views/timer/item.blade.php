@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+{{--    <input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
     <input type="hidden" name="time" value="{{ $time }}">
 
     <!-- Remove item -->
@@ -107,7 +107,7 @@
         document.getElementById('{{$enhancement}}-{{$time}}').selected = "true";
 
         // Set the enhancement level on the item icon
-        setEnhancement(document.getElementById("input-enhancement-{{$time}}").value, 'iconbox-{{$time}}')
+        setEnhancement(document.getElementById("input-enhancement-{{$time}}").value, 'iconbox-{{$time}}');
 
         // Set the icon image
         setIconImage('iconbox-{{$time}}', '{{$itemname}}');

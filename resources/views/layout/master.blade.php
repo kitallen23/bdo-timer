@@ -19,5 +19,11 @@
         {{--<span>&copy Kit Allen (put date here)</span>--}}
 {{--</footer>--}}
 @include('shared.navbar')
+<script>
+    $(document).ready(function(){
+        // Enable tooltips
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 </body>
 </html>

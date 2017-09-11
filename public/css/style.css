@@ -227,6 +227,14 @@ body
     font-size: 1.2em;
     text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
+.form-item-img-fixed
+{
+    position: fixed;
+    top: 13px;
+    left: 6px;
+    padding: 0;
+    z-index: 1;
+}
 .form-item-icon
 {
     min-height: 28px;
@@ -483,6 +491,33 @@ input:checked + .slider:before {
     top: 1px;
     padding: 0;
     z-index: 1;
+}
+.fixed-button-wrapper
+{
+    position: fixed;
+    top: 13px;
+    left: 50px;
+    padding: 0;
+    z-index: 2;
+}
+.fixed-button-removeicon
+{
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    text-align: center;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.fixed-button-removeicon:hover
+{
+    color: #f04124;
+}
+.fixed-button-removeicon span
+{
+    line-height: 38px;
 }
 
 th

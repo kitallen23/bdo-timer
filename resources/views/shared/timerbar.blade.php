@@ -26,11 +26,22 @@
         if(timeElapsed >= 1200)
         {
             timerbar_{{$time}}.style.display = "none";
+            document.getElementById('iconbox-{{$time}}').style.display = "none";
+            document.getElementById('form-{{$time}}').style.display = "none";
 
             // Unhide the next timerbar
             if(!!document.getElementById('timerbar-{{$next_time}}'))
             {
                 document.getElementById('timerbar-{{$next_time}}').style.display = "block";
+            }
+            // Unhide next icon/form
+            if(!!document.getElementById('iconbox-{{$next_time}}'))
+            {
+                document.getElementById('iconbox-{{$next_time}}').style.display = "block";
+            }
+            if(!!document.getElementById('form-{{$next_time}}'))
+            {
+                document.getElementById('form-{{$next_time}}').style.display = "block";
             }
             return;
         }

@@ -7,7 +7,7 @@
 
     <script src="{{ URL::asset('js/utility.js') }}"></script>
     <script src="{{ URL::asset('js/time.js') }}"></script>
-{{--    <script src="{{ URL::asset('js/all-items.js') }}"></script>--}}
+    <script src="{{ URL::asset('js/all-items.js') }}"></script>
     <style>
         #current-time-hm
         {
@@ -26,16 +26,27 @@
         }
     </style>
 
-    {{--@if($next_item != null)--}}
-        {{--@include('shared.timerbar', ['itemname' => $next_item[0], 'enhancement' => $next_item[1],--}}
-                {{--'accumulatedtrades' => $next_item[2], 'offset' => $next_item[3], 'time' => $next_item[4]])--}}
-    {{--@endif--}}
-
+    <!-- Include timer bars -->
     @foreach($all_items as $i_time => $i_data)
         @include('shared.timerbar', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
             'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4],
             'next_time' => $next_items[$i_time]])
+        <!-- Include item icon -->
+        <div class="form-item-img form-item-img-fixed text-center" id="iconbox-{{$i_time}}" style="display:none;"
+             data-toggle="tooltip" data-placement="right"
+             title="{{$i_data[1]}} {{$i_data[0]}}"></div>
+        <div class="fixed-button-wrapper" id="form-{{$i_time}}" style="display:none;">
+            {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
+            <input type="hidden" name="time" value="{{ $i_time }}">
+            <div class="fixed-button-removeicon text-center">
+                <button type="submit" class="btn-submit btn-submit-red" name="submit" value="remove" tabindex="1">
+                    <span class="glyphicon glyphicon-remove text-valign"></span>
+                </button>
+            </div>
+        </div>
+        {!! Form::close() !!}
     @endforeach
+
 
     <div class="col-xs-12 time-format-buttons">
         <label class="switch">
@@ -292,14 +303,18 @@
 
             // Unhide the first timer
             document.getElementById('timerbar-{{$first_item}}').style.display = "block";
+            document.getElementById('iconbox-{{$first_item}}').style.display = "block";
+            document.getElementById('form-{{$first_item}}').style.display = "block";
 
         });
 
         // Start all timers
         @foreach($all_items as $i_time => $i_data)
-        $(document).ready(function(){
-            updateTimerbar{{$i_time}}();
-        });
+            $(document).ready(function(){
+                updateTimerbar{{$i_time}}();
+                setIconImage("iconbox-{{$i_time}}", "{{$i_data[0]}}");
+                setEnhancement("{{$i_data[1]}}", 'iconbox-{{$i_time}}');
+            });
         @endforeach
     </script>
 @endsection
