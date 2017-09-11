@@ -602,7 +602,7 @@ th
 /** Item colors for text **/
 .item-orange
 {
-
+    color: #ff5e14;
 }
 .item-yellow
 {
@@ -611,6 +611,10 @@ th
 .item-blue
 {
     color: #0099ff;
+}
+.item-green
+{
+    color: #acff59;
 }
 
 /*.footer {*/

@@ -150,7 +150,11 @@ var blueItems = [
     // Jewelery (belt)
     "Ancient Weapon Core",
     "Belt of Shultz the Gladiator",
-    "Tree Spirit Belt"
+    "Tree Spirit Belt",
+
+    // Enhancement
+    "Hard Black Crystal Shard",
+    "Sharp Black Crystal Shard"
 ];
 
 $(document).ready(function() {

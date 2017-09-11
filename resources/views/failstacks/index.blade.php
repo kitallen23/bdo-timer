@@ -86,8 +86,8 @@
                         <thead>
                         <tr>
                             <th>FS</th>
-                            <th>Blue</th>
-                            <th>Yellow</th>
+                            <th class="item-blue">Blue</th>
+                            <th class="item-yellow">Yellow</th>
                             <th>FS</th>
                         </tr>
                         </thead>
@@ -311,8 +311,8 @@
                         <thead>
                         <tr>
                             <th>FS</th>
-                            <th class="">Blue</th>
-                            <th>Yellow</th>
+                            <th class="item-blue">Blue</th>
+                            <th class="item-yellow">Yellow</th>
                             <th>FS</th>
                         </tr>
                         </thead>
@@ -449,7 +449,7 @@
                         <thead>
                         <tr>
                             <th>FS</th>
-                            <th colspan="2">Green e.g. Grunil/Yuria</th>
+                            <th class="item-green" colspan="2">Green e.g. Grunil/Yuria</th>
                             <th>FS</th>
                         </tr>
                         </thead>
