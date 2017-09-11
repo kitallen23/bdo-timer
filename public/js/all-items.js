@@ -258,7 +258,7 @@ var otherItems = [
 ];
 
 var accessoryEnhancements = [
-    "+0",
+    "-",
     "PRI",
     "DUO",
     "TRI",
@@ -267,7 +267,7 @@ var accessoryEnhancements = [
 ];
 
 var regularEnhancements = [
-    "+0",
+    "-",
     "+1",
     "+2",
     "+3",
@@ -306,36 +306,7 @@ function setEnhancementList(id, name, optionID)
 {
     var _name = name.replace(/&#039;/g, "'");
     var enhancementList = document.getElementById(id);
-    // if(isJewellery(_name))
-    // {
-    //     if(!isJ)
-    //     {
-    //         while(enhancementList.length > 0) {
-    //             enhancementList.remove(0);
-    //         }
-    //
-    //         for(var j = 0; j < accessoryEnhancements.length; ++j)
-    //         {
-    //             var el = document.createElement("option");
-    //             el.textContent = accessoryEnhancements[j];
-    //             if(optionID !== "") el.setAttribute("id", accessoryEnhancements[j]+"-"+optionID);
-    //             enhancementList.appendChild(el);
-    //         }
-    //     }
-    // }
-    // else if(isJ)
-    // {
-    //     while(enhancementList.length > 0) {
-    //         enhancementList.remove(0);
-    //     }
-    //     for(var k = 0; k < regularEnhancements.length; ++k)
-    //     {
-    //         var el = document.createElement("option");
-    //         el.textContent = regularEnhancements[k];
-    //         if(optionID !== "") el.setAttribute("id", regularEnhancements[k]+"-"+optionID);
-    //         enhancementList.appendChild(el);
-    //     }
-    // }
+
     if(isJewellery(_name))
     {
         while(enhancementList.length > 0) {

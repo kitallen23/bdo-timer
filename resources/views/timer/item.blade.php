@@ -27,7 +27,7 @@
                 <div class="form-center-h">
                     <select id="input-enhancement-{{$time}}" class="btn-new2 form-control set-width-input"
                             name="enhancement" onchange="setEnhancement(this.value, 'iconbox-{{$time}}')">
-                        <option id="+0-{{$time}}">+0</option>
+                        <option id="--{{$time}}">-</option>
                         <option id="+1-{{$time}}">+1</option>
                         <option id="+2-{{$time}}">+2</option>
                         <option id="+3-{{$time}}">+3</option>

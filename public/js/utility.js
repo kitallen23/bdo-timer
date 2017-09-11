@@ -3,7 +3,7 @@
 function setEnhancement(enhancement, idToChange)
 {
     var iconbox = document.getElementById(idToChange);
-    if(enhancement.charAt(0) !== '+')
+    if(enhancement.charAt(0) !== '-')
     {
         if(enhancement === 'PRI')
         {

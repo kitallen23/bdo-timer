@@ -32,7 +32,7 @@
                     <select class="btn-new form-control set-width-input" name="enhancement"
                             id="input-enhancement" onchange="setEnhancement(this.value, 'iconbox')"
                             tabindex="2">
-                        <option>+0</option>
+                        <option>-</option>
                         <option>+1</option>
                         <option>+2</option>
                         <option>+3</option>
@@ -119,6 +119,7 @@
     $(document).ready(function(){
         document.getElementById('input-itemname').addEventListener("awesomplete-selectcomplete", function(event) {
             setIconImage('iconbox', event.text);
+            setEnhancementList("input-enhancement", this.value, "");
         });
     });
     $('#input-itemname').focusout(function(){
