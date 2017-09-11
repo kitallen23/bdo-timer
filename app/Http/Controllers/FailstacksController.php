@@ -29,7 +29,6 @@ class FailstacksController extends Controller
             $first_item = "default";
         }
 
-//        dd($all_items, $next_items, $first_item);
         return view('failstacks.index')->with(compact('all_items', 'next_items', 'first_item'));
     }
 }

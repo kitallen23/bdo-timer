@@ -3,7 +3,15 @@
 function setEnhancement(enhancement, idToChange)
 {
     var iconbox = document.getElementById(idToChange);
-    if(enhancement.charAt(0) !== '-')
+    if(enhancement === '-')
+    {
+        iconbox.innerHTML = '';
+    }
+    else if(enhancement.charAt(0) === '+')
+    {
+        iconbox.innerHTML = enhancement;
+    }
+    else
     {
         if(enhancement === 'PRI')
         {
@@ -25,14 +33,6 @@ function setEnhancement(enhancement, idToChange)
         {
             iconbox.innerHTML = 'V';
         }
-    }
-    else if(enhancement === '+0' || enhancement === '-')
-    {
-        iconbox.innerHTML = '';
-    }
-    else
-    {
-        iconbox.innerHTML = enhancement;
     }
 }
 

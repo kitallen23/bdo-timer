@@ -36,6 +36,27 @@
                 </div>
             </div>
 
+            <!-- Question mark section -->
+            <div class="col-xs-4 col-md-offset-1"><hr /></div>
+            <div class="col-xs-2 text-center" id="timer-explanation-toggle">
+                <i class="fa fa-question big-qn" aria-hidden="true"></i>
+            </div>
+            <div class="col-xs-4"><hr /></div>
+
+            <div class="col-md-10 col-md-offset-1" id="timer-explanation" style="display:none;">
+                <br />
+                <h4 class="text-center">The basics</h4>
+                <div class="text-center">
+                    <p>Use this timer to keep track of when marketplace items will show up.</p>
+                    <p>For regular items, the item could list on the market as soon as the timer hits 0.</p>
+                    <p>In the average case, the item will show up when the timer hits 5:00.</p>
+                    <p><strong>Note:</strong> Pearl Store items may have a different timing system.</p>
+                </div>
+
+                <br />
+                <h4 class="text-center">Usage</h4>
+            </div>
+
             {!! Form::open(array('route' => 'timer.add','method'=>'POST')) !!}
             @include('timer.form')
             {!! Form::close() !!}
@@ -53,4 +74,18 @@
 
         </div>
     </div>
+
+    <script>
+        $('#timer-explanation-toggle').click(function() {
+//            if($('#timer-explanation').css("display") === "none")
+//            {
+//                $(this).slideDown("fast");
+//            }
+//            else
+//            {
+//                $(this).slideUp("fast");
+//            }
+            $('#timer-explanation').slideToggle("fast");
+        })
+    </script>
 @endsection
