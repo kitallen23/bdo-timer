@@ -164,7 +164,7 @@ $(document).ready(function() {
     }
 });
 
-var jewelleryItems = [
+var accessoryItems = [
     // YELLOW
     // Jewelery (neck)
     "Ogre Ring",
@@ -226,7 +226,7 @@ var jewelleryItems = [
     "Tree Spirit Belt"
 ];
 
-var jewelleryEnhancements = [
+var accessoryEnhancements = [
     "+0",
     "PRI",
     "DUO",
@@ -262,7 +262,7 @@ var regularEnhancements = [
 var _isJ = false;
 function isJewellery(n)
 {
-    return jewelleryItems.indexOf(n) > -1;
+    return accessoryItems.indexOf(n) > -1;
 }
 function setEnhancementList(id, name, optionID, isJ)
 {
@@ -276,11 +276,11 @@ function setEnhancementList(id, name, optionID, isJ)
                 enhancementList.remove(0);
             }
 
-            for(var i = 0; i < jewelleryEnhancements.length; ++i)
+            for(var i = 0; i < accessoryEnhancements.length; ++i)
             {
                 var el = document.createElement("option");
-                el.textContent = jewelleryEnhancements[i];
-                if(optionID !== "") el.setAttribute("id", jewelleryEnhancements[i]+"-"+optionID);
+                el.textContent = accessoryEnhancements[i];
+                if(optionID !== "") el.setAttribute("id", accessoryEnhancements[i]+"-"+optionID);
                 enhancementList.appendChild(el);
             }
             isJ = true;

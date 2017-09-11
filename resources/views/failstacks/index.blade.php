@@ -74,18 +74,19 @@
 
             <div class="col-xs-8 col-xs-offset-2 text-center">
 
-                <div class="btn-group col-xs-12 btn-group-new" id="btn-group-fstype">
-                    <button type="button" class="btn btn-new3 col-xs-4 active" id="btn-armorweapons">Armor/Weapons</button>
-                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-accessories">Accessories</button>
-                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-buildingfs">Building FS</button>
+                <div class="btn-group col-xs-12 btn-group-new" id="btn-group-fstable">
+                    <button type="button" class="btn btn-new3 col-xs-4 active" id="btn-armorweapons-table">Armor/Weapons</button>
+                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-accessories-table">Accessories</button>
+                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-buildingfs-table">Building FS</button>
                 </div>
 
-                <div class="table-wrapper">
+                <!---------------------- ARMOR/WEAPONS ---------------------->
+                <div class="table-wrapper" id="table-armorweapons">
                     <table class="table table-hover table-bordered text-center text-muted table-spacing-top">
                         <thead>
                         <tr>
                             <th>FS</th>
-                            <th class="">Blue</th>
+                            <th>Blue</th>
                             <th>Yellow</th>
                             <th>FS</th>
                         </tr>
@@ -94,7 +95,7 @@
                         <tr>
                             <td>1</td>
                             <td class="col-xs-5 table-no-content" rowspan="4"></td>
-                            <td class="table-no-content"></td>
+                            <td class="col-xs-5 table-no-content"></td>
                             <td>1</td>
                         </tr>
                         <tr>
@@ -187,7 +188,7 @@
                         <tr>
                             <td>20</td>
                             <td class="col-xs-5 table-content" rowspan="3">+15 / PRI</td>
-                            <td class="col-xs-5 table-content" rowspan="3">+14 / 15 / PRI</td>
+                            <td class="col-xs-5 table-content" rowspan="3">+14 / +15 / PRI</td>
                             <td>20</td>
                         </tr>
                         <tr>
@@ -303,6 +304,304 @@
                         </tbody>
                     </table>
                 </div>
+
+                <!---------------------- ACCESSORIES ---------------------->
+                <div class="table-wrapper" id="table-accessories" style="display:none;">
+                    <table class="table table-hover table-bordered text-center text-muted table-spacing-top">
+                        <thead>
+                        <tr>
+                            <th>FS</th>
+                            <th class="">Blue</th>
+                            <th>Yellow</th>
+                            <th>FS</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="col-xs-5 table-no-content" rowspan="3"></td>
+                            <td class="col-xs-5 table-no-content" rowspan="6"></td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td class="col-xs-5 table-content" rowspan="6">PRI</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td class="col-xs-5 table-content" rowspan="6">PRI</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>27</td>
+                            <td>27</td>
+                        </tr>
+                        <tr>
+                            <td>28</td>
+                            <td class="col-xs-5 table-content" rowspan="3">DUO</td>
+                            <td>28</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>34</td>
+                            <td>34</td>
+                        </tr>
+                        <tr>
+                            <td>35</td>
+                            <td class="col-xs-5 table-content" rowspan="3">TRI</td>
+                            <td class="col-xs-5 table-content" rowspan="3">DUO</td>
+                            <td>35</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>44</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td class="col-xs-5 table-content" rowspan="6">TET</td>
+                            <td class="col-xs-5 table-content" rowspan="3">TRI</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>59</td>
+                            <td>59</td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td class="col-xs-5 table-content" rowspan="6">TET</td>
+                            <td>60</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>69</td>
+                            <td>69</td>
+                        </tr>
+                        <tr>
+                            <td>70</td>
+                            <td class="col-xs-5 table-content" rowspan="3">PEN</td>
+                            <td>70</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>99</td>
+                            <td>99</td>
+                        </tr>
+                        <tr>
+                            <td>100</td>
+                            <td class="col-xs-5 table-no-content" rowspan="3"></td>
+                            <td class="col-xs-5 table-content" rowspan="3">PEN</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>120</td>
+                            <td>120</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!---------------------- BUILDING FS ---------------------->
+                <div class="table-wrapper" id="table-buildingfs" style="display:none;">
+                    <table class="table table-hover table-bordered text-center text-muted table-spacing-top">
+                        <thead>
+                        <tr>
+                            <th>FS</th>
+                            <th colspan="2">Green e.g. Grunil/Yuria</th>
+                            <th>FS</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="col-xs-10 table-content" rowspan="3" colspan="2">+6 / +7 / +8</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td class="col-xs-10 table-content" rowspan="2" colspan="2">+9</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td class="col-xs-10 table-content" rowspan="1" colspan="2">+10</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td class="col-xs-10 table-content" rowspan="1" colspan="2">+11</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td class="col-xs-10 table-content" rowspan="2" colspan="2">+12</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td class="col-xs-10 table-content" rowspan="3" colspan="2">+13</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td class="col-xs-5 table-content" rowspan="5">+10</td>
+                            <td class="col-xs-5 table-no-content" rowspan="2"></td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>14</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td class="col-xs-5 table-content" rowspan="4">PRI</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        <tr>
+                            <td>18</td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td class="col-xs-5 table-content" rowspan="4">+10</td>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td class="col-xs-5 table-content" rowspan="3">DUO</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td class="col-xs-10 table-content" rowspan="3" colspan="2">+13</td>
+                            <td>26</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>32</td>
+                            <td>32</td>
+                        <tr>
+                            <td>33</td>
+                            <td class="col-xs-10 table-no-content" rowspan="3" colspan="2"></td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>44</td>
+                            <td>44</td>
+                        </tr>
+                        <tr>
+                            <td>45</td>
+                            <td class="col-xs-10 table-content" rowspan="3" colspan="2">TET</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>54</td>
+                            <td>54</td>
+                        </tr>
+                        <tr>
+                            <td>55</td>
+                            <td class="col-xs-10 table-content" rowspan="3" colspan="2">PEN</td>
+                            <td>55</td>
+                        </tr>
+                        <tr>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>69</td>
+                            <td>69</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
             <!-- VIEW SESSION -->
@@ -335,8 +634,23 @@
             });
         @endforeach
 
-        $('#btn-group-fstype button').click(function() {
+        $('#btn-group-fstable button').click(function() {
             $(this).addClass('active').siblings().removeClass('active');
+        });
+        $('#btn-armorweapons-table').click(function() {
+            $('#table-armorweapons').css("display", "block");
+            $('#table-accessories').css("display", "none");
+            $('#table-buildingfs').css("display", "none");
+        });
+        $('#btn-accessories-table').click(function() {
+            $('#table-armorweapons').css("display", "none");
+            $('#table-accessories').css("display", "block");
+            $('#table-buildingfs').css("display", "none");
+        });
+        $('#btn-buildingfs-table').click(function() {
+            $('#table-armorweapons').css("display", "none");
+            $('#table-accessories').css("display", "none");
+            $('#table-buildingfs').css("display", "block");
         });
     </script>
 @endsection

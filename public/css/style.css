@@ -561,7 +561,7 @@ th
 .btn-new3:hover
 {
     color: #eee;
-    background-color: #626262;
+    background: #666666;
 }
 .btn-new3.active
 {
@@ -572,6 +572,12 @@ th
 {
     outline: 0 !important;
     color: #aaa;
+}
+.btn-new3:focus:hover,
+.btn-new3:active:hover
+{
+    outline: 0 !important;
+    color: #eee;
 }
 .btn-group-new
 {
@@ -592,6 +598,12 @@ th
     /*font-size: 1.6em;*/
     /*height: 100%;*/
 /*}*/
+
+/** Item colors for text **/
+.item-yellow
+{
+
+}
 
 /*.footer {*/
     /*margin-bottom: 50px;*/
