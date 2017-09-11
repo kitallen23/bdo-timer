@@ -1,5 +1,6 @@
+
 <div class="col-xs-12 timerbar-wrapper">
-    <div class="progress col-xs-12 progress-custom-lg" id="timerbar">
+    <div class="progress col-xs-12 progress-custom-lg" id="timerbar-{{$time}}" style="display:none;">
         <div class="progress-bar progress-bar-success" id="green-{{$time}}" style="width: 50%"></div>
         <div class="progress-bar progress-bar-warning" id="orange-{{$time}}" style="width: 25%"></div>
         <div class="progress-bar progress-bar-danger" id="red-{{$time}}" style="width: 25%"></div>
@@ -7,16 +8,13 @@
 </div>
 
 <script>
-    $(document).ready(function()
-    {
-        updateTimerbar();
-    });
 
     var green{{$time}} = document.getElementById('green-{{$time}}');
     var orange{{$time}} = document.getElementById('orange-{{$time}}');
     var red{{$time}} = document.getElementById('red-{{$time}}');
+    var timerbar_{{$time}} = document.getElementById('timerbar-{{$time}}');
 
-    function updateTimerbar()
+    function updateTimerbar{{$time}}()
     {
         var start_t = '{{$time}}';
         var curr_t_offset = Math.round(new Date().valueOf()/1000)-(10*60);
@@ -27,7 +25,13 @@
         // Hide timerbar if item has expired
         if(timeElapsed >= 1200)
         {
-            document.getElementById('timerbar').style.display = "none";
+            timerbar_{{$time}}.style.display = "none";
+
+            // Unhide the next timerbar
+            if(!!document.getElementById('timerbar-{{$next_time}}'))
+            {
+                document.getElementById('timerbar-{{$next_time}}').style.display = "block";
+            }
             return;
         }
 
@@ -61,6 +65,6 @@
             red{{$time}}.style.width = '0%';
         }
 
-        setTimeout(updateTimerbar, 500);
+        setTimeout(updateTimerbar{{$time}}, 500);
     }
 </script>

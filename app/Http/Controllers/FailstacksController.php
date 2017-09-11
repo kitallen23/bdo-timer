@@ -13,10 +13,30 @@ class FailstacksController extends Controller
     {
         $all_items = $this->sortSession();
 
-        if(count($all_items) > 0)
+        $next_items = array();
+        $keys = array_keys($all_items);
+        foreach($all_items as $key => $item)
         {
-            return view('failstacks.index')->with('next_item', reset($all_items));
+            $next_key = $this->get_next_array_key($all_items, $key);
+
+            $next_items[$key] = $next_key != false? $next_key : "";
         }
-        return view('failstacks.index')->with('next_item', null);
+
+        reset($all_items);
+        $first_item = key($all_items);
+
+//        dd($all_items, $next_items, $first_item);
+        return view('failstacks.index')->with(compact('all_items', 'next_items', 'first_item'));
+    }
+
+    function get_next_array_key($array,$key)
+    {
+        $keys = array_keys($array);
+        $position = array_search($key, $keys);
+        $nextKey = "";
+        if (isset($keys[$position + 1])) {
+            $nextKey = $keys[$position + 1];
+        }
+        return $nextKey;
     }
 }

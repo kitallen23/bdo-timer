@@ -26,10 +26,16 @@
         }
     </style>
 
-    @if($next_item != null)
-        @include('shared.timerbar', ['itemname' => $next_item[0], 'enhancement' => $next_item[1],
-                'accumulatedtrades' => $next_item[2], 'offset' => $next_item[3], 'time' => $next_item[4]])
-    @endif
+    {{--@if($next_item != null)--}}
+        {{--@include('shared.timerbar', ['itemname' => $next_item[0], 'enhancement' => $next_item[1],--}}
+                {{--'accumulatedtrades' => $next_item[2], 'offset' => $next_item[3], 'time' => $next_item[4]])--}}
+    {{--@endif--}}
+
+    @foreach($all_items as $i_time => $i_data)
+        @include('shared.timerbar', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
+            'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4],
+            'next_time' => $next_items[$i_time]])
+    @endforeach
 
     <div class="col-xs-12 time-format-buttons">
         <label class="switch">
@@ -46,16 +52,6 @@
                 <div id="current-time-s">00</div>
             </div>
 
-            {{--<div class="game-time-wrapper text-center">--}}
-                {{--<div class="col-md-3 col-md-offset-3">--}}
-                    {{--<span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-icon" aria-hidden="true"></i></span>--}}
-                    {{--<span id="game-time">00 00</span>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 dim">--}}
-                    {{--<span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-changeover-icon" aria-hidden="true"></i></span>--}}
-                    {{--<span id="game-time-to-changeover">00 00</span>--}}
-                {{--</div>--}}
-            {{--</div>--}}
 
             <div class="col-xs-8 col-xs-offset-2">
                 <table class="table table-hover table-bordered text-center text-muted">
@@ -291,6 +287,19 @@
         $(document).ready(function(){
             // Enable tooltips
             $('[data-toggle="tooltip"]').tooltip();
+
+
+
+            // Unhide the first timer
+            document.getElementById('timerbar-{{$first_item}}').style.display = "block";
+
         });
+
+        // Start all timers
+        @foreach($all_items as $i_time => $i_data)
+        $(document).ready(function(){
+            updateTimerbar{{$i_time}}();
+        });
+        @endforeach
     </script>
 @endsection
