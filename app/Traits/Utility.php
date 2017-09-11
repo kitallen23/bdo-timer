@@ -18,4 +18,15 @@ trait Utility
         ksort($all_items);
         return $all_items;
     }
+
+    public function get_next_array_key($array,$key)
+    {
+        $keys = array_keys($array);
+        $position = array_search($key, $keys);
+        $nextKey = "";
+        if (isset($keys[$position + 1])) {
+            $nextKey = $keys[$position + 1];
+        }
+        return $nextKey;
+    }
 }

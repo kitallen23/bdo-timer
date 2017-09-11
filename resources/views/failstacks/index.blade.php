@@ -26,6 +26,14 @@
         }
     </style>
 
+    <div class="col-xs-12 timerbar-wrapper">
+        <div class="progress col-xs-12 progress-custom-lg" id="timerbar-default" style="display:none;">
+            {{--<div class="progress-bar progress-bar-success" id="green-{{$time}}" style="width: 50%"></div>--}}
+            {{--<div class="progress-bar progress-bar-warning" id="orange-{{$time}}" style="width: 25%"></div>--}}
+            {{--<div class="progress-bar progress-bar-danger" id="red-{{$time}}" style="width: 25%"></div>--}}
+        </div>
+    </div>
+
     <!-- Include timer bars -->
     @foreach($all_items as $i_time => $i_data)
         @include('shared.timerbar', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
@@ -34,7 +42,7 @@
         <!-- Include item icon -->
         <div class="form-item-img form-item-img-fixed text-center" id="iconbox-{{$i_time}}" style="display:none;"
              data-toggle="tooltip" data-placement="right"
-             title="{{$i_data[1]}} {{$i_data[0]}}"></div>
+             title="{{$i_data[0]}}"></div>
         <div class="fixed-button-wrapper" id="form-{{$i_time}}" style="display:none;">
             {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
             <input type="hidden" name="time" value="{{ $i_time }}">
@@ -302,9 +310,12 @@
 
 
             // Unhide the first timer
-            document.getElementById('timerbar-{{$first_item}}').style.display = "block";
-            document.getElementById('iconbox-{{$first_item}}').style.display = "block";
-            document.getElementById('form-{{$first_item}}').style.display = "block";
+            if(!!document.getElementById('timerbar-{{$first_item}}'))
+                document.getElementById('timerbar-{{$first_item}}').style.display = "block";
+            if(!!document.getElementById('iconbox-{{$first_item}}'))
+                document.getElementById('iconbox-{{$first_item}}').style.display = "block";
+            if(!!document.getElementById('form-{{$first_item}}'))
+                document.getElementById('form-{{$first_item}}').style.display = "block";
 
         });
 

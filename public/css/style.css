@@ -507,13 +507,14 @@ input:checked + .slider:before {
     min-width: 44px;
     max-width: 44px;
     text-align: center;
-    font-size: 1.8em;
+    font-size: 1.4em;
     color: #666;
     cursor: pointer;
 }
 .fixed-button-removeicon:hover
 {
     color: #f04124;
+    font-size: 1.8em;
 }
 .fixed-button-removeicon span
 {

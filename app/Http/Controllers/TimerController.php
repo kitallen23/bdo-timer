@@ -96,7 +96,6 @@ class TimerController extends Controller
             session()->push('items.'.$allrequest['time'], array($item[0][0], $item[0][1], $item[0][2], $item[0][3], $item[0][4]));
         }
 
-//        return redirect()->route('timer.index');
         return redirect()->back();
     }
 }
