@@ -64,7 +64,7 @@
 
                     <div class="text-row">
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
-                        <span class="text-row-item">Wait patiently.</span>
+                        <span class="text-row-item">Wait patiently while you're in the green.</span>
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
