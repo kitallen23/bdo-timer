@@ -119,6 +119,7 @@
     var green{{$time}} = document.getElementById('green-{{$time}}');
     var orange{{$time}} = document.getElementById('orange-{{$time}}');
     var red{{$time}} = document.getElementById('red-{{$time}}');
+    var playedAlert{{$time}} = false;
 
     function updateTimer{{$time}}()
     {
@@ -134,6 +135,15 @@
         {
             document.getElementById('item-{{$time}}').style.display = "none";
             return;
+        }
+
+        if(timeElapsed >= 540 && timeElapsed < 542 && playedAlert{{$time}} === false)
+        {
+            // Play alert sound
+            var audio = new Audio("{{ URL::asset('audio/notification01.wav') }}");
+            audio.play();
+            // Stop alert from playing again
+            playedAlert{{$time}} = true;
         }
 
         // Update times

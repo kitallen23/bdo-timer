@@ -623,6 +623,35 @@ hr
     border-top: 1px solid #525252;
 }
 
+/*.small-dot*/
+/*{*/
+    /*font-size: 0.4em;*/
+    /*line-height: 50px;*/
+    /*text-align: center;*/
+/*}*/
+.text-row
+{
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.text-row-item
+{
+    /*min-height: 48px;*/
+    display: flex;
+    align-items: flex-start;
+}
+.small-dot
+{
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 0.75em;
+    margin-top: 6px;
+}
+
 /** Item colors for text **/
 .item-orange
 {

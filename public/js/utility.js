@@ -53,6 +53,10 @@ function setIconImage(elementID, itemname)
     {
         document.getElementById(elementID).style.border = '1px solid #0099ff';
     }
+    else
+    {
+        document.getElementById(elementID).style.border = 'none';
+    }
 }
 
 function clearItemForm()
