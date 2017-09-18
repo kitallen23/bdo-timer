@@ -597,11 +597,6 @@ th
     /*height: 100%;*/
 /*}*/
 
-/*.big-qn*/
-/*{*/
-    /*font-size: 2.2em;*/
-    /*color: #525252;*/
-/*}*/
 #timer-explanation-toggle
 {
     height: 44px;
@@ -612,8 +607,9 @@ th
     line-height: 44px;
     font-size: 2em;
 }
-#timer-explanation-toggle:hover
+#timer-explanation-toggle > i:hover
 {
+    cursor: pointer;
     color: #eee;
 }
 hr
@@ -621,12 +617,6 @@ hr
     border-top: 1px solid #525252;
 }
 
-/*.small-dot*/
-/*{*/
-    /*font-size: 0.4em;*/
-    /*line-height: 50px;*/
-    /*text-align: center;*/
-/*}*/
 .text-row
 {
     margin: 0 auto;
@@ -648,6 +638,7 @@ hr
     margin-right: 30px;
     font-size: 0.75em;
     margin-top: 6px;
+    color: #555;
 }
 
 .flash{

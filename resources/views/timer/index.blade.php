@@ -44,47 +44,47 @@
             <div class="col-xs-4"><hr /></div>
 
             <div class="col-md-10 col-md-offset-1" id="timer-explanation" style="display:none;">
-                <br />
-                <!-- Make headings darker..? -->
-                <h4 class="text-center text-muted">BDO Marketplace Registration Timer</h4>
-                <div class="text-center">
-                    <p>Use this timer to keep track of when marketplace items will show up.</p>
-                    {{--<p>For regular items, the item could list on the market as soon as the timer hits 0.</p>--}}
-                    {{--<p>In the average case, the item will show up when the timer hits 5:00.</p>--}}
-                    <p><strong>Note:</strong> Pearl Store items may have a different timing system.</p>
-                </div>
-
-                <br />
-                <h4 class="text-center text-muted">Usage</h4>
                 <div class="text-center col-xs-8 col-xs-offset-2">
+                    <!-- Make headings darker..? -->
+                    <h4 class="text-center text-muted">BDO Marketplace Registration Timer</h4>
+                    <div class="text-center">
+                        <p>Use this timer to keep track of when marketplace items will show up.</p>
+                        {{--<p>For regular items, the item could list on the market as soon as the timer hits 0.</p>--}}
+                        {{--<p>In the average case, the item will show up when the timer hits 5:00.</p>--}}
+                        <p><strong>Note:</strong> Pearl Store items may have a different timing system.</p>
+                    </div>
+
+                    <hr />
+                    <h4 class="text-center text-muted">Usage</h4>
                     <div class="text-row">
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                         <span class="text-row-item">Fill out the form below.</span>
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
                     <div class="text-row">
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                         <span class="text-row-item">Wait patiently.</span>
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
                     <div class="text-row">
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                         <span class="text-row-item">When the timer reaches zero, the item is in the period of time in which it can show on the market.</span>
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
                     <div class="text-row">
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                         <span class="text-row-item">Head to the market, buy the item, rejoice.</span>
-                        <i class="fa fa-asterisk small-dot text-row-item" aria-hidden="true"></i>
+                        <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
-                </div>
 
-                <p class="text-center col-xs-8 col-xs-offset-2"><strong>Pro tip:</strong> As soon as a notification appears in-game, enter
-                the item name and press enter. This will start the timer immediately, and you can edit/update the
-                enhancement level and marketplace listings afterwards.</p>
+                    <hr />
+                    <p class="text-center col-xs-8 col-xs-offset-2"><span class="text-muted">Pro tip:</span> As soon as a notification appears in-game, enter
+                    the item name and press enter. This will start the timer immediately, and you can edit/update the
+                    enhancement level and marketplace listings afterwards.</p>
+                </div>
             </div>
 
             {!! Form::open(array('route' => 'timer.add','method'=>'POST')) !!}
