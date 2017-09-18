@@ -10,7 +10,7 @@
     </div>
 
     <div class="col-sm-10 form-item-wrapper">
-        <div class="form-item-inner-wrapper">
+        <div class="form-item-inner-wrapper" id="item-{{$time}}-backgroundbox">
 
             <div class="form-item-timer col-sm-2 form-item text-center">
                 <div class="form-center-h" id="timer-{{$time}}">
@@ -139,11 +139,15 @@
 
         if(timeElapsed >= 540 && timeElapsed < 542 && playedAlert{{$time}} === false)
         {
+            // Stop alert from playing again
+            playedAlert{{$time}} = true;
+
             // Play alert sound
             var audio = new Audio("{{ URL::asset('audio/notification01.wav') }}");
             audio.play();
-            // Stop alert from playing again
-            playedAlert{{$time}} = true;
+
+            // Display alert
+            playAlert("item-{{$time}}-backgroundbox");
         }
 
         // Update times

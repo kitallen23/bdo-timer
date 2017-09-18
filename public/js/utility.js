@@ -69,6 +69,15 @@ function clearItemForm()
     document.getElementById('input-offset').selectedIndex = 0;
 }
 
+function playAlert(selectorID)
+{
+    $("#"+selectorID).addClass("flash");
+
+    setTimeout( function(){
+        $("#"+selectorID).removeClass("flash");
+    }, 5000);
+}
+
 function getCookie(cname)
 {
     var name = cname + "=";

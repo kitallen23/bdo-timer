@@ -183,9 +183,7 @@ body
 {
     background-color: #333;
     color: #ccc;
-    padding-top: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 10px 0 10px 0;
     cursor: default;
 }
 /*.border-left*/
@@ -371,8 +369,8 @@ body
 }
 .progress-custom-wrapper
 {
-    margin: 10px 0 0 0;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 
 /*** Items ***/
@@ -650,6 +648,46 @@ hr
     margin-right: 30px;
     font-size: 0.75em;
     margin-top: 6px;
+}
+
+.flash{
+
+    -moz-animation: flash 1s ease-in-out;
+    -moz-animation-iteration-count: 5;
+
+    -webkit-animation: flash 1s ease-in-out;
+    -webkit-animation-iteration-count: 5;
+
+    -ms-animation: flash 1s ease-in-out;
+    -ms-animation-iteration-count: 5;
+
+    animation: flash 1s ease-in-out;
+    animation-iteration-count: 5;
+
+}
+@-webkit-keyframes flash {
+    0% { background:none;}
+    20% { background:#626262;}
+    50% {background:none;}
+    100% {background:none;}
+}
+@-moz-keyframes flash {
+    0% { background:none;}
+    20% { background:#626262;}
+    50% {background:none;}
+    100% {background:none;}
+}
+@-ms-keyframes flash {
+    0% { background:none;}
+    20% { background:#626262;}
+    50% {background:none;}
+    100% {background:none;}
+}
+@keyframes flash {
+    0% { background:none;}
+    20% { background:#626262;}
+    50% {background:none;}
+    100% {background:none;}
 }
 
 /** Item colors for text **/
