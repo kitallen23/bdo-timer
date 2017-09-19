@@ -11,14 +11,11 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-
-//Route::get('/', 'HomeController@timer');
 Route::get('/', ['as' => 'timer.index', 'uses' => 'TimerController@index']);
 Route::post('/add', ['as' => 'timer.add', 'uses' => 'TimerController@add']);
 Route::post('/update', ['as' => 'timer.update', 'uses' => 'TimerController@update']);
 
 Route::get('/failstacks', ['as' => 'failstacks.index', 'uses' => 'FailstacksController@index']);
+Route::get('/links', ['as' => 'links.index', 'uses' => 'LinksController@index']);
+Route::get('/about', ['as' => 'about.index', 'uses' => 'AboutController@index']);
+Route::get('/scratch', ['as' => 'scratch.index', 'uses' => 'ScratchController@index']);

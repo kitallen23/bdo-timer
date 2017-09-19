@@ -747,6 +747,10 @@ th
 .nav > li {
     min-width: 150px;
 }
+.nav > li.nav-ohai > a:hover
+{
+    color: #e99002;
+}
 /*.nav > li > a {*/
     /*margin: 0;*/
     /*height: 100%;*/

@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'BDO Market Timer')
+@section('title', 'Failstacks | BDO Market Timer')
 @section('content')
     <!-- Scripts etc. -->
     <link rel="stylesheet" href="{{ URL::asset('css/awesomplete.css') }}" />
@@ -607,8 +607,6 @@
 
     <script>
         $(document).ready(function(){
-            // Enable tooltips
-            $('[data-toggle="tooltip"]').tooltip();
 
             // Unhide the first timer
             if(!!document.getElementById('timerbar-{{$first_item}}'))
