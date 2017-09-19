@@ -142,6 +142,66 @@
                         <a href="http://www.blackdesertfoundry.com/valkyrie_class_guide/" class="lnk">BDFoundry guide</a>,
                         <a href="http://forum.blackdesertonline.com/index.php?/topic/58303-01282017-update-the-ultimate-valkyrie-gearskillcombo-guide/" class="lnk">forum guide</a>
                     </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Musa:</span>
+                        <a href="http://www.blackdesertfoundry.com/blader-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="http://bddatabase.net/us/skillcalc/25412/" class="lnk">skill build</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Maehwa:</span>
+                        <a href="http://www.blackdesertfoundry.com/plum-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://community.blackdesertonline.com/index.php?threads/comprehensive-maewha-guide-by-angwar.3248/" class="lnk">forum guide</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Wizard:</span>
+                        <a href="http://www.blackdesertfoundry.com/wizard-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://www.invenglobal.com/articles/724/bdo-guide-witch-wizard-pre-awakening-basics" class="lnk">pre-awakening skill guide</a>,
+                        <a href="https://www.invenglobal.com/articles/669/bdo-guide-wizard-awakening-basics" class="lnk">awakening skill guide</a>,
+                        <a href="http://bddatabase.net/us/skillcalc/28813/" class="lnk">skill build</a>
+
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Witch:</span>
+                        <a href="http://www.blackdesertfoundry.com/witch-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://www.invenglobal.com/articles/1583/black-desert-online-skill-build-guide-for-witch-newbies-and-possibly-wizards-before-pre-awakening" class="lnk">skill guide</a>,
+                        <a href="http://bddatabase.net/us/skillcalc/55507/" class="lnk">skill build</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Kunoichi:</span>
+                        <a href="http://www.blackdesertfoundry.com/kunoichi-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://community.blackdesertonline.com/index.php?threads/nayrikos-ninja-kunoichi-guide.2174/" class="lnk">forum guide</a>,
+                        <a href="https://www.invenglobal.com/articles/1475/bdo-guide-kunoichi-pre-awakeningawakening-skill-build" class="lnk">skill guide</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Ninja:</span>
+                        <a href="http://www.blackdesertfoundry.com/ninja-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://community.blackdesertonline.com/index.php?threads/nayrikos-ninja-kunoichi-guide.2174/" class="lnk">forum guide #1</a>,
+                        <a href="https://www.reddit.com/r/blackdesertonline/comments/5nrflo/bgs_guide_to_ninja/" class="lnk">forum guide #2</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Dark Knight:</span>
+                        <a href="http://www.blackdesertfoundry.com/dark-knight-class-guide/" class="lnk">BDFoundry guide</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Striker:</span>
+                        <a href="https://www.invenglobal.com/articles/1950/one-point-lessonrecommended-pre-awakening-skillsskill-build-for-strikers" class="lnk">Pre-awakening skill build/guide</a>,
+                        <a href="https://www.invenglobal.com/articles/2225/bdo-striker-awakening-guide-pve-combo-hidden-key-commands" class="lnk">awakening skill guide</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Mystic: Coming soon!</span>
+                    </div>
+                    <p class="text-muted">Note: if you have a better build than one listed above, please
+                        <a href="#" class="lnk">contact me</a> and I'll include it!
+                    </p>
 
                     <hr />
                     <h3 class="text-muted">Gear</h3>
