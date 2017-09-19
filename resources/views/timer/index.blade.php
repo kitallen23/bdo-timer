@@ -37,7 +37,7 @@
             <!-- Question mark section -->
             <div class="col-xs-4 col-md-offset-1"><hr /></div>
             <div class="col-xs-2 text-center" id="timer-explanation-toggle">
-                <i class="fa fa-question big-qn" aria-hidden="true"></i>
+                <i class="fa fa-question" aria-hidden="true"></i>
             </div>
             <div class="col-xs-4"><hr /></div>
 
