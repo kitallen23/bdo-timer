@@ -427,6 +427,36 @@ body
     margin: 0;
     padding: 16px 16px 0 0;
 }
+#settings-toggle-button
+{
+    font-size: 2em;
+    cursor: pointer;
+}
+#settings-toggle-button > i
+{
+    -moz-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
+i.rotate {
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: #eee;
+}
+
+/*#settings-toggle-button:hover*/
+/*{*/
+    /*color: #eeeeee;*/
+/*}*/
+
+#settings-toggle-wrapper
+{
+    position:absolute;
+    top: 46px;
+    right: 0;
+}
 /* The switch - the box around the slider */
 .switch {
     position: relative;
@@ -516,9 +546,12 @@ input:checked + .slider:before {
     height: 30px;
     float: right;
 }
-#volume-level
+.small-hr
 {
-    /*width: 80px;*/
+    width: 80px;
+    margin-right: 16px;
+    margin-top: 12px;
+    margin-bottom: 6px;
 }
 
 /** Range **/
