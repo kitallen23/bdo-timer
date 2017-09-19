@@ -863,6 +863,31 @@ hr
     color: #acff59;
 }
 
+/** Link styles **/
+.lnk
+{
+    -moz-transition: color 0.075s linear;
+    -webkit-transition: color 0.075s linear;
+    transition: color 0.075s linear;
+}
+.lnk,
+.lnk:visited
+{
+    margin-left: 12px;
+    color: #eee;
+    text-decoration: none;
+}
+.lnk:hover,
+.lnk:active
+{
+    color: #e99002;
+    text-decoration: none;
+}
+.lnk-row
+{
+    margin: 10px 12px;
+}
+
 /*.footer {*/
     /*margin-bottom: 50px;*/
     /*padding-bottom: 26px;*/

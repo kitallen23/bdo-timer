@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('title', 'Failstacks | BDO Market Timer')
+@section('title', 'Failstacks')
 @section('content')
     <!-- Scripts etc. -->
     <link rel="stylesheet" href="{{ URL::asset('css/awesomplete.css') }}" />

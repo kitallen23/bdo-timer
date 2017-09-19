@@ -65,9 +65,24 @@
             </div>
 
 
-            <div class="col-xs-8 col-xs-offset-2 text-center">
+            <div class="col-xs-8 col-xs-offset-2">
+                <h2 class="text-center text-muted">Helpful Links</h2>
+                <hr />
 
+                <h3 class="text-muted">Must Haves <i class="fa fa-heart" aria-hidden="true"></i></h3>
 
+                <div class="lnk-row">
+                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
+                    <a href="http://www.somethinglovely.net/bdo/" class="lnk">Famme's somethinglovely map</a>
+                </div>
+                <div class="lnk-row">
+                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
+                    <a href="https://community.blackdesertonline.com/index.php" class="lnk">Official BDO forum</a>
+                </div>
+                <div class="lnk-row">
+                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
+                    <a href="http://dulfy.net/category/bdo/" class="lnk">Dulfy's BDO archive</a>
+                </div>
             </div>
 
             <!-- VIEW SESSION -->
