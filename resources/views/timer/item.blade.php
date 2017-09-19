@@ -137,17 +137,19 @@
             return;
         }
 
-        if(timeElapsed >= 540 && timeElapsed < 542 && playedAlert{{$time}} === false)
+        if(timeElapsed >= 540)
         {
+            if(timeElapsed < 542 && playedAlert{{$time}} === false)
+            {
+                // Play alert sound
+                var audio = new Audio("{{ URL::asset('audio/notification01.wav') }}");
+                audio.play();
+
+                // Display alert
+                playAlert("item-{{$time}}-backgroundbox");
+            }
             // Stop alert from playing again
             playedAlert{{$time}} = true;
-
-            // Play alert sound
-            var audio = new Audio("{{ URL::asset('audio/notification01.wav') }}");
-            audio.play();
-
-            // Display alert
-            playAlert("item-{{$time}}-backgroundbox");
         }
 
         // Update times

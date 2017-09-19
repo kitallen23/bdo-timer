@@ -409,15 +409,21 @@ body
     text-overflow: ellipsis;
 }
 
+/** REMOVE **/
 .session-data
 {
     margin-top: 20px;
 }
 
 /*** Time format switch ***/
-.time-format-buttons
+/*.time-format-buttons*/
+/*{*/
+    /*margin-top: 16px;*/
+/*}*/
+.settings-button
 {
-    margin-top: 16px;
+    margin: 0;
+    padding: 16px 16px 0 0;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -482,6 +488,24 @@ input:checked + .slider:before {
 {
     width: 50%;
     display: inline-block;
+}
+.slider-l > i
+{
+    width: 50%;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 1.6em;
+}
+.slider-r > i
+{
+    width: 50%;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    font-size: 1.6em;
 }
 
 .timerbar-wrapper
@@ -607,7 +631,7 @@ th
     line-height: 44px;
     font-size: 2em;
 }
-#timer-explanation-toggle > i:hover
+#timer-explanation-toggle:hover
 {
     cursor: pointer;
     color: #eee;

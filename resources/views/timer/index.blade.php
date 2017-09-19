@@ -9,22 +9,32 @@
     <script src="{{ URL::asset('js/time.js') }}"></script>
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
 
-    <div class="col-xs-12 time-format-buttons">
-
+    <div class="col-xs-12 settings-button">
         <label class="switch">
             <input type="checkbox" id="time-format-button" onchange="setTimeFormatCookie();">
             <div class="slider"><div class="slider-l">24h</div><div class="slider-r text-right">12h</div></div>
-        </label>
+        </label><br />
+    </div>
+
+    <div class="col-xs-12 settings-button">
+        <label class="switch">
+            <input type="checkbox" id="volume-switch-button" onchange="setVolumeSwitchCookie();">
+            <div class="slider">
+                <div class="slider-l"><i class="fa fa-volume-off"></i></div><div class="slider-r text-right"><i class="fa fa-volume-up"></i></div>
+            </div>
+        </label><br />
     </div>
 
     <div class="container">
 
         <div class="content">
+            <!-- System time display -->
             <div class="current-time-wrapper text-center">
                 <div id="current-time-hm">00 00</div>
                 <div id="current-time-s">00</div>
             </div>
 
+            <!-- Game time display -->
             <div class="game-time-wrapper text-center">
                 <div class="col-md-3 col-md-offset-3">
                     <span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-icon" aria-hidden="true"></i></span>
@@ -51,7 +61,7 @@
                         <p>Use this timer to keep track of when marketplace items will show up.</p>
                         {{--<p>For regular items, the item could list on the market as soon as the timer hits 0.</p>--}}
                         {{--<p>In the average case, the item will show up when the timer hits 5:00.</p>--}}
-                        <p><strong>Note:</strong> Pearl Store items may have a different timing system.</p>
+                        <p><span class="text-muted">Note:</span> Pearl Store items may have a different timing system.</p>
                     </div>
 
                     <hr />
@@ -64,7 +74,7 @@
 
                     <div class="text-row">
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
-                        <span class="text-row-item">Wait patiently while you're in the green.</span>
+                        <span class="text-row-item">Relax while you're in the green.</span>
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 

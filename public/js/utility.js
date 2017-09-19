@@ -78,6 +78,17 @@ function playAlert(selectorID)
     }, 5000);
 }
 
+function setVolumeSwitchCookie()
+{
+    var playSound = document.getElementById('volume-switch-button').checked;
+    return setCookie("volumeOn", playSound ? "true" : "false");
+    // if(playSound)
+    // {
+    //     return setCookie("volumeOn", playSound ? "true" : "false");
+    // }
+    // return setCookie("volumeOn", "12h");
+}
+
 function getCookie(cname)
 {
     var name = cname + "=";
