@@ -10,7 +10,7 @@
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
 
     <audio id="audio-notification">
-        <source src="{{ URL::asset('audio/notification01.wav')  }}" type="audio/wav">
+        <source src="{{ URL::asset('audio/notification02_tim.mp3')  }}" type="audio/mpeg">
     </audio>
 
     <style>
@@ -67,9 +67,14 @@
 
             <div class="col-xs-8 col-xs-offset-2">
                 <h2 class="text-center text-muted">Helpful Links</h2>
-                <hr />
 
-                <h3 class="text-muted">Must Haves <i class="fa fa-heart" aria-hidden="true"></i></h3>
+                <div class="btn-group col-xs-12 btn-group-new extra-spacing" id="btn-group-fstable">
+                    <button type="button" class="btn btn-new3 col-xs-4 active" id="btn-lnk-abc">Armor/Weapons</button>
+                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-lnk-def">Accessories</button>
+                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-lnk-ghi">Building FS</button>
+                </div>
+
+                {{--<h3 class="text-muted">Must Haves <i class="fa fa-heart" aria-hidden="true"></i></h3>--}}
 
                 <div class="lnk-row">
                     <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
@@ -82,6 +87,10 @@
                 <div class="lnk-row">
                     <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
                     <a href="http://dulfy.net/category/bdo/" class="lnk">Dulfy's BDO archive</a>
+                </div>
+                <div class="lnk-row">
+                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
+                    <a href="http://www.blackdesertfoundry.com/" class="lnk">BDFoundry</a>
                 </div>
             </div>
 
