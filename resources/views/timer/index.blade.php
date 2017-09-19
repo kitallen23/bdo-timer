@@ -9,27 +9,28 @@
     <script src="{{ URL::asset('js/time.js') }}"></script>
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
 
-    <div class="col-xs-12 settings-button">
-        <label class="switch">
-            <input type="checkbox" id="time-format-button" onchange="setTimeFormatCookie();">
-            <div class="slider"><div class="slider-l">24h</div><div class="slider-r text-right">12h</div></div>
-        </label>
-    </div>
+    <div style="float:right;">
+        <div class="col-xs-12 settings-button">
+            <label class="switch">
+                <input type="checkbox" id="time-format-button" onchange="setTimeFormatCookie();">
+                <div class="slider"><div class="slider-l">24h</div><div class="slider-r text-right">12h</div></div>
+            </label>
+        </div>
 
-    <div class="col-xs-12 settings-button">
-        <label class="switch">
-            <input type="checkbox" id="volume-switch-button" onchange="setVolumeSwitchCookie();">
-            <div class="slider">
-                <div class="slider-l"><i class="fa fa-volume-off"></i></div><div class="slider-r text-right"><i class="fa fa-volume-up"></i></div>
-            </div>
-        </label>
-    </div>
+        <div class="col-xs-12 settings-button">
+            <label class="switch">
+                <input type="checkbox" id="volume-switch-button" onchange="setVolumeSwitchCookie();">
+                <div class="slider">
+                    <div class="slider-l"><i class="fa fa-volume-off"></i></div><div class="slider-r text-right"><i class="fa fa-volume-up"></i></div>
+                </div>
+            </label>
+        </div>
 
-
-    <div class="col-xs-12 settings-button">
-        <label class="volume-level-switch">
-            <input id="volume-level" type="range" min="0" max="100" step="10" />
-        </label>
+        <div class="col-xs-12 settings-button" id="volume-slider">
+            <label class="volume-level-switch">
+                <input id="volume-level" type="range" min="0" max="100" step="10" onchange="alert(this.value);" />
+            </label>
+        </div>
     </div>
 
     <div class="container">
@@ -125,6 +126,9 @@
     <script>
         $('#timer-explanation-toggle').click(function() {
             $('#timer-explanation').slideToggle("fast");
+        })
+        $('#volume-switch-button').click(function() {
+            $('#volume-slider').slideToggle("fast");
         })
     </script>
 @endsection
