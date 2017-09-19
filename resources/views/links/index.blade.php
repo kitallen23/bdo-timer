@@ -68,29 +68,101 @@
             <div class="col-xs-8 col-xs-offset-2">
                 <h2 class="text-center text-muted">Helpful Links</h2>
 
-                <div class="btn-group col-xs-12 btn-group-new extra-spacing" id="btn-group-fstable">
-                    <button type="button" class="btn btn-new3 col-xs-4 active" id="btn-lnk-abc">Armor/Weapons</button>
-                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-lnk-def">Accessories</button>
-                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-lnk-ghi">Building FS</button>
+                <div class="btn-group col-xs-12 btn-group-new extra-spacing" id="btn-group-links">
+                    <button type="button" class="btn btn-new3 col-xs-4 active" id="btn-lnk-general">General</button>
+                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-lnk-def">Character</button>
+                    <button type="button" class="btn btn-new3 col-xs-4" id="btn-lnk-ghi">Lifeskills</button>
                 </div>
 
                 {{--<h3 class="text-muted">Must Haves <i class="fa fa-heart" aria-hidden="true"></i></h3>--}}
 
-                <div class="lnk-row">
-                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
-                    <a href="http://www.somethinglovely.net/bdo/" class="lnk">Famme's somethinglovely map</a>
+                <div class="table-wrapper" id="links-general">
+                    <h3 class="text-muted">Must-haves</h3>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="http://www.somethinglovely.net/bdo/" class="lnk">Famme's somethinglovely map</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="https://community.blackdesertonline.com/index.php" class="lnk">Official BDO forum</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="http://dulfy.net/category/bdo/" class="lnk">Dulfy's BDO archive</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="http://www.blackdesertfoundry.com/" class="lnk">BDFoundry</a>
+                    </div>
+
+                    <hr />
+                    <h3 class="text-muted">Must-haves</h3>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="http://www.blackdesertfoundry.com/" class="lnk">BDFoundry</a>
+                    </div>
+
                 </div>
-                <div class="lnk-row">
-                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
-                    <a href="https://community.blackdesertonline.com/index.php" class="lnk">Official BDO forum</a>
+
+                <div class="table-wrapper" id="links-def" style="display:none;">
+                    <h3 class="text-muted">Class Guides</h3>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Warrior:</span>
+                        <a href="http://www.blackdesertfoundry.com/warrior-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="http://bddatabase.net/us/skillcalc/30493/" class="lnk">skill build</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Ranger:</span>
+                        <a href="http://www.blackdesertfoundry.com/ranger-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://docs.google.com/document/d/1jQ0MuIafb9hAgEqHhkAUd4APxl3h9i_RVJtZjAUDBLI/edit#" class="lnk">Google Doc</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Sorceress:</span>
+                        <a href="http://www.blackdesertfoundry.com/ranger-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://community.blackdesertonline.com/index.php?threads/sorceress-guide.13675/" class="lnk">forum guide</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Berserker:</span>
+                        <a href="http://www.blackdesertfoundry.com/berserker-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="http://forum.blackdesertonline.com/index.php?/topic/35771-guide-berserker-road-to-60-update-29-july-including-google-doc/" class="lnk">forum guide</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Tamer:</span>
+                        <a href="http://www.blackdesertfoundry.com/tamer-class-guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="https://www.reddit.com/r/blackdesertonline/comments/667q4n/tamer_guide_by_trollsies/" class="lnk">reddit guide</a>
+                    </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <span class="text-muted">Valkyrie:</span>
+                        <a href="http://www.blackdesertfoundry.com/valkyrie_class_guide/" class="lnk">BDFoundry guide</a>,
+                        <a href="http://forum.blackdesertonline.com/index.php?/topic/58303-01282017-update-the-ultimate-valkyrie-gearskillcombo-guide/" class="lnk">forum guide</a>
+                    </div>
+
+                    <hr />
+                    <h3 class="text-muted">Gear</h3>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="http://bdoplanner.com/" class="lnk">BDO Planner</a>
+                    </div>
+
+                    <hr />
+                    <h3 class="text-muted">Leveling</h3>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="http://www.blackdesertfoundry.com/leveling-1-60-guide/" class="lnk">Leveling 1-60 guide</a>
+                    </div>
                 </div>
-                <div class="lnk-row">
-                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
-                    <a href="http://dulfy.net/category/bdo/" class="lnk">Dulfy's BDO archive</a>
-                </div>
-                <div class="lnk-row">
-                    <i class="fa fa-asterisk text-muted" aria-hidden="true"></i>
-                    <a href="http://www.blackdesertfoundry.com/" class="lnk">BDFoundry</a>
+                <div class="table-wrapper" id="links-ghi" style="display:none;">
+
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a href="http://www.blackdesertfoundry.com/" class="lnk">BDFoundry</a>
+                    </div>
                 </div>
             </div>
 
@@ -115,6 +187,25 @@
             if(!!document.getElementById('form-{{$first_item}}'))
                 document.getElementById('form-{{$first_item}}').style.display = "block";
 
+        });
+
+        $('#btn-group-links button').click(function() {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+        $('#btn-lnk-general').click(function() {
+            $('#links-general').css("display", "block");
+            $('#links-def').css("display", "none");
+            $('#links-ghi').css("display", "none");
+        });
+        $('#btn-lnk-def').click(function() {
+            $('#links-general').css("display", "none");
+            $('#links-def').css("display", "block");
+            $('#links-ghi').css("display", "none");
+        });
+        $('#btn-lnk-ghi').click(function() {
+            $('#links-general').css("display", "none");
+            $('#links-def').css("display", "none");
+            $('#links-ghi').css("display", "block");
         });
 
         // Start all timers

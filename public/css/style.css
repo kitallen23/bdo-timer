@@ -873,7 +873,6 @@ hr
 .lnk,
 .lnk:visited
 {
-    margin-left: 12px;
     color: #eee;
     text-decoration: none;
 }
@@ -890,6 +889,10 @@ hr
 .extra-spacing
 {
     margin: 20px 0;
+}
+.lnk-list
+{
+    margin-right: 12px;
 }
 
 /*.footer {*/
