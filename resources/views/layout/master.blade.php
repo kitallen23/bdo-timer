@@ -23,16 +23,6 @@
     $(document).ready(function(){
         // Enable tooltips
         $('[data-toggle="tooltip"]').tooltip();
-
-        // Set volume button
-        if(!!document.getElementById('volume-switch-button'))
-        {
-            var playSound = getCookie('volumeOn');
-            if(playSound === "")
-                playSound = setVolumeSwitchCookie();
-
-            document.getElementById('volume-switch-button').checked = (playSound === "true");
-        }
     });
 </script>
 </body>

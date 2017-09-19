@@ -69,24 +69,44 @@ function clearItemForm()
     document.getElementById('input-offset').selectedIndex = 0;
 }
 
+function playNotification()
+{
+    document.getElementById('audio-notification').play();
+}
+
 function playAlert(selectorID)
 {
-    $("#"+selectorID).addClass("flash");
+    if(!document.getElementById('volume-switch-button').checked)
+    {
+        playNotification();
+    }
 
-    setTimeout( function(){
-        $("#"+selectorID).removeClass("flash");
-    }, 5000);
+    if(!!document.getElementById(selectorID))
+    {
+        $("#"+selectorID).addClass("flash");
+
+        setTimeout( function(){
+            $("#"+selectorID).removeClass("flash");
+        }, 5000);
+    }
+}
+
+function setVolume()
+{
+    document.getElementById('audio-notification').volume = document.getElementById('volume-level').value/100;
+    setVolumeLevelCookie();
 }
 
 function setVolumeSwitchCookie()
 {
     var playSound = document.getElementById('volume-switch-button').checked;
     return setCookie("volumeOn", playSound ? "true" : "false");
-    // if(playSound)
-    // {
-    //     return setCookie("volumeOn", playSound ? "true" : "false");
-    // }
-    // return setCookie("volumeOn", "12h");
+}
+
+function setVolumeLevelCookie()
+{
+    var volumeLevel = document.getElementById('volume-level').value;
+    return setCookie("volumeLevel", volumeLevel)
 }
 
 function getCookie(cname)

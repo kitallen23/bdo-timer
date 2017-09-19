@@ -137,15 +137,12 @@
             return;
         }
 
+        // Visual/audio alert
         if(timeElapsed >= 540)
         {
             if(timeElapsed < 542 && playedAlert{{$time}} === false)
             {
-                // Play alert sound
-                var audio = new Audio("{{ URL::asset('audio/notification01.wav') }}");
-                audio.play();
-
-                // Display alert
+                // Play alert sound & display visual alert
                 playAlert("item-{{$time}}-backgroundbox");
             }
             // Stop alert from playing again

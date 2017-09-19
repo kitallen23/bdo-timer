@@ -9,6 +9,10 @@
     <script src="{{ URL::asset('js/time.js') }}"></script>
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
 
+    <audio id="audio-notification">
+        <source src="{{ URL::asset('audio/notification01.wav')  }}" type="audio/wav">
+    </audio>
+
     <div class="container">
 
         <div class="content">
@@ -43,8 +47,6 @@
                     <h4 class="text-center text-muted">BDO Marketplace Registration Timer</h4>
                     <div class="text-center">
                         <p>Use this timer to keep track of when marketplace items will show up.</p>
-                        {{--<p>For regular items, the item could list on the market as soon as the timer hits 0.</p>--}}
-                        {{--<p>In the average case, the item will show up when the timer hits 5:00.</p>--}}
                         <p><span class="text-muted">Note:</span> Pearl Store items may have a different timing system.</p>
                     </div>
 
@@ -99,36 +101,6 @@
         </div>
     </div>
 
-    <div class="settings-button-wrapper" style="position:absolute;top:0;right:0;">
-        <div class="col-xs-12 settings-button">
-            <label class="switch">
-                <input type="checkbox" id="time-format-button" onchange="setTimeFormatCookie();">
-                <div class="slider"><div class="slider-l">24h</div><div class="slider-r text-right">12h</div></div>
-            </label>
-        </div>
+    @include('shared.settings')
 
-        <div class="col-xs-12 settings-button">
-            <label class="switch">
-                <input type="checkbox" id="volume-switch-button" onchange="setVolumeSwitchCookie();">
-                <div class="slider">
-                    <div class="slider-l"><i class="fa fa-volume-off"></i></div><div class="slider-r text-right"><i class="fa fa-volume-up"></i></div>
-                </div>
-            </label>
-        </div>
-
-        <div class="col-xs-12 settings-button" id="volume-slider">
-            <label class="volume-level-switch">
-                <input id="volume-level" type="range" min="0" max="100" step="10" onchange="alert(this.value);" />
-            </label>
-        </div>
-    </div>
-
-    <script>
-        $('#timer-explanation-toggle').click(function() {
-            $('#timer-explanation').slideToggle("fast");
-        })
-        $('#volume-switch-button').click(function() {
-            $('#volume-slider').slideToggle("fast");
-        })
-    </script>
 @endsection

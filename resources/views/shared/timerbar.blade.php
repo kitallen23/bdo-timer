@@ -13,6 +13,7 @@
     var orange{{$time}} = document.getElementById('orange-{{$time}}');
     var red{{$time}} = document.getElementById('red-{{$time}}');
     var timerbar_{{$time}} = document.getElementById('timerbar-{{$time}}');
+    var playedAlert{{$time}} = false;
 
     function updateTimerbar{{$time}}()
     {
@@ -44,6 +45,18 @@
                 document.getElementById('form-{{$next_time}}').style.display = "block";
             }
             return;
+        }
+
+        // Visual/audio alert
+        if(timeElapsed >= 540)
+        {
+            if(timeElapsed < 542 && playedAlert{{$time}} === false)
+            {
+                // Play alert sound & display visual alert
+                playAlert("null");
+            }
+            // Stop alert from playing again
+            playedAlert{{$time}} = true;
         }
 
         // Update timerbar colors

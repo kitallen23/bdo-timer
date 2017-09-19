@@ -8,6 +8,11 @@
     <script src="{{ URL::asset('js/utility.js') }}"></script>
     <script src="{{ URL::asset('js/time.js') }}"></script>
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
+
+    <audio id="audio-notification">
+        <source src="{{ URL::asset('audio/notification01.wav')  }}" type="audio/wav">
+    </audio>
+
     <style>
         #current-time-hm
         {
@@ -27,11 +32,7 @@
     </style>
 
     <div class="col-xs-12 timerbar-wrapper">
-        <div class="progress col-xs-12 progress-custom-lg" id="timerbar-default" style="display:none;">
-            {{--<div class="progress-bar progress-bar-success" id="green-{{$time}}" style="width: 50%"></div>--}}
-            {{--<div class="progress-bar progress-bar-warning" id="orange-{{$time}}" style="width: 25%"></div>--}}
-            {{--<div class="progress-bar progress-bar-danger" id="red-{{$time}}" style="width: 25%"></div>--}}
-        </div>
+        <div class="progress col-xs-12 progress-custom-lg" id="timerbar-default" style="display:none;"></div>
     </div>
 
     <!-- Include timer bars -->
@@ -54,14 +55,6 @@
         </div>
         {!! Form::close() !!}
     @endforeach
-
-
-    <div class="col-xs-12 time-format-buttons">
-        <label class="switch">
-            <input type="checkbox" id="time-format-button" onchange="setTimeFormatCookie();">
-            <div class="slider"><div class="slider-l">24h</div><div class="slider-r text-right">12h</div></div>
-        </label>
-    </div>
 
     <div class="container">
 
@@ -609,6 +602,8 @@
 
         </div>
     </div>
+
+    @include('shared.settings')
 
     <script>
         $(document).ready(function(){
