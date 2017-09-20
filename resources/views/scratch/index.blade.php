@@ -69,31 +69,30 @@
             <div class="scratch-wrapper col-md-8 col-md-offset-2">
 
                 <!-- Clear form -->
-                <div class="col-md-1 form-center-h">
-                    <div class="form-item-removeicon text-center">
-                        <button class="btn-submit btn-submit-red" type="button" onclick="clearScratchForm()" tabindex="4">
+                <div class="col-md-1">
+                    <div class="form-scratch-removeicon text-center">
+                        <button class="btn-submit btn-submit-red" type="button" onclick="clearScratchForm()">
                             <span class="glyphicon glyphicon-remove text-valign"></span>
                         </button>
                     </div>
                 </div>
 
                 <div class="col-md-10 scratch-form-wrapper">
-
                     <div class="col-md-12 scratch-form-inner-wrapper">
                         <input type="text" class="form-control scratch-input-title" tabindex="1"
-                                name="s_title" placeholder="Title"/>
+                              name="s_title" placeholder="Title" id="scratch-title" />
                     </div>
                     <div class="col-md-12 scratch-form-inner-wrapper">
                         <textarea class="form-control scratch-input-comment" tabindex="2"
-                                placeholder="Help, I lost my memory..."
-                                rows="2" name="s_comment" data-autoresize required ></textarea>
+                                placeholder="..." rows="2" name="s_comment" id="scratch-comment"
+                                data-autoresize required ></textarea>
                     </div>
                 </div>
 
 
                 <!-- Submit form -->
                 <div class="col-md-1 form-center-h">
-                    <div class="form-item-submiticon text-center">
+                    <div class="form-scratch-submiticon text-center">
                         <button type="submit" class="btn-submit btn-submit-green" tabindex="3">
                             <span class="glyphicon glyphicon-ok text-valign"></span>
                         </button>
@@ -102,22 +101,11 @@
             </div>
             {!! Form::close() !!}
 
-
-
-
-
-
-
-
-
-
-
-            <div class="col-xs-8 col-xs-offset-2 text-center">
             @foreach($all_comments as $c_time => $c_data)
-                <div>Time: {{$c_time}}, Title: {{$c_data[0]}}, Comment: {{$c_data[1]}}</div>
+                {!! Form::open(array('route' => 'scratch.update','method'=>'POST')) !!}
+                @include('scratch.comment', ['title' => $c_data[0], 'comment' => $c_data[1], 'timestamp' => $c_time])
+                {!! Form::close() !!}
             @endforeach
-
-            </div>
 
             <!-- VIEW SESSION -->
             {{--<div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>--}}
@@ -128,6 +116,10 @@
     @include('shared.settings')
 
     <script>
+        var resizeTextarea = function(el, offset) {
+            jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+        };
+
         $(document).ready(function(){
             // Enable tooltips
             $('[data-toggle="tooltip"]').tooltip();
@@ -140,6 +132,10 @@
             if(!!document.getElementById('form-{{$first_item}}'))
                 document.getElementById('form-{{$first_item}}').style.display = "block";
 
+            jQuery.each(jQuery('textarea[data-autoresize]'), function() {
+                var offset = this.offsetHeight - this.clientHeight;
+                resizeTextarea(this, offset);
+            });
         });
 
         // Start all timers
@@ -153,11 +149,7 @@
 
         jQuery.each(jQuery('textarea[data-autoresize]'), function() {
             var offset = this.offsetHeight - this.clientHeight;
-
-            var resizeTextarea = function(el) {
-                jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
-            };
-            jQuery(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
+            jQuery(this).on('keyup input', function() { resizeTextarea(this, offset); });//.removeAttr('data-autoresize');
         });
     </script>
 @endsection

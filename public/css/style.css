@@ -898,14 +898,22 @@ hr
 /** Scratch styles **/
 .scratch-wrapper
 {
-
+    margin-top: 20px;
 }
 .scratch-form-wrapper
 {
     background-color: #333;
     color: #eee;
     padding: 0;
-    border: 1px solid #444444;
+    border: 1px solid #555;
+    border-radius: 6px;
+}
+.scratch-comment-wrapper
+{
+    background-color: #333;
+    color: #eee;
+    padding: 0;
+    border: none;
     border-radius: 6px;
 }
 .scratch-form-inner-wrapper
@@ -918,7 +926,6 @@ hr
     border: none;
     background: none;
     font-size: 1.2em;
-    /*font-weight: bold;*/
 }
 .scratch-input-comment
 {
@@ -928,6 +935,71 @@ hr
     background: none;
     margin: 0;
     resize: none;
+}
+.form-scratch-submiticon
+{
+    margin-top: 6px;
+    min-width: 44px;
+    max-width: 44px;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-scratch-submiticon:hover
+{
+    color: #43ac6a;
+}
+.form-scratch-removeicon
+{
+    margin-top: 6px;
+    min-width: 44px;
+    max-width: 44px;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-scratch-removeicon:hover
+{
+    color: #f04124;
+}
+.form-scratch-updateicon
+{
+    margin-top: 6px;
+    min-width: 44px;
+    max-width: 44px;
+    font-size: 1.8em;
+    color: #666;
+    cursor: pointer;
+}
+.form-scratch-updateicon:hover
+{
+    color: #76cfe6;
+}
+.form-scratch-removeicon-sm
+{
+    margin-top: 6px;
+    min-width: 44px;
+    max-width: 44px;
+    font-size: 1.4em;
+    color: #666;
+    cursor: pointer;
+}
+.form-scratch-removeicon-sm:hover
+{
+    color: #f04124;
+}
+.form-scratch-updateicon-sm
+{
+    margin-top: 6px;
+    min-width: 44px;
+    max-width: 44px;
+    font-size: 1.4em;
+    color: #666;
+    cursor: pointer;
+}
+.form-scratch-updateicon-sm:hover
+{
+    color: #76cfe6;
 }
 /*.form-item-inner-wrapper*/
 /*{*/

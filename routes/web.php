@@ -21,3 +21,4 @@ Route::get('/about', ['as' => 'about.index', 'uses' => 'AboutController@index'])
 
 Route::get('/scratch', ['as' => 'scratch.index', 'uses' => 'ScratchController@index']);
 Route::post('/scratch/add', ['as' => 'scratch.add', 'uses' => 'ScratchController@add']);
+Route::post('/scratch/update', ['as' => 'scratch.update', 'uses' => 'ScratchController@update']);

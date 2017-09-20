@@ -67,6 +67,14 @@ function clearItemForm()
     document.getElementById('iconbox').style.background = '#222 url("img/none.png") no-repeat center';
     document.getElementById('input-accumulatedtrades').value = '';
     document.getElementById('input-offset').selectedIndex = 0;
+    document.getElementById('input-itemname').focus();
+}
+
+function clearScratchForm()
+{
+    document.getElementById('scratch-title').value = '';
+    document.getElementById('scratch-comment').value = '';
+    document.getElementById('scratch-title').focus();
 }
 
 function playNotification()

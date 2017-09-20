@@ -103,8 +103,6 @@
         </div>
     </div>
 
-    {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
-
     <!-- Submit form -->
     <div class="col-xs-1 form-center-h">
         <div class="form-item-submiticon text-center">
