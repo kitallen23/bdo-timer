@@ -153,10 +153,9 @@ input::-webkit-calendar-picker-indicator
     float: none;
     display: inline-block;
 }
-.nav-ohai
+.nav > li.nav-ohai > a
 {
-    /*font-size: 1.6em;*/
-    /*font-weight: bold;*/
+    color: #fdba4e;
 }
 /*.navbar .navbar-nav > li > a{*/
     /*height: 48px;*/

@@ -116,9 +116,41 @@
     @include('shared.settings')
 
     <script>
+        var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
         var resizeTextarea = function(el, offset)
         {
             jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+        };
+
+        var setTimestamps = function()
+        {
+            jQuery.each($('*[data-timestamp]'), function()
+            {
+                var ts = $(this).data("timestamp");
+                var tsDateTime = new Date(ts*1000);
+                var currDateTime = new Date();
+
+                var time = getTimeStringHM(tsDateTime.getHours(), tsDateTime.getMinutes());
+
+                var date = "today";
+                var isToday = (currDateTime.toDateString() === tsDateTime.toDateString());
+                if(!isToday)
+                {
+                    var yesterdayDateTime = new Date();
+                    yesterdayDateTime.setDate(yesterdayDateTime.getDate() - 1);
+                    if((yesterdayDateTime.toDateString() === tsDateTime.toDateString()))
+                    {
+                        date = "yesterday";
+                    }
+                    else
+                    {
+                        date = tsDateTime.getDate()+" "+monthNames[tsDateTime.getMonth()];
+                    }
+                }
+
+                $(this).find(".datetime").text(time+", "+date);
+            });
         };
 
         $(document).ready(function(){
@@ -138,26 +170,7 @@
                 resizeTextarea(this, offset);
             });
 
-            jQuery.each($('*[data-timestamp]'), function()
-            {
-                var ts = $(this).data("timestamp");
-                var tsDateTime = new Date(ts*1000);
-                var currDateTime = new Date();
-                //alert(ts+" : "+currDateTime.getTime());
-
-                var time = getTimeStringHM(tsDateTime.getHours(), tsDateTime.getMinutes());
-
-                var date = "today";
-                var isToday = (currDateTime.toDateString() === tsDateTime.toDateString());
-                if(!isToday)
-                {
-                    //if()
-                }
-
-                //alert(isToday);
-                $(this).find(".datetime").text(time+", "+date);
-                //alert($(this).find(".datetime").text());
-            });
+            setTimestamps();
         });
 
         // Start all timers
