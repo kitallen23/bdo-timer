@@ -3,17 +3,23 @@
 
     <div class="col-md-10 col-md-offset-1 scratch-comment-wrapper">
 
-        <div class="col-md-12 scratch-form-inner-wrapper">
-            <input type="text" class="form-control scratch-input-title"
-                  name="s_title" placeholder="Title" value="{{$title}}"/>
-        </div>
+        @if($title)
+            <div class="col-md-12 scratch-form-inner-wrapper">
+                <input type="text" class="form-control scratch-input-title"
+                      name="s_title" placeholder="Title" value="{{$title}}" spellcheck="false"/>
+            </div>
+        @else
+            <input type="hidden" name="s_title" value="" />
+        @endif
         <div class="col-md-12 scratch-form-inner-wrapper">
             <textarea class="form-control scratch-input-comment"
-                      placeholder="..." rows="2" name="s_comment" data-autoresize required >{{$comment}}</textarea>
+                  placeholder="..." rows="3" name="s_comment"  spellcheck="false"
+                  data-autoresize required >{{$comment}}</textarea>
         </div>
 
     </div>
 
+    <input type="hidden" name="time" value="{{ $time }}">
 
     <div class="col-md-1">
         <!-- Update comment -->

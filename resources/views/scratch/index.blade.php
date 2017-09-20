@@ -69,7 +69,7 @@
             <div class="scratch-wrapper col-md-8 col-md-offset-2">
 
                 <!-- Clear form -->
-                <div class="col-md-1">
+                <div class="col-md-1 scratch-form-center-h">
                     <div class="form-scratch-removeicon text-center">
                         <button class="btn-submit btn-submit-red" type="button" onclick="clearScratchForm()">
                             <span class="glyphicon glyphicon-remove text-valign"></span>
@@ -91,7 +91,7 @@
 
 
                 <!-- Submit form -->
-                <div class="col-md-1 form-center-h">
+                <div class="col-md-1 scratch-form-center-h">
                     <div class="form-scratch-submiticon text-center">
                         <button type="submit" class="btn-submit btn-submit-green" tabindex="3">
                             <span class="glyphicon glyphicon-ok text-valign"></span>
@@ -103,7 +103,7 @@
 
             @foreach($all_comments as $c_time => $c_data)
                 {!! Form::open(array('route' => 'scratch.update','method'=>'POST')) !!}
-                @include('scratch.comment', ['title' => $c_data[0], 'comment' => $c_data[1], 'timestamp' => $c_time])
+                @include('scratch.comment', ['title' => $c_data[0], 'comment' => $c_data[1], 'time' => $c_time])
                 {!! Form::close() !!}
             @endforeach
 

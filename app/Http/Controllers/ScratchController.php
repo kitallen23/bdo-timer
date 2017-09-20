@@ -14,7 +14,6 @@ class ScratchController extends Controller
         $all_items = $this->sortSession();
 
         $next_items = array();
-        $keys = array_keys($all_items);
         foreach($all_items as $key => $item)
         {
             $next_key = $this->get_next_array_key($all_items, $key);
@@ -46,26 +45,20 @@ class ScratchController extends Controller
 
     public function update(Request $request)
     {
-//        $allrequest = $request->all();
-//
-//        // Abort early if session has expired
-//        if(!Session::has('items.'.$allrequest['time']))
-//            return redirect()->route('timer.index');
-//
-//        if($allrequest['submit'] == 'remove')
-//        {
-//            session()->pull('items.'.$allrequest['time']);
-//        }
-//        else if($allrequest['submit'] == 'update')
-//        {
-//            // Obtain and modify
-//            $item = session()->pull('items.'.$allrequest['time']);
-//            $item[0][1] = $allrequest['enhancement'];
-//            $item[0][2] = $allrequest['accumulatedtrades'];
-//
-//            // Save back to session
-//            session()->push('items.'.$allrequest['time'], array($item[0][0], $item[0][1], $item[0][2], $item[0][3], $item[0][4]));
-//        }
+        $allrequest = $request->all();
+
+        if($allrequest['submit'] == 'remove')
+        {
+            if(isset($_COOKIE['comment-'.$allrequest['time']]))
+            {
+                setcookie("comment-".$allrequest['time'], "", time() - 3600);
+            }
+        }
+        else if($allrequest['submit'] == 'update')
+        {
+            $c = array(urlencode($allrequest['s_title']), urlencode($allrequest['s_comment']));
+            setcookie("comment-".$allrequest['time'], serialize($c), time()+60*60*24*365);
+        }
 
         return redirect()->back();
     }
