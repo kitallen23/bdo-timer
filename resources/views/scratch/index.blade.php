@@ -64,7 +64,7 @@
                 <div id="current-time-s">00</div>
             </div>
 
-
+            <p class="text-muted text-center">Keep notes of stuff.</p>
             {!! Form::open(array('route' => 'scratch.add','method'=>'POST')) !!}
             <div class="scratch-wrapper col-md-8 col-md-offset-2">
 
@@ -116,7 +116,8 @@
     @include('shared.settings')
 
     <script>
-        var resizeTextarea = function(el, offset) {
+        var resizeTextarea = function(el, offset)
+        {
             jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
         };
 
@@ -135,6 +136,14 @@
             jQuery.each(jQuery('textarea[data-autoresize]'), function() {
                 var offset = this.offsetHeight - this.clientHeight;
                 resizeTextarea(this, offset);
+            });
+
+            jQuery.each($('*[data-timestamp]'), function() {
+                var ts = $(this).data("timestamp");
+                var dateTime = new Date(ts*1000);
+                var time = dateTime.getHours() + ":" + zeroPadTime(dateTime.getMinutes());
+                $(this).find(".datetime").text(time);
+                //alert($(this).find(".datetime").text());
             });
         });
 

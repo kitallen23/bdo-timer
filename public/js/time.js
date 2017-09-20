@@ -63,6 +63,27 @@ function displayCurrentTime(h, m, s)
     }
 }
 
+function getTimeStringHM(h, m)
+{
+    var display24hr = document.getElementById('time-format-button').checked;
+
+    if(!display24hr && h > 12)
+    {
+        document.getElementById('current-time-hm').innerHTML = zeroPadTime(h-12) + " " + zeroPadTime(m);
+        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+    }
+    else if(!display24hr && h === 0)
+    {
+        document.getElementById('current-time-hm').innerHTML = "12 " + zeroPadTime(m);
+        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+    }
+    else
+    {
+        document.getElementById('current-time-hm').innerHTML = zeroPadTime(h) + " " + zeroPadTime(m);
+        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+    }
+}
+
 // Zero-pads time
 function zeroPadTime(i)
 {

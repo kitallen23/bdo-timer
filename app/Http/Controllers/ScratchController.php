@@ -56,8 +56,13 @@ class ScratchController extends Controller
         }
         else if($allrequest['submit'] == 'update')
         {
+            if(isset($_COOKIE['comment-'.$allrequest['time']]))
+            {
+                setcookie("comment-".$allrequest['time'], "", time() - 3600);
+            }
+
             $c = array(urlencode($allrequest['s_title']), urlencode($allrequest['s_comment']));
-            setcookie("comment-".$allrequest['time'], serialize($c), time()+60*60*24*365);
+            setcookie("comment-".time(), serialize($c), time()+60*60*24*365);
         }
 
         return redirect()->back();

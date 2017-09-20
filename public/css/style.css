@@ -257,10 +257,7 @@ body
 .form-item-submiticon
 {
     margin-top: 10px;
-    min-height: 44px;
-    max-height: 44px;
-    min-width: 44px;
-    max-width: 44px;
+    width: 100%;
     text-align: center;
     font-size: 1.8em;
     color: #666;
@@ -277,10 +274,7 @@ body
 .form-item-removeicon
 {
     margin-top: 10px;
-    min-height: 44px;
-    max-height: 44px;
-    min-width: 44px;
-    max-width: 44px;
+    width: 100%;
     text-align: center;
     font-size: 1.8em;
     color: #666;
@@ -297,10 +291,7 @@ body
 .form-item-updateicon
 {
     margin-top: 10px;
-    min-height: 44px;
-    max-height: 44px;
-    min-width: 44px;
-    max-width: 44px;
+    width: 100%;
     text-align: center;
     font-size: 1.8em;
     color: #666;
@@ -896,9 +887,14 @@ hr
 }
 
 /** Scratch styles **/
-.scratch-wrapper
+.datetime-wrapper
 {
     margin-top: 20px;
+    font-size: 0.75em;
+}
+.scratch-wrapper
+{
+    margin-top: 4px;
 }
 .scratch-form-wrapper
 {
