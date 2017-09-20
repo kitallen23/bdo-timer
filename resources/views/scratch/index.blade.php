@@ -65,8 +65,57 @@
             </div>
 
 
-            <div class="col-xs-8 col-xs-offset-2 text-center">
+            {!! Form::open(array('route' => 'scratch.add','method'=>'POST')) !!}
+            <div class="scratch-wrapper col-md-8 col-md-offset-2">
 
+                <!-- Clear form -->
+                <div class="col-md-1 form-center-h">
+                    <div class="form-item-removeicon text-center">
+                        <button class="btn-submit btn-submit-red" type="button" onclick="clearScratchForm()" tabindex="4">
+                            <span class="glyphicon glyphicon-remove text-valign"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-md-10 scratch-form-wrapper">
+
+                    <div class="col-md-12 scratch-form-inner-wrapper">
+                        <input type="text" class="form-control scratch-input-title" tabindex="1"
+                                name="s_title" placeholder="Title"/>
+                    </div>
+                    <div class="col-md-12 scratch-form-inner-wrapper">
+                        <textarea class="form-control scratch-input-comment" tabindex="2"
+                                placeholder="Help, I lost my memory..."
+                                rows="2" name="s_comment" data-autoresize required ></textarea>
+                    </div>
+                </div>
+
+
+                <!-- Submit form -->
+                <div class="col-md-1 form-center-h">
+                    <div class="form-item-submiticon text-center">
+                        <button type="submit" class="btn-submit btn-submit-green" tabindex="3">
+                            <span class="glyphicon glyphicon-ok text-valign"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {!! Form::close() !!}
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-xs-8 col-xs-offset-2 text-center">
+            @foreach($all_comments as $c_time => $c_data)
+                <div>Time: {{$c_time}}, Title: {{$c_data[0]}}, Comment: {{$c_data[1]}}</div>
+            @endforeach
 
             </div>
 
@@ -101,5 +150,14 @@
             setEnhancement("{{$i_data[1]}}", 'iconbox-{{$i_time}}');
         });
         @endforeach
+
+        jQuery.each(jQuery('textarea[data-autoresize]'), function() {
+            var offset = this.offsetHeight - this.clientHeight;
+
+            var resizeTextarea = function(el) {
+                jQuery(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+            };
+            jQuery(this).on('keyup input', function() { resizeTextarea(this); }).removeAttr('data-autoresize');
+        });
     </script>
 @endsection

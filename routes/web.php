@@ -18,4 +18,6 @@ Route::post('/update', ['as' => 'timer.update', 'uses' => 'TimerController@updat
 Route::get('/failstacks', ['as' => 'failstacks.index', 'uses' => 'FailstacksController@index']);
 Route::get('/links', ['as' => 'links.index', 'uses' => 'LinksController@index']);
 Route::get('/about', ['as' => 'about.index', 'uses' => 'AboutController@index']);
+
 Route::get('/scratch', ['as' => 'scratch.index', 'uses' => 'ScratchController@index']);
+Route::post('/scratch/add', ['as' => 'scratch.add', 'uses' => 'ScratchController@add']);

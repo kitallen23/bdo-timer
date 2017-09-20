@@ -77,7 +77,7 @@
                 {{--<h3 class="text-muted">Must Haves <i class="fa fa-heart" aria-hidden="true"></i></h3>--}}
 
                 <div class="table-wrapper" id="links-general">
-                    <h3 class="text-muted">Must-haves</h3>
+                    <h3 class="text-muted">Fundamentals</h3>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a href="http://www.somethinglovely.net/bdo/" class="lnk">Famme's somethinglovely map</a>

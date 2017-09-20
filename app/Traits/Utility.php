@@ -19,6 +19,22 @@ trait Utility
         return $all_items;
     }
 
+    public function sortCookieScratch()
+    {
+        $all_scratch = array();
+
+        foreach($_COOKIE as $ckey => $cvalue)
+        {
+            if(strpos($ckey, "comment-") === 0)
+            {
+                $comment = unserialize($cvalue);
+                $all_scratch[substr($ckey, 8)] = array(urldecode($comment[0]), urldecode($comment[1]));
+            }
+        }
+        krsort($all_scratch);
+        return $all_scratch;
+    }
+
     public function get_next_array_key($array,$key)
     {
         $keys = array_keys($array);

@@ -130,6 +130,6 @@ function setCookie(cname, cvalue)
 {
     var a = new Date();
     a = new Date(a.getTime() +1000*60*60*24*365);
-    document.cookie = cname+"="+cvalue+"; expires="+a.toGMTString()+";";
+    document.cookie = cname+"="+encodeURIComponent(cvalue)+"; expires="+a.toGMTString()+";";
     return cvalue;
 }
