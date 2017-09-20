@@ -69,19 +69,13 @@ function getTimeStringHM(h, m)
 
     if(!display24hr && h > 12)
     {
-        document.getElementById('current-time-hm').innerHTML = zeroPadTime(h-12) + " " + zeroPadTime(m);
-        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+        return (h-12) + ":" + zeroPadTime(m) + ampm(h);
     }
     else if(!display24hr && h === 0)
     {
-        document.getElementById('current-time-hm').innerHTML = "12 " + zeroPadTime(m);
-        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
+        return "12:" + zeroPadTime(m) + ampm(h);
     }
-    else
-    {
-        document.getElementById('current-time-hm').innerHTML = zeroPadTime(h) + " " + zeroPadTime(m);
-        document.getElementById('current-time-s').innerHTML = zeroPadTime(s);
-    }
+    return h + ":" + zeroPadTime(m);
 }
 
 // Zero-pads time
@@ -140,7 +134,6 @@ function gameTime()
         secsUntilNightStart = secsUntilNightStart_t;
     }
 
-    // document.getElementById('game-time').innerHTML = displayHour() + ":" + displayMinute() + ampm();
     displayGameTime();
     setTimeout(gameTime, 500);
 }
@@ -148,7 +141,7 @@ function gameTime()
 function displayGameTime()
 {
     // BDO time
-    document.getElementById('game-time').innerHTML = displayHour() + ":" + displayMinute() + ampm();
+    document.getElementById('game-time').innerHTML = displayHour() + ":" + displayMinute() + ampm(inGameHour);
     document.getElementById('day-night-icon').className = isDay? "fa fa-sun-o spinme" : "fa fa-moon-o pulseme";
 
     // Time to next changeover (day/night)
@@ -164,9 +157,9 @@ function displayGameTime()
     }
 }
 
-function ampm()
+function ampm(h)
 {
-    return inGameHour < 12 ? 'am' : 'pm';
+    return h < 12 ? 'am' : 'pm';
 }
 
 function displayHour()

@@ -35,27 +35,6 @@
         <div class="progress col-xs-12 progress-custom-lg" id="timerbar-default" style="display:none;"></div>
     </div>
 
-    <!-- Include timer bars -->
-    @foreach($all_items as $i_time => $i_data)
-        @include('shared.timerbar', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
-            'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4],
-            'next_time' => $next_items[$i_time]])
-        <!-- Include item icon -->
-        <div class="form-item-img form-item-img-fixed text-center" id="iconbox-{{$i_time}}" style="display:none;"
-             data-toggle="tooltip" data-placement="right"
-             title="{{$i_data[0]}}"></div>
-        <div class="fixed-button-wrapper" id="form-{{$i_time}}" style="display:none;">
-            {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
-            <input type="hidden" name="time" value="{{ $i_time }}">
-            <div class="fixed-button-removeicon text-center">
-                <button type="submit" class="btn-submit btn-submit-red" name="submit" value="remove" tabindex="1">
-                    <span class="glyphicon glyphicon-remove text-valign"></span>
-                </button>
-            </div>
-        </div>
-        {!! Form::close() !!}
-    @endforeach
-
     <div class="container">
 
         <div class="content">
@@ -71,7 +50,7 @@
                 <!-- Clear form -->
                 <div class="col-md-1 scratch-form-center-h">
                     <div class="form-scratch-removeicon text-center">
-                        <button class="btn-submit btn-submit-red" type="button" onclick="clearScratchForm()">
+                        <button class="btn-submit btn-submit-red" type="button" onclick="clearScratchForm()" tabindex="4">
                             <span class="glyphicon glyphicon-remove text-valign"></span>
                         </button>
                     </div>
@@ -113,6 +92,27 @@
         </div>
     </div>
 
+    <!-- Include timer bars -->
+    @foreach($all_items as $i_time => $i_data)
+        @include('shared.timerbar', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
+            'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4],
+            'next_time' => $next_items[$i_time]])
+        <!-- Include item icon -->
+        <div class="form-item-img form-item-img-fixed text-center" id="iconbox-{{$i_time}}" style="display:none;"
+             data-toggle="tooltip" data-placement="right"
+             title="{{$i_data[0]}}"></div>
+        <div class="fixed-button-wrapper" id="form-{{$i_time}}" style="display:none;">
+            {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
+            <input type="hidden" name="time" value="{{ $i_time }}">
+            <div class="fixed-button-removeicon text-center">
+                <button type="submit" class="btn-submit btn-submit-red" name="submit" value="remove">
+                    <span class="glyphicon glyphicon-remove text-valign"></span>
+                </button>
+            </div>
+        </div>
+        {!! Form::close() !!}
+    @endforeach
+
     @include('shared.settings')
 
     <script>
@@ -138,11 +138,24 @@
                 resizeTextarea(this, offset);
             });
 
-            jQuery.each($('*[data-timestamp]'), function() {
+            jQuery.each($('*[data-timestamp]'), function()
+            {
                 var ts = $(this).data("timestamp");
-                var dateTime = new Date(ts*1000);
-                var time = dateTime.getHours() + ":" + zeroPadTime(dateTime.getMinutes());
-                $(this).find(".datetime").text(time);
+                var tsDateTime = new Date(ts*1000);
+                var currDateTime = new Date();
+                //alert(ts+" : "+currDateTime.getTime());
+
+                var time = getTimeStringHM(tsDateTime.getHours(), tsDateTime.getMinutes());
+
+                var date = "today";
+                var isToday = (currDateTime.toDateString() === tsDateTime.toDateString());
+                if(!isToday)
+                {
+                    //if()
+                }
+
+                //alert(isToday);
+                $(this).find(".datetime").text(time+", "+date);
                 //alert($(this).find(".datetime").text());
             });
         });
