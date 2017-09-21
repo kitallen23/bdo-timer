@@ -10,7 +10,7 @@
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
 
     <audio id="audio-notification">
-        <source src="{{ URL::asset('audio/notification01.wav')  }}" type="audio/wav">
+        <source src="{{ URL::asset('audio/notification02_tim.mp3')  }}" type="audio/mpeg">
     </audio>
 
     <div class="container">
