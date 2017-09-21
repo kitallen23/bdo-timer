@@ -280,6 +280,7 @@
         });
         function autosave(formID)
         {
+            console.log("Autosave beginning...");
             $.ajax({
                 type:'POST',
                 url:'{{url("scratch/autosave")}}',
