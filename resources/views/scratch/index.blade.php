@@ -189,7 +189,13 @@
                     f.preventDefault();
                     return false;
                 }
-            })
+            });
+            $('.scratch-form').keydown(function (e) {
+
+                if (e.ctrlKey && e.keyCode === 13) {
+                    $(this).submit();
+                }
+            });
         });
 
         // Update timestamps on time change
@@ -245,7 +251,7 @@
         });
         @endforeach
 
-        // For autosave feature
+        // Autosave feature
         var saveTimeout;
         var toSave;
         function saveForm(el)

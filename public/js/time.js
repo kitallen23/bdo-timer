@@ -75,6 +75,11 @@ function getTimeStringHM(h, m)
     {
         return "12:" + zeroPadTime(m) + ampm(h);
     }
+    else if(!display24hr)
+    {
+
+        return h + ":" + zeroPadTime(m) + ampm(h);
+    }
     return zeroPadTime(h) + ":" + zeroPadTime(m);
 }
 
