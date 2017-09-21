@@ -9,21 +9,33 @@
 <div class="scratch-wrapper col-md-8 col-md-offset-2">
 
     <!-- Scratch data -->
-    <div class="col-md-10 col-md-offset-1 scratch-comment-wrapper">
+    <div class="col-md-10 col-md-offset-1 scratch-comment-wrapper" data-focus="false">
 
         @if($title)
-            <div class="col-md-12 scratch-form-inner-wrapper">
+            <div class="col-md-12 scratch-form-inner-wrapper scratch-input-title-wrapper">
                 <input type="text" class="form-control scratch-input-title"
                       name="s_title" placeholder="Title" value="{{$title}}" spellcheck="false"/>
             </div>
-        @else
-            <input type="hidden" name="s_title" value="" />
-        @endif
-        <div class="col-md-12 scratch-form-inner-wrapper">
+
+            <div class="col-md-12 scratch-form-inner-wrapper">
             <textarea class="form-control scratch-input-comment"
-                  placeholder="..." rows="3" name="s_comment"  spellcheck="false"
-                  data-autoresize required >{{$comment}}</textarea>
-        </div>
+                      placeholder="..." rows="3" name="s_comment"  spellcheck="false"
+                      data-autoresize required>{{$comment}}</textarea>
+            </div>
+        @else
+            <div class="col-md-12 scratch-form-inner-wrapper scratch-input-title-wrapper">
+                <input type="text" class="form-control scratch-input-title"
+                       name="s_title" placeholder="Title" value="{{$title}}" spellcheck="false"
+                       style="display:none;"/>
+            </div>
+
+            <div class="col-md-12 scratch-form-inner-wrapper">
+                <textarea class="form-control scratch-input-comment"
+                      placeholder="..." rows="3" name="s_comment"  spellcheck="false"
+                      data-autoresize required style="border-top:0;">{{$comment}}</textarea>
+            </div>
+        @endif
+
 
     </div>
 

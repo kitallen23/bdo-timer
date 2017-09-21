@@ -59,12 +59,12 @@
                 <div class="col-md-10 scratch-form-wrapper">
                     <div class="col-md-12 scratch-form-inner-wrapper">
                         <input type="text" class="form-control scratch-input-title" tabindex="1"
-                              name="s_title" placeholder="Title" id="scratch-title" />
+                              name="s_title" placeholder="Title" id="scratch-title" spellcheck="false" />
                     </div>
                     <div class="col-md-12 scratch-form-inner-wrapper">
                         <textarea class="form-control scratch-input-comment" tabindex="2"
                                 placeholder="..." rows="2" name="s_comment" id="scratch-comment"
-                                data-autoresize required ></textarea>
+                                spellcheck="false" data-autoresize required ></textarea>
                     </div>
                 </div>
 
@@ -173,6 +173,45 @@
             setTimestamps();
         });
 
+        // Display title bar on focus in
+        $('.scratch-comment-wrapper').on('focusin', function() {
+            showTitleBar(this);
+            $(this).data("focus", true);
+        });
+        $('.scratch-comment-wrapper').on('focusout', function() {
+
+            var t_this = this;
+            setTimeout(function() {
+                hideTitleBar(t_this);
+            }, 0);
+        });
+
+        function showTitleBar(el)
+        {
+            if($(el).data("focus") === false)
+            {
+                // Add border and unhide title bar
+                $(el).find('textarea[data-autoresize]').css("border-top", "1px solid red");
+                $(el).find('.scratch-input-title').css("display", "block");
+            }
+        }
+        function hideTitleBar(el)
+        {
+            if($(el).data("focus") === true)
+            {
+                if(!$("*:focus").is($(el).find('.scratch-input-title')) &&
+                    !$("*:focus").is($(el).find('.scratch-input-comment')))
+                {
+                    if($(el).find('.scratch-input-title').val() === "")
+                    {
+                        $(el).find('textarea[data-autoresize]').css("border-top", "0");
+                        $(el).find('.scratch-input-title').css("display", "none");
+                    }
+                    $(el).data("focus", false);
+                }
+            }
+        }
+
         // Start all timers
         @foreach($all_items as $i_time => $i_data)
         $(document).ready(function(){
@@ -184,7 +223,7 @@
 
         jQuery.each(jQuery('textarea[data-autoresize]'), function() {
             var offset = this.offsetHeight - this.clientHeight;
-            jQuery(this).on('keyup input', function() { resizeTextarea(this, offset); });//.removeAttr('data-autoresize');
+            jQuery(this).on('keyup input', function() { resizeTextarea(this, offset); }).removeAttr('data-autoresize');
         });
     </script>
 @endsection
