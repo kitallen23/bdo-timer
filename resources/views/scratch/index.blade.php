@@ -173,16 +173,14 @@
 
             setTimestamps();
 
+            // Flash when no data was entered in comment box
             $(".scratch-form").submit(function(f) {
                 var comment = $(this).find('.scratch-input-comment').val();
-                //alert(comment);
 
                 if(!comment.trim())
                 {
-                    //alert("Error! Empty string.");
                     $(this).find('.scratch-input-comment').focus();
                     $(this).find('.scratch-input-comment').css("background-color", "#fdba4e").animate({backgroundColor:"#333"}, 500);
-                    //$(this).find('.scratch-input-comment').addClass('blink-border');
 
                     f.preventDefault();
                     return false;
@@ -190,7 +188,13 @@
             })
         });
 
-        // Display title bar on focus in
+        // Update timestamps on time change
+        $('#time-format-button').change(function() {
+            //alert("Time format changed");
+            setTimestamps();
+        });
+
+        // Display title bar on focus in, hide on focus out
         $('.scratch-comment-wrapper').on('focusin', function() {
             showTitleBar(this);
             $(this).data("focus", true);
@@ -202,7 +206,6 @@
                 hideTitleBar(t_this);
             }, 0);
         });
-
         function showTitleBar(el)
         {
             if($(el).data("focus") === false)
@@ -238,6 +241,7 @@
         });
         @endforeach
 
+        // For autosave feature
 //        var saveTimeout;
 //        function saveForm(el)
 //        {
@@ -259,6 +263,8 @@
 //                saveForm(t_this);
 //            }, 3000);
 //        });
+
+        // Enable autoresizing of text boxes
         jQuery.each(jQuery('textarea[data-autoresize]'), function() {
             var offset = this.offsetHeight - this.clientHeight;
             jQuery(this).on('keyup input', function() {

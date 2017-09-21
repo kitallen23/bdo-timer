@@ -1,5 +1,5 @@
 
-<!-- Time -->
+<!-- Timestamp -->
 <div class="col-md-8 col-md-offset-2 scratch-time-wrapper text-muted datetime-wrapper" data-timestamp="{{$time}}" >
     <div class="col-md-10 col-md-offset-1">
         <span class="datetime pull-right"></span>
