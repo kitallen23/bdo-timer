@@ -2,7 +2,7 @@
 <!-- Timestamp -->
 <div class="col-md-8 col-md-offset-2 scratch-time-wrapper text-muted datetime-wrapper" data-timestamp="{{$time}}" >
     <div class="col-md-10 col-md-offset-1">
-        <span class="autosave-text text-muted"><span class="glyphicon glyphicon-ok small-tick"></span>saved</span>
+        <span class="autosave-text text-muted"><span class="glyphicon glyphicon-ok small-icon"></span>saved</span>
         <span class="datetime pull-right"></span>
     </div>
 </div>
@@ -58,10 +58,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    {{--$(document).ready(function() {--}}
-        {{--var date = new Date('{{$time}}' * 1000);--}}
-        {{----}}
-    {{--});--}}
-</script>
