@@ -8,6 +8,7 @@
     <script src="{{ URL::asset('js/utility.js') }}"></script>
     <script src="{{ URL::asset('js/time.js') }}"></script>
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.color-2.1.2.js') }}"></script>
 
     <audio id="audio-notification">
         <source src="{{ URL::asset('audio/notification02_tim.mp3')  }}" type="audio/mpeg">
@@ -44,7 +45,7 @@
             </div>
 
             <p class="text-muted text-center">Keep notes of stuff.</p>
-            {!! Form::open(array('route' => 'scratch.add','method'=>'POST')) !!}
+            {!! Form::open(array('route' => 'scratch.add', 'method'=>'POST', 'class'=>'scratch-form')) !!}
             <div class="scratch-wrapper col-md-8 col-md-offset-2">
 
                 <!-- Clear form -->
@@ -64,7 +65,7 @@
                     <div class="col-md-12 scratch-form-inner-wrapper">
                         <textarea class="form-control scratch-input-comment" tabindex="2"
                                 placeholder="..." rows="2" name="s_comment" id="scratch-comment"
-                                spellcheck="false" data-autoresize required ></textarea>
+                                spellcheck="false" data-autoresize ></textarea>
                     </div>
                 </div>
 
@@ -171,6 +172,22 @@
             });
 
             setTimestamps();
+
+            $(".scratch-form").submit(function(f) {
+                var comment = $(this).find('.scratch-input-comment').val();
+                //alert(comment);
+
+                if(!comment.trim())
+                {
+                    //alert("Error! Empty string.");
+                    $(this).find('.scratch-input-comment').focus();
+                    $(this).find('.scratch-input-comment').css("background-color", "#fdba4e").animate({backgroundColor:"#333"}, 500);
+                    //$(this).find('.scratch-input-comment').addClass('blink-border');
+
+                    f.preventDefault();
+                    return false;
+                }
+            })
         });
 
         // Display title bar on focus in
@@ -191,7 +208,7 @@
             if($(el).data("focus") === false)
             {
                 // Add border and unhide title bar
-                $(el).find('textarea[data-autoresize]').css("border-top", "1px solid red");
+                $(el).find('textarea[data-autoresize]').css("border-top", "1px solid #424242");
                 $(el).find('.scratch-input-title').css("display", "block");
             }
         }
@@ -221,9 +238,36 @@
         });
         @endforeach
 
+//        var saveTimeout;
+//        function saveForm(el)
+//        {
+//            if($(el).data("savetime") < new Date().getTime())
+//            {
+//                var ts = $(el).parents('.scratch-wrapper').find('.hidden-time').val();
+//                //alert("comment-"+ts);
+//                var comment =
+//
+//                alert(setCookie('comment-'+ts, 'IT SAVED'));
+////                alert("Saved!");
+//            }
+//        }
+//        $('.autosave').on('keyup', function() {
+//            $(this).data("savetime", (new Date().getTime())+2000);
+//            var t_this = this;
+//            clearTimeout(saveTimeout);
+//            saveTimeout = setTimeout(function () {
+//                saveForm(t_this);
+//            }, 3000);
+//        });
         jQuery.each(jQuery('textarea[data-autoresize]'), function() {
             var offset = this.offsetHeight - this.clientHeight;
-            jQuery(this).on('keyup input', function() { resizeTextarea(this, offset); }).removeAttr('data-autoresize');
+            jQuery(this).on('keyup input', function() {
+                resizeTextarea(this, offset);
+
+//                $(this).data("savetime", (new Date().getTime())+2000);
+//                //alert($(this).data("savetime"));
+//                setTimeout(saveForm(this), 3000);
+            });
         });
     </script>
 @endsection

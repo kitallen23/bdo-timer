@@ -75,7 +75,7 @@ function getTimeStringHM(h, m)
     {
         return "12:" + zeroPadTime(m) + ampm(h);
     }
-    return h + ":" + zeroPadTime(m);
+    return zeroPadTime(h) + ":" + zeroPadTime(m);
 }
 
 // Zero-pads time

@@ -29,7 +29,7 @@ class ScratchController extends Controller
         }
 
         $all_comments = $this->sortCookieScratch();
-        //dd($all_comments);
+//        dd($_COOKIE);
 
         return view('scratch.index')->with(compact('all_items', 'next_items', 'first_item', 'all_comments'));
     }

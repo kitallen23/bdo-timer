@@ -18,9 +18,9 @@
             </div>
 
             <div class="col-md-12 scratch-form-inner-wrapper">
-            <textarea class="form-control scratch-input-comment"
+                <textarea class="form-control scratch-input-comment autosave"
                       placeholder="..." rows="3" name="s_comment"  spellcheck="false"
-                      data-autoresize required>{{$comment}}</textarea>
+                      data-autoresize>{{$comment}}</textarea>
             </div>
         @else
             <div class="col-md-12 scratch-form-inner-wrapper scratch-input-title-wrapper">
@@ -30,16 +30,16 @@
             </div>
 
             <div class="col-md-12 scratch-form-inner-wrapper">
-                <textarea class="form-control scratch-input-comment"
+                <textarea class="form-control scratch-input-comment autosave"
                       placeholder="..." rows="3" name="s_comment"  spellcheck="false"
-                      data-autoresize required style="border-top:0;">{{$comment}}</textarea>
+                      data-autoresize data-savetime="0" style="border-top:0;">{{$comment}}</textarea>
             </div>
         @endif
 
 
     </div>
 
-    <input type="hidden" name="time" value="{{ $time }}">
+    <input class="hidden-time" type="hidden" name="time" value="{{ $time }}">
 
     <div class="col-md-1">
         <!-- Update comment -->
