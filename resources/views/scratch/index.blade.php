@@ -281,14 +281,24 @@
         function autosave(formID)
         {
             console.log("Autosave beginning...");
+            // Display saving icon etc.
+            $('#'+formID).find(".autosave-message-wrapper").css("display", "inline");
+            $('#'+formID).find(".small-icon").removeClass("glyphicon-ok").addClass("glyphicon-repeat").addClass("fast-right-spinner");
+            $('#'+formID).find(".autosave-text").html("saving...");
+
             $.ajax({
                 type:'POST',
                 url:'{{url("scratch/autosave")}}',
                 data: $('#'+formID).serialize(),
                 dataType: 'json',
                 success:function(data){
-                    $("#msg").html(data.msg);
                     console.log(data.msg);
+                    $('#'+formID).find(".small-icon").removeClass("glyphicon-repeat").removeClass("fast-right-spinner").addClass("glyphicon-ok");
+                    $('#'+formID).find(".autosave-text").html("saved");
+
+                    setTimeout(function () {
+                        $('#'+formID).find(".autosave-message-wrapper").fadeOut("slow");
+                    }, 1500);
                 }
             });
         }

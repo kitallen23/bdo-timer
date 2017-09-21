@@ -1009,6 +1009,20 @@ hr
     margin-right: 6px;
     font-size: 0.85em;
 }
+.glyphicon.fast-right-spinner
+{
+    -webkit-animation-name: spin;
+    -webkit-animation: spin 1s infinite linear;
+
+    -moz-animation-name: spin;
+    -moz-animation: spin 1s infinite linear;
+
+    -ms-animation-name: spin;
+    -ms-animation: spin 1s infinite linear;
+
+    animation-name: spin;
+    animation: spin 1s infinite linear;
+}
 /*.form-item-inner-wrapper*/
 /*{*/
     /*background: none;*/
