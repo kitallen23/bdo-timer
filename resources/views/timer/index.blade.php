@@ -10,7 +10,7 @@
     <script src="{{ URL::asset('js/all-items.js') }}"></script>
 
     <audio id="audio-notification">
-        <source src="{{ URL::asset('audio/notification02_tim.mp3')  }}" type="audio/mpeg">
+        <source src="{{ URL::asset('audio/notification01.wav')  }}" type="audio/wav">
     </audio>
 
     <div class="container">
@@ -37,7 +37,7 @@
             <!-- Question mark section -->
             <div class="col-xs-4 col-md-offset-1"><hr /></div>
             <div class="col-xs-2 text-center" id="timer-explanation-toggle">
-                <i class="fa fa-question" aria-hidden="true"></i>
+                <i class="fa fa-question big-qn" aria-hidden="true"></i>
             </div>
             <div class="col-xs-4"><hr /></div>
 
@@ -83,13 +83,13 @@
                 </div>
             </div>
 
-            {!! Form::open(array('route' => 'timer.add','method'=>'POST')) !!}
+            {!! Form::open(array('route' => 'timer.add','method'=>'POST', 'class'=>'f-form')) !!}
             @include('timer.form')
             {!! Form::close() !!}
 
             @foreach($all_items as $i_time => $i_data)
 
-                {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
+                {!! Form::open(array('route' => 'timer.update','method'=>'POST', 'class'=>'f-form')) !!}
                 @include('timer.item', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
                     'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4]])
                 {!! Form::close() !!}
@@ -100,6 +100,17 @@
 
         </div>
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.f-form').keydown(function (e) {
+                if(e.ctrlKey && e.keyCode === 13 ||
+                    e.keyCode === 13 && e.metaKey) {
+                    $(this).submit();
+                }
+            });
+        });
+    </script>
 
     @include('shared.settings')
 

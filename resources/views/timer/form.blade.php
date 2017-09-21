@@ -119,6 +119,13 @@
             setIconImage('iconbox', event.text);
             setEnhancementList("input-enhancement", this.value, "");
         });
+
+
+        $('.f-form').keydown(function (e) {
+            if (e.ctrlKey && e.keyCode === 13) {
+                $(this).submit();
+            }
+        });
     });
     $('#input-itemname').focusout(function(){
         setIconImage('iconbox', this.value);

@@ -192,7 +192,8 @@
             });
             $('.scratch-form').keydown(function (e) {
 
-                if (e.ctrlKey && e.keyCode === 13) {
+                if(e.ctrlKey && e.keyCode === 13 ||
+                    e.keyCode === 13 && e.metaKey) {
                     $(this).submit();
                 }
             });
