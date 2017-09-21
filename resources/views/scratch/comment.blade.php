@@ -2,6 +2,7 @@
 <!-- Timestamp -->
 <div class="col-md-8 col-md-offset-2 scratch-time-wrapper text-muted datetime-wrapper" data-timestamp="{{$time}}" >
     <div class="col-md-10 col-md-offset-1">
+        <span class="autosave-text text-muted"><span class="glyphicon glyphicon-ok small-tick"></span>saved</span>
         <span class="datetime pull-right"></span>
     </div>
 </div>
@@ -13,7 +14,7 @@
 
         @if($title)
             <div class="col-md-12 scratch-form-inner-wrapper scratch-input-title-wrapper">
-                <input type="text" class="form-control scratch-input-title"
+                <input type="text" class="form-control scratch-input-title autosave"
                       name="s_title" placeholder="Title" value="{{$title}}" spellcheck="false"/>
             </div>
 
@@ -24,7 +25,7 @@
             </div>
         @else
             <div class="col-md-12 scratch-form-inner-wrapper scratch-input-title-wrapper">
-                <input type="text" class="form-control scratch-input-title"
+                <input type="text" class="form-control scratch-input-title autosave"
                        name="s_title" placeholder="Title" value="{{$title}}" spellcheck="false"
                        style="display:none;"/>
             </div>
@@ -39,15 +40,15 @@
 
     </div>
 
-    <input class="hidden-time" type="hidden" name="time" value="{{ $time }}">
+    <input class="hidden-time" type="hidden" name="timestamp" value="{{ $time }}">
 
     <div class="col-md-1">
         <!-- Update comment -->
-        <div class="form-scratch-updateicon-sm text-center">
-            <button type="submit" class="btn-submit btn-submit-blue" name="submit" value="update">
-                <span class="glyphicon glyphicon-upload text-valign"></span>
-            </button>
-        </div>
+        {{--<div class="form-scratch-updateicon-sm text-center">--}}
+            {{--<button type="submit" class="btn-submit btn-submit-blue" name="submit" value="update">--}}
+                {{--<span class="glyphicon glyphicon-upload text-valign"></span>--}}
+            {{--</button>--}}
+        {{--</div>--}}
 
         <!-- Remove comment -->
         <div class="form-scratch-removeicon-sm text-center">

@@ -44,6 +44,8 @@
                 <div id="current-time-s">00</div>
             </div>
 
+
+
             <p class="text-muted text-center">Keep notes of stuff.</p>
             {!! Form::open(array('route' => 'scratch.add', 'method'=>'POST', 'class'=>'scratch-form')) !!}
             <div class="scratch-wrapper col-md-8 col-md-offset-2">
@@ -82,9 +84,11 @@
             {!! Form::close() !!}
 
             @foreach($all_comments as $c_time => $c_data)
-                {!! Form::open(array('route' => 'scratch.update','method'=>'POST')) !!}
-                @include('scratch.comment', ['title' => $c_data[0], 'comment' => $c_data[1], 'time' => $c_time])
-                {!! Form::close() !!}
+                <div class="col-xs-12 no-spacing">
+                    {!! Form::open(array('route' => 'scratch.update','method'=>'POST', 'id'=>'f-'.$c_time)) !!}
+                    @include('scratch.comment', ['title' => $c_data[0], 'comment' => $c_data[1], 'time' => $c_time])
+                    {!! Form::close() !!}
+                </div>
             @endforeach
 
             <!-- VIEW SESSION -->
@@ -242,37 +246,65 @@
         @endforeach
 
         // For autosave feature
-//        var saveTimeout;
-//        function saveForm(el)
-//        {
-//            if($(el).data("savetime") < new Date().getTime())
-//            {
-//                var ts = $(el).parents('.scratch-wrapper').find('.hidden-time').val();
-//                //alert("comment-"+ts);
-//                var comment =
-//
-//                alert(setCookie('comment-'+ts, 'IT SAVED'));
-////                alert("Saved!");
-//            }
-//        }
-//        $('.autosave').on('keyup', function() {
-//            $(this).data("savetime", (new Date().getTime())+2000);
-//            var t_this = this;
-//            clearTimeout(saveTimeout);
-//            saveTimeout = setTimeout(function () {
-//                saveForm(t_this);
-//            }, 3000);
-//        });
+        var saveTimeout;
+        var toSave;
+        function saveForm(el)
+        {
+            if($(el).data("savetime") <= new Date().getTime())
+            {
+                var ts = $(el).parents('.scratch-wrapper').find('.hidden-time').val();
+                autosave("f-"+ts);
+            }
+        }
+        $('.autosave').on('keyup', function(e) {
+            if(e.keyCode !== 9 && e.keyCode !== 16)
+            {
+                // Ensure we initialise the form to save
+                if(!toSave)
+                {
+                    toSave = this;
+                }
+                // Save the form with the existing document object if we're now editing another comment
+                if(toSave !== this)
+                {
+                    saveForm(toSave);
+                }
+
+                $(this).data("savetime", (new Date().getTime())+2000);
+                toSave = this;
+                clearTimeout(saveTimeout);
+                saveTimeout = setTimeout(function () {
+                    saveForm(toSave);
+                }, 3000);
+            }
+        });
+        function autosave(formID)
+        {
+            $.ajax({
+                type:'POST',
+                url:'{{url("scratch/autosave")}}',
+                data: $('#'+formID).serialize(),
+                dataType: 'json',
+                success:function(data){
+                    $("#msg").html(data.msg);
+                    console.log(data.msg);
+                }
+            });
+        }
+        // Hide empty forms
+        $('.autosave').on('focusout', function() {
+            if($(this).parents('.scratch-wrapper').find('.scratch-input-comment').val() === "" &&
+                $(this).parents('.scratch-wrapper').find('.scratch-input-title').val() === "")
+            {
+                $(this).parents('.no-spacing').slideUp(200);
+            }
+        });
 
         // Enable autoresizing of text boxes
         jQuery.each(jQuery('textarea[data-autoresize]'), function() {
             var offset = this.offsetHeight - this.clientHeight;
             jQuery(this).on('keyup input', function() {
                 resizeTextarea(this, offset);
-
-//                $(this).data("savetime", (new Date().getTime())+2000);
-//                //alert($(this).data("savetime"));
-//                setTimeout(saveForm(this), 3000);
             });
         });
     </script>

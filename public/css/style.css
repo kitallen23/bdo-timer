@@ -5,6 +5,12 @@ input::-webkit-calendar-picker-indicator
     display: none;
 }
 
+.no-spacing
+{
+    padding: 0;
+    margin: 0;
+}
+
 /** REMOVE **/
 .test
 {
@@ -969,7 +975,7 @@ hr
 }
 .form-scratch-removeicon-sm
 {
-    margin-top: 6px;
+    margin-top: 8px;
     width: 100%;
     font-size: 1.4em;
     color: #666;
@@ -981,7 +987,7 @@ hr
 }
 .form-scratch-updateicon-sm
 {
-    margin-top: 6px;
+    margin-top: 8px;
     width: 100%;
     font-size: 1.4em;
     color: #666;
@@ -997,6 +1003,11 @@ hr
     display: flex;
     align-items: center;
     padding: 0;
+}
+.small-icon
+{
+    margin-right: 6px;
+    font-size: 0.85em;
 }
 /*.form-item-inner-wrapper*/
 /*{*/

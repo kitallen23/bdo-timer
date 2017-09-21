@@ -49,16 +49,16 @@ class ScratchController extends Controller
 
         if($allrequest['submit'] == 'remove')
         {
-            if(isset($_COOKIE['comment-'.$allrequest['time']]))
+            if(isset($_COOKIE['comment-'.$allrequest['timestamp']]))
             {
-                setcookie("comment-".$allrequest['time'], "", time() - 3600);
+                setcookie("comment-".$allrequest['timestamp'], "", time() - 3600);
             }
         }
         else if($allrequest['submit'] == 'update')
         {
-            if(isset($_COOKIE['comment-'.$allrequest['time']]))
+            if(isset($_COOKIE['comment-'.$allrequest['timestamp']]))
             {
-                setcookie("comment-".$allrequest['time'], "", time() - 3600);
+                setcookie("comment-".$allrequest['timestamp'], "", time() - 3600);
             }
 
             $c = array(urlencode($allrequest['s_title']), urlencode($allrequest['s_comment']));
@@ -66,5 +66,31 @@ class ScratchController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function autosave(Request $request)
+    {
+        if (\Request::ajax())
+        {
+            $allrequest = $request->all();
+            $title = $request->input('s_title');
+            $comment = $request->input('s_comment');
+            $time = $request->input('timestamp');
+
+            if($comment == "")
+            {
+                setcookie("comment-".$time, "", time() - 3600);
+
+                return response()->json(array('msg'=> "Empty comment removed successfully"), 200);
+            }
+            // Remove old
+            setcookie("comment-".$time, "", time() - 3600);
+            // Create/set new
+            $c = array(urlencode($title), urlencode($comment));
+            setcookie("comment-".time(), serialize($c), time()+60*60*24*365);
+
+            return response()->json(array('msg'=> "Autosave completed successfully"), 200);
+        }
+        return response()->json(array('msg'=> "Internal error autosaving"), 500);
     }
 }
