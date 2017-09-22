@@ -61,9 +61,12 @@
             'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4],
             'next_time' => $next_items[$i_time]])
         <!-- Include item icon -->
-        <a href="{{url('/')}}"><div class="form-item-img form-item-img-fixed text-center" id="iconbox-{{$i_time}}" style="display:none;"
-                                    data-toggle="tooltip" data-placement="right"
-                                    title="{{$i_data[0]}}"></div></a>
+        <a href="{{url('/')}}" class="icon-link">
+            <div class="form-item-img form-item-img-fixed text-center"
+                 id="iconbox-{{$i_time}}" style="display:none;" data-toggle="tooltip"
+                 data-placement="right"
+                 title="{{$i_data[0]}}"></div>
+        </a>
         <div class="fixed-button-wrapper" id="form-{{$i_time}}" style="display:none;">
             {!! Form::open(array('route' => 'timer.update','method'=>'POST')) !!}
             <input type="hidden" name="time" value="{{ $i_time }}">
