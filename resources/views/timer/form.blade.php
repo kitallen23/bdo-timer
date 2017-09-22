@@ -120,8 +120,7 @@
             setEnhancementList("input-enhancement", this.value, "");
         });
 
-
-        $('.f-form').keydown(function (e) {
+        $('.fform').keydown(function (e) {
             if (e.ctrlKey && e.keyCode === 13) {
                 $(this).submit();
             }

@@ -88,9 +88,9 @@
             {!! Form::close() !!}
 
             <!-- Indicator for timer -->
-            <div class="row-wrapper col-xs-12">
+            <div class="row-wrapper col-xs-12" id="time-indicator-wrapper" style="display:none;">
 
-                <div class="col-sm-10 col-sm-offset-1" id="time-indicator" style="display:none;">
+                <div class="col-sm-10 col-sm-offset-1" id="time-indicator">
                     <div class=text-center"><hr class="hr-green"/><span class="time-indicator-text text-green">be patient</span><hr class="hr-green"/></div>
                     <div class=text-center"><hr class="hr-orange"/><span class="time-indicator-text text-dark-orange">early listing</span><hr class="hr-orange"/></div>
                     <div class=text-center"><hr class="hr-red"/><span class="time-indicator-text text-red">late listing</span><hr class="hr-red"/></div>
@@ -98,13 +98,14 @@
                 </div>
             </div>
 
+            <div id="all-timers-wrapper">
             @foreach($all_items as $i_time => $i_data)
-
                 {!! Form::open(array('route' => 'timer.update','method'=>'POST', 'class'=>'f-form')) !!}
                 @include('timer.item', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
                     'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4]])
                 {!! Form::close() !!}
             @endforeach
+            </div>
 
             <!-- VIEW SESSION -->
             {{--<div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>--}}
@@ -124,7 +125,7 @@
 
         $('#timer-explanation-toggle').click(function() {
             $('#timer-explanation').slideToggle("fast");
-            $('#time-indicator').slideToggle("fast");
+            $('#time-indicator-wrapper').slideToggle("fast");
         });
     </script>
 
