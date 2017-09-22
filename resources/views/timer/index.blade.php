@@ -77,7 +77,7 @@
                     </div>
 
                     <hr />
-                    <p class="text-center col-xs-8 col-xs-offset-2"><span class="text-muted">Pro tip:</span> As soon as
+                    <p class="text-center col-xs-10 col-xs-offset-1"><span class="text-muted">Pro tip:</span> As soon as
                         a notification appears in-game, enter the item name and press ctrl+enter. This will start the
                         timer immediately, and you can edit/update the enhancement level and marketplace listings afterwards.</p>
                 </div>
