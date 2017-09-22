@@ -65,10 +65,6 @@
         $('#settings-toggle-wrapper').slideToggle("fast");
         $('#settings-toggle-icon').toggleClass("rotate");
     });
-
-    $('#timer-explanation-toggle').click(function() {
-        $('#timer-explanation').slideToggle("fast");
-    });
     $('#volume-switch-button').click(function() {
         $('#volume-slider').slideToggle("fast");
     });

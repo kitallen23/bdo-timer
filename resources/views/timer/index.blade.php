@@ -37,7 +37,7 @@
             <!-- Question mark section -->
             <div class="col-xs-4 col-md-offset-1"><hr /></div>
             <div class="col-xs-2 text-center" id="timer-explanation-toggle">
-                <i class="fa fa-question big-qn" aria-hidden="true"></i>
+                <i class="fa fa-question" aria-hidden="true"></i>
             </div>
             <div class="col-xs-4"><hr /></div>
 
@@ -87,6 +87,17 @@
             @include('timer.form')
             {!! Form::close() !!}
 
+            <!-- Indicator for timer -->
+            <div class="row-wrapper col-xs-12">
+
+                <div class="col-sm-10 col-sm-offset-1" id="time-indicator" style="display:none;">
+                    <div class=text-center"><hr class="hr-green"/><span class="time-indicator-text text-green">be patient</span><hr class="hr-green"/></div>
+                    <div class=text-center"><hr class="hr-orange"/><span class="time-indicator-text text-dark-orange">early listing</span><hr class="hr-orange"/></div>
+                    <div class=text-center"><hr class="hr-red"/><span class="time-indicator-text text-red">late listing</span><hr class="hr-red"/></div>
+                    <div class=text-center"></div>
+                </div>
+            </div>
+
             @foreach($all_items as $i_time => $i_data)
 
                 {!! Form::open(array('route' => 'timer.update','method'=>'POST', 'class'=>'f-form')) !!}
@@ -109,6 +120,11 @@
                     $(this).submit();
                 }
             });
+        });
+
+        $('#timer-explanation-toggle').click(function() {
+            $('#timer-explanation').slideToggle("fast");
+            $('#time-indicator').slideToggle("fast");
         });
     </script>
 

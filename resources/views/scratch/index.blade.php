@@ -184,7 +184,7 @@
                 if(!comment.trim())
                 {
                     $(this).find('.scratch-input-comment').focus();
-                    $(this).find('.scratch-input-comment').css("background-color", "#fdba4e").animate({backgroundColor:"#333"}, 500);
+                    $(this).find('.scratch-input-comment').css("background-color", "#fdba4e").animate({backgroundColor:"transparent"}, 500);
 
                     f.preventDefault();
                     return false;

@@ -766,6 +766,10 @@ th
 {
     line-height: 44px;
     font-size: 2em;
+
+    -moz-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
 }
 #timer-explanation-toggle:hover
 {
@@ -1023,6 +1027,69 @@ hr
     animation-name: spin;
     animation: spin 1s infinite linear;
 }
+
+/** Time indicator **/
+#time-indicator
+{
+    padding: 0;
+    display: flex;
+}
+#time-indicator > div
+{
+    height:30px;
+    display:flex;
+}
+#time-indicator > div:nth-of-type(1)
+{
+    border-right:2px solid #43ac6a;
+    border-left:2px solid #43ac6a;
+    flex: 2;
+}
+#time-indicator > div:nth-of-type(2)
+{
+    border-right:2px solid #e99002;
+    border-left:2px solid #e99002;
+    flex: 1;
+}
+#time-indicator > div:nth-of-type(3)
+{
+    border-right:2px solid #f04124;
+    border-left:2px solid #f04124;
+    flex: 1;
+}
+.hr-green
+{
+    padding: 0;
+    margin: 14px 0 0 0;
+    border-top: 2px solid #43ac6a;
+    flex: 2;
+}
+.hr-orange
+{
+    padding: 0;
+    margin: 14px 0 0 0;
+    border-top: 2px solid #e99002;
+    flex: 2;
+}
+.hr-red
+{
+    padding: 0;
+    margin: 14px 0 0 0;
+    border-top: 2px solid #f04124;
+    flex: 2;
+}
+.time-indicator-text
+{
+    line-height: 28px;
+    padding: 0 12px;
+}
+
+/** Preset text colours (matches theme) **/
+.text-green {  color: #43ac6a;  }
+.text-orange {  color: #fdba4e;  }
+.text-dark-orange {  color: #e99002;  }
+.text-red {  color: #f04124;  }
+
 /*.form-item-inner-wrapper*/
 /*{*/
     /*background: none;*/
