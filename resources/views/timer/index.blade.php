@@ -98,14 +98,12 @@
                 </div>
             </div>
 
-            <div id="all-timers-wrapper">
             @foreach($all_items as $i_time => $i_data)
                 {!! Form::open(array('route' => 'timer.update','method'=>'POST', 'class'=>'f-form')) !!}
                 @include('timer.item', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
                     'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4]])
                 {!! Form::close() !!}
             @endforeach
-            </div>
 
             <!-- VIEW SESSION -->
             {{--<div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>--}}
