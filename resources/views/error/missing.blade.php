@@ -12,9 +12,11 @@
         <div class="content">
 
 
-            <div class="col-xs-8 col-xs-offset-2 text-center" style="margin-top:200px;">
+            {{--<div class="col-xs-8 col-xs-offset-2 text-center" style="margin-top:200px;">--}}
+            <div class="col-xs-8 col-xs-offset-2 text-center" style="margin-top:90px;">
+                <h1>404 error</h1>
 
-                <h3>This NPC is not in place currently. Please come back between 5 AM and 7 PM.</h3>
+                <h4 style="margin-top:40px;">This NPC is not in place currently. Please come back between 5 AM and 7 PM.</h4>
                 <img src="{{URL::asset('img/err/404.png')}}" style="margin-top:40px;" width="350" />
 
             </div>
