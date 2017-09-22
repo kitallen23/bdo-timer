@@ -89,7 +89,6 @@
 
             <!-- Indicator for timer -->
             <div class="row-wrapper col-xs-12" id="time-indicator-wrapper" style="display:none;">
-
                 <div class="col-sm-10 col-sm-offset-1" id="time-indicator">
                     <div class=text-center"><hr class="hr-green"/><span class="time-indicator-text text-green">be patient</span><hr class="hr-green"/></div>
                     <div class=text-center"><hr class="hr-orange"/><span class="time-indicator-text text-dark-orange">early listing</span><hr class="hr-orange"/></div>

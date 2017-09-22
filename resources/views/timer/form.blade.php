@@ -14,7 +14,7 @@
 
             <div class="form-item-timer col-sm-2 form-item text-center">
                 <div class="form-center-h">
-                    <span>-10:00</span>
+                    <span id="form-time">-10:00</span>
                 </div>
             </div>
 
@@ -129,5 +129,23 @@
     $('#input-itemname').focusout(function(){
         setIconImage('iconbox', this.value);
         setEnhancementList("input-enhancement", this.value, "");
+    });
+    $('#input-offset').change(function(){
+        var t = "-10:00";
+        switch($(this).val())
+        {
+            case "-": t="-10:00";break;
+            case "1 min": t="-09:00";break;
+            case "2 mins": t="-08:00";break;
+            case "3 mins": t="-07:00";break;
+            case "4 mins": t="-06:00";break;
+            case "5 mins": t="-05:00";break;
+            case "6 mins": t="-04:00";break;
+            case "7 mins": t="-03:00";break;
+            case "8 mins": t="-02:00";break;
+            case "9 mins": t="-01:00";break;
+            case "10 mins": t="-00:00";break;
+        }
+        $("#form-time").html(t);
     });
 </script>
