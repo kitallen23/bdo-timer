@@ -14,7 +14,7 @@
 
             <div class="col-xs-8 col-xs-offset-2 text-center" style="margin-top:200px;">
 
-                <h3>This PAGE is not in place currently. Please come back between 5 AM and 7 PM.</h3>
+                <h3>This NPC is not in place currently. Please come back between 5 AM and 7 PM.</h3>
                 <img src="{{URL::asset('img/err/404.png')}}" style="margin-top:40px;" width="350" />
 
             </div>
