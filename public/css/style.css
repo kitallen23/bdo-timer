@@ -645,7 +645,7 @@ input[type=range]::-ms-fill-upper {
     position: fixed;
     top: 1px;
     padding: 0;
-    z-index: 1;
+    z-index: 10;
 }
 .fixed-button-wrapper
 {
