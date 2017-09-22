@@ -309,7 +309,7 @@
                     //toSave = null;
 
                     setTimeout(function () {
-                        $('#'+formID).find(".autosave-message-wrapper").fadeOut("slow");
+                        $('#f-'+data.newtime).find(".autosave-message-wrapper").fadeOut("slow");
                     }, 1500);
                 }
             });
