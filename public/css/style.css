@@ -175,6 +175,11 @@ body
     color: #eee;
 }
 
+.text-light
+{
+    font-weight:200;
+}
+
 /*** Form ***/
 .form-item-wrapper
 {

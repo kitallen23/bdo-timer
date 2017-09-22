@@ -10,7 +10,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-timer"><a href="{{url("/")}}">Timer</a></li>
                 <li class="nav-failstacks"><a href="{{url("/failstacks")}}">Failstacks</a></li>
-                <li class="nav-ohai"><a href="{{url("/")}}">Ohai! Otaku!</a></li>
+                <li class="nav-ohai"><a href="{{url("/about")}}">Ohai! Otaku!</a></li>
                 <li class="nav-links"><a href="{{url("/links")}}">Links</a></li>
                 <li class="nav-about"><a href="{{url("/scratch")}}">Scratch</a></li>
             </ul>

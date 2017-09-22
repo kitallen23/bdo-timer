@@ -14,7 +14,6 @@ class LinksController extends Controller
         $all_items = $this->sortSession();
 
         $next_items = array();
-        $keys = array_keys($all_items);
         foreach($all_items as $key => $item)
         {
             $next_key = $this->get_next_array_key($all_items, $key);
