@@ -264,26 +264,24 @@
             }
         }
         $('.autosave').on('keyup', function(e) {
-            if(e.keyCode !== 9 && e.keyCode !== 16)
+            // Ensure we initialise the form to save
+            if(!toSave)
             {
-                // Ensure we initialise the form to save
-                if(!toSave)
-                {
-                    toSave = this;
-                }
-                // Save the form with the existing document object if we're now editing another comment
-                if(toSave !== this)
-                {
-                    saveForm(toSave);
-                }
-
-                $(this).data("savetime", (new Date().getTime())+2000);
                 toSave = this;
-                clearTimeout(saveTimeout);
-                saveTimeout = setTimeout(function () {
-                    saveForm(toSave);
-                }, 3000);
             }
+            // Save the form with the existing document object if we're now editing another comment
+            if(toSave !== this)
+            {
+                $(toSave).data("savetime", (new Date().getTime()));
+                saveForm(toSave);
+            }
+
+            $(this).data("savetime", (new Date().getTime())+2000);
+            toSave = this;
+            clearTimeout(saveTimeout);
+            saveTimeout = setTimeout(function () {
+                saveForm(toSave);
+            }, 3000);
         });
         function autosave(formID)
         {
@@ -302,6 +300,13 @@
                     console.log(data.msg);
                     $('#'+formID).find(".small-icon").removeClass("glyphicon-repeat").removeClass("fast-right-spinner").addClass("glyphicon-ok");
                     $('#'+formID).find(".autosave-text").html("saved");
+
+                    // Modify timestamp form field
+                    $('#'+formID).find(".hidden-time").val(data.newtime);
+
+                    // Modify form's ID
+                    $('#'+formID).attr('id','f-'+data.newtime);
+                    //toSave = null;
 
                     setTimeout(function () {
                         $('#'+formID).find(".autosave-message-wrapper").fadeOut("slow");

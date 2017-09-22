@@ -86,10 +86,11 @@ class ScratchController extends Controller
             // Remove old
             setcookie("comment-".$time, "", time() - 3600);
             // Create/set new
+            $newtime = time();
             $c = array(urlencode($title), urlencode($comment));
-            setcookie("comment-".time(), serialize($c), time()+60*60*24*365);
+            setcookie("comment-".$newtime, serialize($c), time()+60*60*24*365);
 
-            return response()->json(array('msg'=> "Autosave completed successfully"), 200);
+            return response()->json(array('msg'=> "Autosave completed successfully", 'newtime'=>''.$newtime), 200);
         }
         return response()->json(array('msg'=> "Internal error autosaving"), 500);
     }
