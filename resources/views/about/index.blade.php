@@ -55,10 +55,13 @@
                 <h3 class="text-muted">Guild</h3>
                 <p class="text-light">&lt;Ohai_Otaku&gt; is a small guild on NA servers. We're always looking for
                     friendly new players of all skill and experience levels. If you're interested in joining,
-                    either shoot me an email, or contact one of us in-game: me (IGN:
-                    <span class="text-orange">Tims_Buddy</span>), our "One True Leader" Ephraim (IGN:
-                    <span class="text-orange">Nikolas</span>), or <strike class="text-muted">the village idiot</strike>
-                    Tim (IGN: <span class="text-orange">Ar_Tard</span>).</p>
+                    either shoot me an email, or contact one of us in-game: me (main:
+                    <span class="text-orange">Tims_Buddy</span>, family: <span class="text-orange">Zsatei</span>), our
+                    "One True Leader" Nich (main:
+                    <span class="text-orange">Nikolas</span>, family: <span class="text-orange">Truheart</span>), or
+                    <strike class="text-muted">the village idiot</strike> Tim (main:
+                    <span class="text-orange">Ar_Tard</span>, family: <span class="text-orange">Tzharr</span>).
+                    Alternatively, leave us a guestbook comment and we'll get back to you.</p>
                 <p class="text-light">I'd like to thank Nich & Tim for their ongoing help with creating this website. It wouldn't be half
                     as good if they hadn't given me amazing suggestions and kept me on-track.
                     <span class="glyphicon glyphicon-heart"></span></p>
@@ -86,7 +89,11 @@
                 <p class="text-light text-muted">Full disclosure: some donations may be used to purchase coffee, which
                     I will convert into source code.</p>
                 <div class="text-center text-orange">
-                    <button class="btn btn-warning">Donate</button>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="6FH4D4ATR7BUW">
+                        <button type="submit" class="btn btn-warning btn-donate">Donate</button>
+                    </form>
                 </div>
 
             </div>

@@ -46,39 +46,39 @@
                     <!-- Make headings darker..? -->
                     <h4 class="text-center text-muted">BDO Marketplace Registration Timer</h4>
                     <div class="text-center">
-                        <p>Use this timer to keep track of when marketplace items will show up.</p>
-                        <p><span class="text-muted">Note:</span> Pearl Store items may have a different timing system.</p>
+                        <p class="text-light">Use this timer to keep track of when marketplace items will show up.</p>
+                        <p class="text-light"><span class="text-muted">Note:</span> Pearl Store items may have a different timing system.</p>
                     </div>
 
                     <hr />
                     <h4 class="text-center text-muted">Usage</h4>
                     <div class="text-row">
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
-                        <span class="text-row-item">Fill out the form below.</span>
+                        <span class="text-row-item text-light">Fill out the form below.</span>
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
                     <div class="text-row">
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
-                        <span class="text-row-item">Relax while you're in the green.</span>
+                        <span class="text-row-item text-light">Relax while you're in the green.</span>
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
                     <div class="text-row">
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
-                        <span class="text-row-item">When the timer reaches zero, the item is in the period of time in which it can show on the market.</span>
+                        <span class="text-row-item text-light">When the timer reaches zero, the item is in the period of time in which it can show on the market.</span>
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
                     <div class="text-row">
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
-                        <span class="text-row-item">Head to the market, buy the item, rejoice.</span>
+                        <span class="text-row-item text-light">Head to the market, buy the item, rejoice.</span>
                         <i class="fa fa-asterisk small-dot text-row-item text-muted" aria-hidden="true"></i>
                     </div>
 
                     <hr />
-                    <p class="text-center col-xs-10 col-xs-offset-1"><span class="text-muted">Pro tip:</span> As soon as
-                        a notification appears in-game, enter the item name and press ctrl+enter. This will start the
+                    <p class="text-center col-xs-10 col-xs-offset-1 text-light"><span class="text-muted">Pro tip:</span> As soon as
+                        a notification appears in-game, fill out only the item name and press ctrl+enter. This will start the
                         timer immediately, and you can edit/update the enhancement level and marketplace listings afterwards.</p>
                 </div>
             </div>

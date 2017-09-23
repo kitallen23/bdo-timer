@@ -1098,6 +1098,11 @@ hr
     text-decoration: none;
 }
 
+.btn-donate
+{
+    border-radius: 6px;
+}
+
 /** Preset text colours (matches theme) **/
 .text-green {  color: #43ac6a;  }
 .text-orange {  color: #fdba4e;  }
