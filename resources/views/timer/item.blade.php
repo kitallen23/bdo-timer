@@ -3,7 +3,7 @@
 
     <div class="col-xs-1 form-center-h">
         <div class="form-item-updateicon text-center">
-            <button type="submit" class="btn-submit btn-submit-blue" name="submit" value="update">
+            <button type="submit" class="btn-submit btn-submit-blue" name="submit" value="update" id="i-update">
                 <span class="glyphicon glyphicon-upload text-valign"></span>
             </button>
         </div>

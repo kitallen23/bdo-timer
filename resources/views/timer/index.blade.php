@@ -98,7 +98,7 @@
             </div>
 
             @foreach($all_items as $i_time => $i_data)
-                {!! Form::open(array('route' => 'timer.update','method'=>'POST', 'class'=>'f-form')) !!}
+                {!! Form::open(array('route' => 'timer.update','method'=>'POST', 'class'=>'i-form')) !!}
                 @include('timer.item', ['itemname' => $i_data[0], 'enhancement' => $i_data[1],
                     'accumulatedtrades' => $i_data[2], 'offset' => $i_data[3], 'time' => $i_data[4]])
                 {!! Form::close() !!}
@@ -115,8 +115,13 @@
             $('.f-form').keydown(function (e) {
                 if(e.ctrlKey && e.keyCode === 13 ||
                     e.keyCode === 13 && e.metaKey) {
-                    alert("Submitting!");
                     $(this).submit();
+                }
+            });
+            $('.i-form').keydown(function (e) {
+                if(e.ctrlKey && e.keyCode === 13 ||
+                    e.keyCode === 13 && e.metaKey) {
+                    $('#i-update').trigger('click');
                 }
             });
         });
