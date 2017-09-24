@@ -576,6 +576,12 @@
                 </div>
             </div>
 
+            <div class="col-xs-8 col-xs-offset-2 text-center">
+                <p class="text-light">A big thanks to Al3xmac and his
+                    <a target="_blank" href="https://www.reddit.com/r/blackdesertonline/comments/5gzhox/alexmac_gear_enchant_guide_get_those_tets_boys/" class="text-orange">gear guide</a>
+                for the data in these tables.</p>
+            </div>
+
             <!-- VIEW SESSION -->
             {{--<div class="col-xs-12 session-data">{{ var_dump(Session::get('items')) }}</div>--}}
 

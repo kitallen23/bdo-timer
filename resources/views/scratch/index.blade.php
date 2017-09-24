@@ -204,7 +204,6 @@
 
         // Update timestamps on time change
         $('#time-format-button').change(function() {
-            //alert("Time format changed");
             setTimestamps();
         });
 
@@ -289,27 +288,33 @@
         function autosave(formID)
         {
             console.log("Autosave beginning...");
+            var fid = '#'+formID;
             // Display saving icon etc.
-            $('#'+formID).find(".autosave-message-wrapper").css("display", "inline");
-            $('#'+formID).find(".small-icon").removeClass("glyphicon-ok").addClass("glyphicon-repeat").addClass("fast-right-spinner");
-            $('#'+formID).find(".autosave-text").html("saving...");
+            $(fid).find(".autosave-message-wrapper").css("display", "inline");
+            $(fid).find(".small-icon").removeClass("glyphicon-ok").addClass("glyphicon-repeat").addClass("fast-right-spinner");
+            $(fid).find(".autosave-text").html("saving...");
 
             $.ajax({
                 type:'POST',
                 url:'{{url("scratch/autosave")}}',
-                data: $('#'+formID).serialize(),
+                data: $(fid).serialize(),
                 dataType: 'json',
                 success:function(data){
                     console.log(data.msg);
-                    $('#'+formID).find(".small-icon").removeClass("glyphicon-repeat").removeClass("fast-right-spinner").addClass("glyphicon-ok");
-                    $('#'+formID).find(".autosave-text").html("saved");
+                    $(fid).find(".small-icon").removeClass("glyphicon-repeat").removeClass("fast-right-spinner").addClass("glyphicon-ok");
+                    $(fid).find(".autosave-text").html("saved");
 
                     // Modify timestamp form field
-                    $('#'+formID).find(".hidden-time").val(data.newtime);
+                    $(fid).find(".hidden-time").val(data.newtime);
+
+                    // Modify data-timestamp value
+                    $(fid).find('*[data-timestamp]').data('timestamp', data.newtime);
 
                     // Modify form's ID
-                    $('#'+formID).attr('id','f-'+data.newtime);
-                    //toSave = null;
+                    $(fid).attr('id','f-'+data.newtime);
+
+                    // Re-render the timestamps
+                    setTimestamps();
 
                     setTimeout(function () {
                         $('#f-'+data.newtime).find(".autosave-message-wrapper").fadeOut("slow");

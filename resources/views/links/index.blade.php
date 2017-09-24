@@ -77,6 +77,10 @@
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://bddatabase.net/us/" class="lnk">Black Desert Database</a>
                     </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a target="_blank" href="http://urzasarchives.com/bdo/wbtbdo/" class="lnk">World Boss Timer</a>
+                    </div>
 
                     <hr />
                     <h3 class="text-muted">Miscellaneous</h3>
@@ -207,6 +211,10 @@
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="https://alphaoptix.github.io/bdocrystalz/" class="lnk">BDO Crystalz</a>
                     </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a target="_blank" href="https://www.reddit.com/r/blackdesertonline/comments/5gzhox/alexmac_gear_enchant_guide_get_those_tets_boys/" class="lnk">Enchanting Guide</a>
+                    </div>
 
 
                     <hr />
@@ -239,6 +247,10 @@
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://dulfy.net/2016/08/31/black-desert-miniature-elephant-mount-guide/" class="lnk">Mini Elephant Mount Guide (Dulfy)</a>
                     </div>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a target="_blank" href="http://www.somethinglovely.net/bdo/horses/" class="lnk">Horse Breeding Calculator (Famme)</a>
+                    </div>
 
                     <hr />
                     <h3 class="text-muted">Alchemy</h3>
@@ -256,6 +268,13 @@
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://dulfy.net/2016/06/06/black-desert-cooking-life-skill-guide/" class="lnk">Cooking Guide (Dulfy)</a>
+                    </div>
+
+                    <hr />
+                    <h3 class="text-muted">Trading</h3>
+                    <div class="lnk-row">
+                        <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
+                        <a target="_blank" href="http://www.somethinglovely.net/bdo/crates/" class="lnk">Trading Crate Calculator (Famme)</a>
                     </div>
 
                 </div>
