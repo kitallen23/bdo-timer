@@ -115,6 +115,7 @@
             $('.f-form').keydown(function (e) {
                 if(e.ctrlKey && e.keyCode === 13 ||
                     e.keyCode === 13 && e.metaKey) {
+                    alert("Submitting!");
                     $(this).submit();
                 }
             });
