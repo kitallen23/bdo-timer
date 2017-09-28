@@ -331,6 +331,16 @@
             }
         });
 
+        $(window).bind('beforeunload', function(){
+            if(toSave)
+            {
+                var ts = $(toSave).parents('.scratch-wrapper').find('.hidden-time').val();
+                autosave("f-"+ts);
+                clearTimeout(saveTimeout);
+                return 'Changes have not yet been saved.';
+            }
+        });
+
         // Enable autoresizing of text boxes
         jQuery.each(jQuery('textarea[data-autoresize]'), function() {
             var offset = this.offsetHeight - this.clientHeight;

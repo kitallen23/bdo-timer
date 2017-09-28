@@ -49,7 +49,7 @@
                 <h3 class="text-muted">About</h3>
                 <p class="text-light">I like keeping everything in one place. I like anything that can assist (or
                     replace) my horrible memory. I like cats. And I dislike missing items on the market because I was
-                    busy looking at pictures of cats. That's why I build this website - and I hope you'll find it as
+                    busy looking at pictures of cats. That's why I built this website - and I hope you'll find it as
                     useful as I do.</p>
 
                 <h3 class="text-muted">Guild</h3>
