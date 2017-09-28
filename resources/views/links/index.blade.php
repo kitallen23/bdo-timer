@@ -13,24 +13,6 @@
         <source src="{{ URL::asset('audio/notification02_tim.mp3')  }}" type="audio/mpeg">
     </audio>
 
-    <style>
-        #current-time-hm
-        {
-            font-size: 4em;
-            font-weight: 300;
-        }
-        #current-time-s
-        {
-            font-size: 1em;
-            font-weight: 300;
-            margin-left: 8px;
-        }
-        .current-time-wrapper
-        {
-            margin-bottom: 40px;
-        }
-    </style>
-
     <div class="col-xs-12 timerbar-wrapper">
         <div class="progress col-xs-12 progress-custom-lg" id="timerbar-default" style="display:none;"></div>
     </div>
@@ -38,14 +20,27 @@
     <div class="container">
 
         <div class="content">
-            <div class="current-time-wrapper text-center">
-                <div id="current-time-hm">00 00</div>
-                <div id="current-time-s">00</div>
+            <!-- System time display -->
+            <div class="current-time-wrapper-sm text-center">
+                <div id="current-time-hm" class="current-time-hm-small">00 00</div>
+                <div id="current-time-s" class="current-time-s-small">00</div>
+            </div>
+
+            <!-- Game time display -->
+            <div class="game-time-wrapper text-center">
+                <div class="col-md-3 col-md-offset-3">
+                    <span class="game-time-icon-sm"><i class="fa fa-moon-o" id="day-night-icon" aria-hidden="true"></i></span>
+                    <span id="game-time" class="game-time-sm">00 00</span>
+                </div>
+                <div class="col-md-3 dim">
+                    <span class="game-time-icon-sm"><i class="fa fa-moon-o" id="day-night-changeover-icon" aria-hidden="true"></i></span>
+                    <span id="game-time-to-changeover" class="game-time-sm">00 00</span>
+                </div>
             </div>
 
 
             <div class="col-xs-8 col-xs-offset-2">
-                <h2 class="text-center text-muted">Helpful Links</h2>
+                <h3 class="text-center text-muted">Helpful Links</h3>
 
                 <div class="btn-group col-xs-12 btn-group-new extra-spacing" id="btn-group-links">
                     <button type="button" class="btn btn-new3 col-xs-4 active" id="btn-lnk-general">General</button>
@@ -53,10 +48,8 @@
                     <button type="button" class="btn btn-new3 col-xs-4" id="btn-lnk-ghi">Lifeskills</button>
                 </div>
 
-                {{--<h3 class="text-muted">Must Haves <i class="fa fa-heart" aria-hidden="true"></i></h3>--}}
-
                 <div class="table-wrapper" id="links-general">
-                    <h3 class="text-muted">Fundamentals</h3>
+                    <h4 class="text-muted">Fundamentals</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://www.somethinglovely.net/bdo/" class="lnk">Famme's somethinglovely map</a>
@@ -83,7 +76,7 @@
                     </div>
 
                     <hr />
-                    <h3 class="text-muted">Miscellaneous</h3>
+                    <h4 class="text-muted">Miscellaneous</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://bdotools.com/" class="lnk">Amity Calculator</a>
@@ -104,7 +97,7 @@
                 </div>
 
                 <div class="table-wrapper" id="links-def" style="display:none;">
-                    <h3 class="text-muted">Class Guides</h3>
+                    <h4 class="text-muted">Class Guides</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <span class="text-muted">Warrior:</span>
@@ -202,7 +195,7 @@
                     </p>
 
                     <hr />
-                    <h3 class="text-muted">Gear</h3>
+                    <h4 class="text-muted">Gear</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://bdoplanner.com/" class="lnk">BDO Planner</a>
@@ -218,7 +211,7 @@
 
 
                     <hr />
-                    <h3 class="text-muted">Leveling</h3>
+                    <h4 class="text-muted">Leveling</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://www.blackdesertfoundry.com/leveling-1-60-guide/" class="lnk">Leveling 1-60 guide</a>
@@ -227,14 +220,14 @@
 
                 <div class="table-wrapper" id="links-ghi" style="display:none;">
 
-                    <h3 class="text-muted">General</h3>
+                    <h4 class="text-muted">General</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://dulfy.net/2016/03/01/black-desert-node-management-and-hiring-workers-basic-guide/" class="lnk">Nodes and Workers Guide (Dulfy)</a>
                     </div>
 
                     <hr />
-                    <h3 class="text-muted">Mounts</h3>
+                    <h4 class="text-muted">Mounts</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="https://www.blackd.de/horse/" class="lnk">Horse Breeding Calculator</a>
@@ -253,7 +246,7 @@
                     </div>
 
                     <hr />
-                    <h3 class="text-muted">Alchemy</h3>
+                    <h4 class="text-muted">Alchemy</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://dulfy.net/2016/05/08/black-desert-alchemy-life-skill-guide/" class="lnk">Alchemy Guide (Dulfy)</a>
@@ -264,14 +257,14 @@
                     </div>
 
                     <hr />
-                    <h3 class="text-muted">Cooking</h3>
+                    <h4 class="text-muted">Cooking</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://dulfy.net/2016/06/06/black-desert-cooking-life-skill-guide/" class="lnk">Cooking Guide (Dulfy)</a>
                     </div>
 
                     <hr />
-                    <h3 class="text-muted">Trading</h3>
+                    <h4 class="text-muted">Trading</h4>
                     <div class="lnk-row">
                         <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>
                         <a target="_blank" href="http://www.somethinglovely.net/bdo/crates/" class="lnk">Trading Crate Calculator (Famme)</a>

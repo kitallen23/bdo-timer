@@ -13,24 +13,6 @@
         <source src="{{ URL::asset('audio/notification02_tim.mp3')  }}" type="audio/mpeg">
     </audio>
 
-    <style>
-        #current-time-hm
-        {
-            font-size: 4em;
-            font-weight: 300;
-        }
-        #current-time-s
-        {
-            font-size: 1em;
-            font-weight: 300;
-            margin-left: 8px;
-        }
-        .current-time-wrapper
-        {
-            margin-bottom: 40px;
-        }
-    </style>
-
     <div class="col-xs-12 timerbar-wrapper">
         <div class="progress col-xs-12 progress-custom-lg" id="timerbar-default" style="display:none;"></div>
     </div>
@@ -38,9 +20,22 @@
     <div class="container">
 
         <div class="content">
-            <div class="current-time-wrapper text-center">
-                <div id="current-time-hm">00 00</div>
-                <div id="current-time-s">00</div>
+            <!-- System time display -->
+            <div class="current-time-wrapper-sm text-center">
+                <div id="current-time-hm" class="current-time-hm-small">00 00</div>
+                <div id="current-time-s" class="current-time-s-small">00</div>
+            </div>
+
+            <!-- Game time display -->
+            <div class="game-time-wrapper text-center">
+                <div class="col-md-3 col-md-offset-3">
+                    <span class="game-time-icon-sm"><i class="fa fa-moon-o" id="day-night-icon" aria-hidden="true"></i></span>
+                    <span id="game-time" class="game-time-sm">00 00</span>
+                </div>
+                <div class="col-md-3 dim">
+                    <span class="game-time-icon-sm"><i class="fa fa-moon-o" id="day-night-changeover-icon" aria-hidden="true"></i></span>
+                    <span id="game-time-to-changeover" class="game-time-sm">00 00</span>
+                </div>
             </div>
 
 

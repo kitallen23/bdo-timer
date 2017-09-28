@@ -23,40 +23,62 @@ input::-webkit-calendar-picker-indicator
     margin-bottom: 10px;
     color: #eee;
 }
+.current-time-wrapper-sm
+{
+    margin-top: 60px;
+    margin-bottom: 10px;
+    color: #eee;
+}
 #current-time-hm,#current-time-s
 {
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
 }
-#current-time-hm
+.current-time-hm-large
 {
     font-size: 12em;
     font-weight: 300;
 }
-#current-time-s
+.current-time-s-large
 {
     font-size: 3em;
     font-weight: 300;
     margin-left: 26px;
+}
+.current-time-hm-small
+{
+    font-size: 4em;
+    font-weight: 300;
+}
+.current-time-s-small
+{
+    font-size: 1em;
+    font-weight: 300;
+    margin-left: 8px;
 }
 .game-time-wrapper
 {
     margin-bottom: 60px;
     color: #eee;
 }
-#game-time
+.game-time-med
 {
     font-size: 1.6em;
     font-weight: 300;
 }
-#game-time-to-changeover
+.game-time-sm
 {
-    font-size: 1.6em;
+    font-size: 1em;
     font-weight: 300;
 }
 .game-time-icon
 {
     font-size: 1.4em;
+    margin-right: 10px;
+}
+.game-time-icon-sm
+{
+    font-size: 1em;
     margin-right: 10px;
 }
 .dim

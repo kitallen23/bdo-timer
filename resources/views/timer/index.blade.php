@@ -18,19 +18,19 @@
         <div class="content">
             <!-- System time display -->
             <div class="current-time-wrapper text-center">
-                <div id="current-time-hm">00 00</div>
-                <div id="current-time-s">00</div>
+                <div id="current-time-hm" class="current-time-hm-large">00 00</div>
+                <div id="current-time-s" class="current-time-s-large">00</div>
             </div>
 
             <!-- Game time display -->
             <div class="game-time-wrapper text-center">
                 <div class="col-md-3 col-md-offset-3">
                     <span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-icon" aria-hidden="true"></i></span>
-                    <span id="game-time">00 00</span>
+                    <span id="game-time" class="game-time-med">00 00</span>
                 </div>
                 <div class="col-md-3 dim">
                     <span class="game-time-icon"><i class="fa fa-moon-o" id="day-night-changeover-icon" aria-hidden="true"></i></span>
-                    <span id="game-time-to-changeover">00 00</span>
+                    <span id="game-time-to-changeover" class="game-time-med">00 00</span>
                 </div>
             </div>
 
