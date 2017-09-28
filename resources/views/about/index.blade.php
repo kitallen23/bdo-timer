@@ -13,24 +13,6 @@
         <source src="{{ URL::asset('audio/notification02_tim.mp3')  }}" type="audio/mpeg">
     </audio>
 
-    <style>
-        #current-time-hm
-        {
-            font-size: 4em;
-            font-weight: 300;
-        }
-        #current-time-s
-        {
-            font-size: 1em;
-            font-weight: 300;
-            margin-left: 8px;
-        }
-        .current-time-wrapper
-        {
-            margin-bottom: 40px;
-        }
-    </style>
-
     <div class="col-xs-12 timerbar-wrapper">
         <div class="progress col-xs-12 progress-custom-lg" id="timerbar-default" style="display:none;"></div>
     </div>
@@ -93,6 +75,9 @@
                 </div>
                 <div class="text-light lnk-row">
                     <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>Ideas for more tools to create
+                </div>
+                <div class="text-light lnk-row">
+                    <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>Items you'd like added to the timer
                 </div>
 
                 <h3 class="text-muted">Donate</h3>
