@@ -10,7 +10,7 @@
     <div class="container">
 
         <div class="content">
-            
+
             <div class="col-xs-8 col-xs-offset-2 text-center" style="margin-top:90px;">
                 <h1>404 error</h1>
 
