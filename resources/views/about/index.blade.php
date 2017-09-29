@@ -61,6 +61,20 @@
                     as good if they hadn't given me amazing suggestions and kept me on-track.
                     <span class="glyphicon glyphicon-heart"></span></p>
 
+                <h3 class="text-muted">Donate</h3>
+                <p class="text-light">If you enjoy this website and have a few extra dollarydoos lying around, please
+                    consider donating. This will go a long way towards covering the ongoing costs of hosting
+                    and maintaining the website.</p>
+                <p class="text-light text-muted">Full disclosure: some donations may be used to purchase coffee, which
+                    I will convert into source code.</p>
+                <div class="text-center text-orange">
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="6FH4D4ATR7BUW">
+                        <button type="submit" class="btn btn-warning btn-donate">Donate</button>
+                    </form>
+                </div>
+
                 <h3 class="text-muted">Contribution</h3>
                 <p class="text-light">I rely heavily on feedback from all of you. Please send an email to
                     <span class="text-orange">bdotimer.ohaiotaku@gmail.com</span> if you have any suggestions at all.
@@ -80,19 +94,13 @@
                     <i class="fa fa-asterisk text-muted lnk-list" aria-hidden="true"></i>Items you'd like added to the timer
                 </div>
 
-                <h3 class="text-muted">Donate</h3>
-                <p class="text-light">If you enjoy this website and have a few extra dollarydoos lying around, please
-                    consider donating. This will go a long way towards covering the ongoing costs of hosting
-                    and maintaining the website.</p>
-                <p class="text-light text-muted">Full disclosure: some donations may be used to purchase coffee, which
-                    I will convert into source code.</p>
-                <div class="text-center text-orange">
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-                        <input type="hidden" name="cmd" value="_s-xclick">
-                        <input type="hidden" name="hosted_button_id" value="6FH4D4ATR7BUW">
-                        <button type="submit" class="btn btn-warning btn-donate">Donate</button>
-                    </form>
-                </div>
+                <h3 class="text-muted">Notable Mentions</h3>
+                <p class="text-light">I'd like to thank
+                    <a target="_blank" href="http://www.somethinglovely.net/bdo/" class="lnk">Famme</a>
+                    for his amazing BDO tools, which were a great inspiration for me.</p>
+                <p class="text-light">All item icons came from the amazing
+                    <a target="_blank" href="http://bddatabase.net/us/" class="lnk">Black Desert Database</a>.
+                </p>
 
             </div>
 
