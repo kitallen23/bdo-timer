@@ -39,19 +39,35 @@ function setEnhancement(enhancement, idToChange)
 function setIconImage(elementID, itemname)
 {
     var _name = itemname.replace(/[^a-z]/gi, '').toLowerCase();
-    document.getElementById(elementID).style.background = '#222 url("img/'+_name+'.png") no-repeat center';
 
+    // Check if ultimate
+    if(ultimateItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
+    {
+        var no_ultimate = _name.replace('ultimate', '');
+        document.getElementById(elementID).style.background = '#222 url("img/'+no_ultimate+'.png") no-repeat center';
+    }
+    else
+    {
+        document.getElementById(elementID).style.background = '#222 url("img/'+_name+'.png") no-repeat center';
+    }
+
+    // Set border
     if(orangeItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
     {
         document.getElementById(elementID).style.border = '1px solid #ff5e14';
     }
-    else if(yellowItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
+    else if(yellowItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1
+            || ultimateItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
     {
         document.getElementById(elementID).style.border = '1px solid gold';
     }
     else if(blueItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
     {
         document.getElementById(elementID).style.border = '1px solid #0099ff';
+    }
+    else if(greenItems.indexOf(itemname.replace(/&#039;/g, "'")) > -1)
+    {
+        document.getElementById(elementID).style.border = '1px solid #acff59';
     }
     else
     {

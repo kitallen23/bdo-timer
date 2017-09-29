@@ -70,6 +70,7 @@ var yellowItems = [
     "Serap's Necklace",
     "Sicil's Necklace",
     "Tungrad Necklace",
+    "Laytenn's Power Stone",
     "Manos Diamond Necklace",
     "Manos Ruby Necklace",
     "Manos Topaz Necklace",
@@ -157,6 +158,101 @@ var blueItems = [
     "Sharp Black Crystal Shard"
 ];
 
+var greenItems = [
+    // Armor
+    // Grunil
+    "Grunil Helmet",
+    "Grunil Armor",
+    "Grunil Gloves",
+    "Grunil Shoes",
+
+    // Agerian
+    "Agerian Helmet",
+    "Agerian Armor",
+    "Agerian Gloves",
+    "Agerian Shoes",
+
+    // Heve
+    "Strength Helmet of Heve",
+    "Strength Armor of Heve",
+    "Strength Gloves of Heve",
+    "Strength Shoes of Heve",
+
+    // Talis
+    "Talis Helmet",
+    "Talis Armor",
+    "Talis Gloves",
+    "Talis Shoes",
+
+    // Taritas
+    "Taritas Helmet",
+    "Taritas Armor",
+    "Taritas Gloves",
+    "Taritas Shoes",
+
+    // Zereth
+    "Zereth Helmet",
+    "Zereth Armor",
+    "Zereth Gloves",
+    "Zereth Shoes"
+];
+
+var ultimateItems = [
+
+    // Blue awakening weapons
+    "Ultimate Mercenary's Steel Great Sword",
+    "Ultimate Spell of Seduction Scythe",
+    "Ultimate Upgraded Iron Buster",
+    "Ultimate Heiress's Kamasylven Sword",
+    "Ultimate Azure Thunder Celestial Bo Staff",
+    "Ultimate Piece of Purification Lancia",
+    "Ultimate Immaculate Crescent Blade",
+    "Ultimate Frosty Cloud Kerispear",
+    "Ultimate Yagakmu Sura Katana",
+    "Ultimate Oeki's Sah Chakram",
+    "Ultimate Alloria Aad Sphera",
+    "Ultimate Lord Godr Sphera",
+    "Ultimate Light-Swallowing Vediant",
+    "Ultimate Backflow Garbrace",
+
+    // Armor
+    // Grunil
+    "Ultimate Grunil Helmet",
+    "Ultimate Grunil Armor",
+    "Ultimate Grunil Gloves",
+    "Ultimate Grunil Shoes",
+
+    // Agerian
+    "Ultimate Agerian Helmet",
+    "Ultimate Agerian Armor",
+    "Ultimate Agerian Gloves",
+    "Ultimate Agerian Shoes",
+
+    // Heve
+    "Ultimate Strength Helmet of Heve",
+    "Ultimate Strength Armor of Heve",
+    "Ultimate Strength Gloves of Heve",
+    "Ultimate Strength Shoes of Heve",
+
+    // Talis
+    "Ultimate Talis Helmet",
+    "Ultimate Talis Armor",
+    "Ultimate Talis Gloves",
+    "Ultimate Talis Shoes",
+
+    // Taritas
+    "Ultimate Taritas Helmet",
+    "Ultimate Taritas Armor",
+    "Ultimate Taritas Gloves",
+    "Ultimate Taritas Shoes",
+
+    // Zereth
+    "Ultimate Zereth Helmet",
+    "Ultimate Zereth Armor",
+    "Ultimate Zereth Gloves",
+    "Ultimate Zereth Shoes"
+];
+
 $(document).ready(function() {
 
     var appendTo = document.getElementById("item-list");
@@ -181,6 +277,18 @@ $(document).ready(function() {
             el.textContent = blueItems[i];
             appendTo.appendChild(el);
         }
+        for(i = 0; i < greenItems.length; ++i)
+        {
+            el = document.createElement("option");
+            el.textContent = greenItems[i];
+            appendTo.appendChild(el);
+        }
+        for(i = 0; i < ultimateItems.length; ++i)
+        {
+            el = document.createElement("option");
+            el.textContent = ultimateItems[i];
+            appendTo.appendChild(el);
+        }
     }
 });
 
@@ -191,6 +299,7 @@ var accessoryItems = [
     "Serap's Necklace",
     "Sicil's Necklace",
     "Tungrad Necklace",
+    "Laytenn's Power Stone",
     "Manos Diamond Necklace",
     "Manos Ruby Necklace",
     "Manos Topaz Necklace",
