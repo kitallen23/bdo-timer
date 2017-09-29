@@ -311,6 +311,9 @@
                     // Re-render the timestamps
                     setTimestamps();
 
+                    // Clean up
+                    toSave = null;
+
                     setTimeout(function () {
                         $('#f-'+data.newtime).find(".autosave-message-wrapper").fadeOut("slow");
                     }, 1500);
