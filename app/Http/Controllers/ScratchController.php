@@ -77,7 +77,7 @@ class ScratchController extends Controller
             $comment = $request->input('s_comment');
             $time = $request->input('timestamp');
 
-            if($comment == "")
+            if($comment == "" && $title == "")
             {
                 setcookie("comment-".$time, "", time() - 3600);
 

@@ -178,8 +178,9 @@
             // Flash when no data was entered in comment box
             $(".scratch-form").submit(function(f) {
                 var comment = $(this).find('.scratch-input-comment').val();
+                var title = $(this).find('.scratch-input-title').val();
 
-                if(!comment.trim())
+                if(!comment.trim() && !title.trim())
                 {
                     $(this).find('.scratch-input-comment').focus();
                     $(this).find('.scratch-input-comment').css("background-color", "#fdba4e").animate({backgroundColor:"transparent"}, 500);
