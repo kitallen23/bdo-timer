@@ -84,6 +84,7 @@ function clearItemForm()
     document.getElementById('input-accumulatedtrades').value = '';
     document.getElementById('input-offset').selectedIndex = 0;
     document.getElementById('input-itemname').focus();
+    setIconImage('iconbox', "")
 }
 
 function clearScratchForm()

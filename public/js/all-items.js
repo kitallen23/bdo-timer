@@ -101,7 +101,11 @@ var yellowItems = [
     "Manos Red Coral Belt",
     "Manos White Coral Belt",
     "Manos Blue Coral Belt",
-    "Manos Green Coral Belt"
+    "Manos Green Coral Belt",
+
+    // Fishing rods
+    "Golden Fishing Rod",
+    "Triple-Float Fishing Rod"
 ];
 
 var blueItems = [
@@ -155,7 +159,16 @@ var blueItems = [
 
     // Enhancement
     "Hard Black Crystal Shard",
-    "Sharp Black Crystal Shard"
+    "Sharp Black Crystal Shard",
+
+    // Fishing rods
+    "Balenos Fishing Rod",
+    "Epheria Fishing Rod",
+    "Mediah Fishing Rod",
+    "Calpheon Fishing Rod",
+
+    "Maple Float",
+    "Ash Tree Float"
 ];
 
 var greenItems = [
@@ -194,7 +207,143 @@ var greenItems = [
     "Zereth Helmet",
     "Zereth Armor",
     "Zereth Gloves",
-    "Zereth Shoes"
+    "Zereth Shoes",
+
+    // Offhands
+    "Axion Shield",
+    "Vangertz Shield",
+    "Kite Shield",
+    "Krea Shield",
+    "Rosar Shield",
+
+    "Steel Dagger",
+    "Bronze Dagger",
+    "Parrying Dagger",
+    "Krea Dagger",
+    "Rosar Dagger",
+
+    "Jubre Talisman",
+    "Helrick Talisman",
+    "Rosar Talisman",
+    "Krea Talisman",
+    "Rhik Talisman",
+
+    "Oros Ornamental Knot",
+    "Krea Ornamental Knot",
+    "Theos Ornamental Knot",
+    "Rosar Ornamental Knot",
+    "Saiyer Ornamental Knot",
+
+    "Incense Trinket",
+    "Krea Trinket",
+    "Rosar Trinket",
+    "Blade Trinket",
+    "Needle Trinket",
+
+    "White Horn Bow",
+    "White Horn Warrior Bow",
+    "Black Horn Warrior Bow",
+    "Krea Horn Bow",
+    "Rosar Horn Bow",
+
+    "Estique Kunai",
+    "Quitar Kunai",
+    "Tadd Kunai",
+    "Krea Kunai",
+    "Rosar Kunai",
+
+    "Estique Shuriken",
+    "Quitar Shuriken",
+    "Tadd Shuriken",
+    "Krea Shuriken",
+    "Rosar Shuriken",
+
+    "Scale Vambrace",
+    "Krea Vambrace",
+    "Rosar Vambrace",
+    "Iron Vambrace",
+    "Leather Vambrace",
+
+    // Mainhands
+    "Yuria Longsword",
+    "Krea Longsword",
+    "Bares Longsword",
+    "Rosar Longsword",
+    "Kalis Longsword",
+    "Seleth Longsword",
+    "Azwell Longsword",
+    "Elsh Longsword",
+    "Ain Longsword",
+
+    "Yuria Longbow",
+    "Bares Longbow",
+    "Krea Longbow",
+    "Kalis Longbow",
+    "Rosar Longbow",
+    "Azwell Longbow",
+    "Seleth Longbow",
+    "Elsh Longbow",
+    "Ain Longbow",
+
+    "Yuria Amulet",
+    "Bares Amulet",
+    "Krea Amulet",
+    "Kalis Amulet",
+    "Rosar Amulet",
+    "Azwell Amulet",
+    "Seleth Amulet",
+    "Elsh Amulet",
+    "Ain Amulet",
+
+    "Yuria Axe",
+    "Bares Axe",
+    "Krea Axe",
+    "Kalis Axe",
+    "Rosar Axe",
+    "Azwell Axe",
+    "Seleth Axe",
+    "Elsh Axe",
+    "Ain Axe",
+
+    "Yuria Shortsword",
+    "Bares Shortsword",
+    "Krea Shortsword",
+    "Kalis Shortsword",
+    "Rosar Shortsword",
+    "Azwell Shortsword",
+    "Seleth Shortsword",
+    "Elsh Shortsword",
+    "Ain Shortsword",
+
+    "Yuria Staff",
+    "Bares Staff",
+    "Krea Staff",
+    "Kalis Staff",
+    "Rosar Staff",
+    "Azwell Staff",
+    "Seleth Staff",
+    "Elsh Staff",
+    "Ain Staff",
+
+    "Yuria Kriegsmesser",
+    "Bares Kriegsmesser",
+    "Krea Kriegsmesser",
+    "Kalis Kriegsmesser",
+    "Rosar Kriegsmesser",
+    "Azwell Kriegsmesser",
+    "Seleth Kriegsmesser",
+    "Elsh Kriegsmesser",
+    "Ain Kriegsmesser",
+
+    "Yuria Gauntlet",
+    "Bares Gauntlet",
+    "Krea Gauntlet",
+    "Kalis Gauntlet",
+    "Rosar Gauntlet",
+    "Azwell Gauntlet",
+    "Seleth Gauntlet",
+    "Elsh Gauntlet",
+    "Ain Gauntlet"
 ];
 
 var ultimateItems = [
@@ -250,7 +399,143 @@ var ultimateItems = [
     "Ultimate Zereth Helmet",
     "Ultimate Zereth Armor",
     "Ultimate Zereth Gloves",
-    "Ultimate Zereth Shoes"
+    "Ultimate Zereth Shoes",
+
+    // Offhands
+    "Ultimate Axion Shield",
+    "Ultimate Vangertz Shield",
+    "Ultimate Kite Shield",
+    "Ultimate Krea Shield",
+    "Ultimate Rosar Shield",
+
+    "Ultimate Steel Dagger",
+    "Ultimate Bronze Dagger",
+    "Ultimate Parrying Dagger",
+    "Ultimate Krea Dagger",
+    "Ultimate Rosar Dagger",
+
+    "Ultimate Jubre Talisman",
+    "Ultimate Helrick Talisman",
+    "Ultimate Rosar Talisman",
+    "Ultimate Krea Talisman",
+    "Ultimate Rhik Talisman",
+
+    "Ultimate Oros Ornamental Knot",
+    "Ultimate Krea Ornamental Knot",
+    "Ultimate Theos Ornamental Knot",
+    "Ultimate Rosar Ornamental Knot",
+    "Ultimate Saiyer Ornamental Knot",
+
+    "Ultimate Incense Trinket",
+    "Ultimate Krea Trinket",
+    "Ultimate Rosar Trinket",
+    "Ultimate Blade Trinket",
+    "Ultimate Needle Trinket",
+
+    "Ultimate White Horn Bow",
+    "Ultimate White Horn Warrior Bow",
+    "Ultimate Black Horn Warrior Bow",
+    "Ultimate Krea Horn Bow",
+    "Ultimate Rosar Horn Bow",
+
+    "Ultimate Estique Kunai",
+    "Ultimate Quitar Kunai",
+    "Ultimate Tadd Kunai",
+    "Ultimate Krea Kunai",
+    "Ultimate Rosar Kunai",
+
+    "Ultimate Estique Shuriken",
+    "Ultimate Quitar Shuriken",
+    "Ultimate Tadd Shuriken",
+    "Ultimate Krea Shuriken",
+    "Ultimate Rosar Shuriken",
+
+    "Ultimate Scale Vambrace",
+    "Ultimate Krea Vambrace",
+    "Ultimate Rosar Vambrace",
+    "Ultimate Iron Vambrace",
+    "Ultimate Leather Vambrace",
+
+    // Mainhands
+    "Ultimate Yuria Longsword",
+    "Ultimate Krea Longsword",
+    "Ultimate Bares Longsword",
+    "Ultimate Rosar Longsword",
+    "Ultimate Kalis Longsword",
+    "Ultimate Seleth Longsword",
+    "Ultimate Azwell Longsword",
+    "Ultimate Elsh Longsword",
+    "Ultimate Ain Longsword",
+
+    "Ultimate Yuria Longbow",
+    "Ultimate Bares Longbow",
+    "Ultimate Krea Longbow",
+    "Ultimate Kalis Longbow",
+    "Ultimate Rosar Longbow",
+    "Ultimate Azwell Longbow",
+    "Ultimate Seleth Longbow",
+    "Ultimate Elsh Longbow",
+    "Ultimate Ain Longbow",
+
+    "Ultimate Yuria Amulet",
+    "Ultimate Bares Amulet",
+    "Ultimate Krea Amulet",
+    "Ultimate Kalis Amulet",
+    "Ultimate Rosar Amulet",
+    "Ultimate Azwell Amulet",
+    "Ultimate Seleth Amulet",
+    "Ultimate Elsh Amulet",
+    "Ultimate Ain Amulet",
+
+    "Ultimate Yuria Axe",
+    "Ultimate Bares Axe",
+    "Ultimate Krea Axe",
+    "Ultimate Kalis Axe",
+    "Ultimate Rosar Axe",
+    "Ultimate Azwell Axe",
+    "Ultimate Seleth Axe",
+    "Ultimate Elsh Axe",
+    "Ultimate Ain Axe",
+
+    "Ultimate Yuria Shortsword",
+    "Ultimate Bares Shortsword",
+    "Ultimate Krea Shortsword",
+    "Ultimate Kalis Shortsword",
+    "Ultimate Rosar Shortsword",
+    "Ultimate Azwell Shortsword",
+    "Ultimate Seleth Shortsword",
+    "Ultimate Elsh Shortsword",
+    "Ultimate Ain Shortsword",
+
+    "Ultimate Yuria Staff",
+    "Ultimate Bares Staff",
+    "Ultimate Krea Staff",
+    "Ultimate Kalis Staff",
+    "Ultimate Rosar Staff",
+    "Ultimate Azwell Staff",
+    "Ultimate Seleth Staff",
+    "Ultimate Elsh Staff",
+    "Ultimate Ain Staff",
+
+    "Ultimate Yuria Kriegsmesser",
+    "Ultimate Bares Kriegsmesser",
+    "Ultimate Krea Kriegsmesser",
+    "Ultimate Kalis Kriegsmesser",
+    "Ultimate Rosar Kriegsmesser",
+    "Ultimate Azwell Kriegsmesser",
+    "Ultimate Seleth Kriegsmesser",
+    "Ultimate Elsh Kriegsmesser",
+    "Ultimate Ain Kriegsmesser",
+
+    "Ultimate Yuria Gauntlet",
+    "Ultimate Bares Gauntlet",
+    "Ultimate Krea Gauntlet",
+    "Ultimate Kalis Gauntlet",
+    "Ultimate Rosar Gauntlet",
+    "Ultimate Azwell Gauntlet",
+    "Ultimate Seleth Gauntlet",
+    "Ultimate Elsh Gauntlet",
+    "Ultimate Ain Gauntlet"
 ];
 
 $(document).ready(function() {
