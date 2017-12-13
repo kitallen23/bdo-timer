@@ -23,15 +23,15 @@ User experience was kept in mind during the development of this app, and I tried
 The website's functionality was built using vanilla JavaScript.
 
 ## Website usage
-# Home page (timer)
+### Home page (timer)
 In the form, enter the item name 'Dandelion Kerispear'. Then simply click on the tick (or press `ctrl+enter`) to start the timer. After the timer has started, relevant fields can be changed.
 Please note that the times displayed under the system time correspond to the in-game time of Black Desert online.
 
-# Failstacks page
+### Failstacks page
 This page is simply a static view page to display information that users commonly need to reference.
 
-# Links page
+### Links page
 This is another static view page, containing links that are commonly accessed by users.
 
-# Scratch page
+### Scratch page
 The Scratch page is used to keep notes. This may seem odd to have on a timer website, but I often found myself needing to write notes to myself whilst playing Black Desert Online, to keep track of various things. To use the scratch page, simply enter some text into the form and submit it. Notes can then be updated by simply clicking on them and typing changes. After 3 seconds of inactivity after making changes to a note, the note is saved via an AJAX call.
